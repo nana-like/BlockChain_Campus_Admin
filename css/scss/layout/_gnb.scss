@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+// **** GNB style
+
+#gnb {
+  z-index: 1;
+  width: 100%;
+  height: 90px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+} // ---end of #gnb
+
+.gnb-container {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  .gnb-left {
+  }
+
+  .gnb-center {
+  }
+
+  .gnb-right {
+  }
+
+  .gnb-title {
+    //타이틀 (블록체인 캠퍼스)
+    text-align: center;
+    font-size: 22px;
+    font-weight: $fw-bl;
+    color: #000;
+  }
+
+  .gnb-route {
+    //루트 표시 영역
+    margin-top: 2px;
+    font-size: 12px;
+    text-align: center;
+
+    .gnb-route-info {
+      //루트 내 텍스트
+      display: inline-block;
+      position: relative;
+      color: #666;
+      opacity: 0.8;
+
+      &:not(:first-child) {
+        margin-left: 14px;
+
+        &:before {
+          // '>'
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -11px;
+          content: ">";
+          cursor: default;
+          @include pointer-none;
+        }
+      }
+
+      &.active {
+        //활성화 시
+        font-weight: $fw-b;
+      }
+    }
+  } //end of .gnb-route
+} //end of .gnb-container

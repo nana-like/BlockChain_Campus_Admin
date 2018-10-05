@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+// **** CONTENT style
+
+#content {
+  @include flexbox;
+  width: 100%;
+  height: calc(100% - 90px);
+  overflow: hidden;
+} //end of #content

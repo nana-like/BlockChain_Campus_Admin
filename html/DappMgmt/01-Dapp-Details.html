@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/nykim.css">
   <title>BlockChain Campus</title>
 </head>
 
@@ -15,24 +16,44 @@
 
     <header id="gnb" class="gnb">
       <div class="gnb-container">
+
         <div class="gnb-left">
-          <p class="gnb-mgmt">DAPP 관리</p>
-          <select name="select-gnb-mgmt" id="select-gnb-mgmt">
-            <option value="gnb-mgmt-system">시스템 관리</option>
-            <option value="gnb-mgmt-dapp" selected>DAPP 관리</option>
-          </select>
+          <!-- 
+            [전달사항] 
+            dropdown에 active 클래스를 추가하면 화면에 보입니다.
+          -->
+          <div class="dropdown dd-gnb-mgmt ">
+            <button class="text">DAPP 관리</button>
+            <div class="combobox">
+              <button class="combobox-item">시스템 관리</button>
+              <button class="combobox-item">DAPP 관리</button>
+            </div>
+          </div>
+          <!-- //end of .dropdown -->
         </div>
+
         <div class="gnb-center">
           <h1 class="gnb-title">Blockchain Campus</h1>
           <div class="gnb-route">
             <p class="gnb-route-info">계정 관리</p>
-            <!-- TODO: 활성화 된 header-route-link에 active 클래스를 추가해주세요 -->
+            <!-- 
+              [전달사항] 
+              활성화 된 header-route-link에 active 클래스를 추가해주세요.
+            -->
             <p class="gnb-route-info active">계정 목록 (All-POSTECH)</p>
           </div>
         </div>
+
         <div class="gnb-right">
-          <div>hello@hello.com</div>
+          <div class="dropdown dd-gnb-email active">
+            <button class="text">hello@hello.com</button>
+            <div class="combobox active">
+              <button class="combobox-item">로그아웃</button>
+            </div>
+          </div>
+          <!-- //end of .dropdown -->
         </div>
+
       </div>
     </header>
     <!-- //end of #gnb -->
@@ -40,19 +61,17 @@
     <div id="content">
 
       <nav id="lnb" class="lnb">
-        <div class="lnb-container">
-          <ul class="lnb-list">
-            <li class="lnb-item">
-              <a href="" class="lnb-link">DApp</a>
-            </li>
-            <li class="lnb-item">
-              <a href="" class="lnb-link">Voting App</a>
-            </li>
-          </ul>
-          <div class="lnb-bottom">
-            <a href="" class="lnb-bottom-link">트래커</a>
-            <a href="" class="lnb-bottom-link">개발자 센터</a>
-          </div>
+        <ul class="lnb-list">
+          <li class="lnb-item">
+            <a href="" class="lnb-link">DApp</a>
+          </li>
+          <li class="lnb-item">
+            <a href="" class="lnb-link">Voting App</a>
+          </li>
+        </ul>
+        <div class="lnb-bottom">
+          <a href="" class="lnb-bottom-link">트래커</a>
+          <a href="" class="lnb-bottom-link">개발자 센터</a>
         </div>
       </nav>
       <!-- //end of .lnb -->
