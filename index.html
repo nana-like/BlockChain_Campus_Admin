@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- HTML에 3개의 CSS를 모두 연결합니다! -->
+  <link rel="stylesheet" href="css/nykim.css" />
+
+  <title>example</title>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="test">
+
+      <h1>Test Page</h1>
+      <article>
+        <ul>
+          <li>css/ 폴더 내 scss/, scss-helpers/ 폴더가 있습니다.</li>
+          <li>scss-helpers/ 폴더는 믹스인이나 변수 등을 담고 있습니다. 필요시 추가하시면 됩니다.</li>
+          <li>scss/ 폴더 내에는 base/, zpark/, nykim/ 폴더가 있습니다.
+            <ol>
+              <li>base: 리셋, 폰트를 정의하고 있습니다. 수정 시 충돌이 일어날 가능성이 높아서, base 를 덮어씌우려면 개별 폴더 내에서 따로 정의해야할 것 같습니다.</li>
+              <li><strong>zpark: 지윤씨는 여기서 작업해주세요 :) 컴파일한 zpark.css 가 css/ 폴더 내에 들어가도록 해주세요.</strong></li>
+              <li>nykim: 저는 여기서 작업합니다~</li>
+            </ol>
+          <li>scss 파일들은 **각각 컴파일**하여, base.css, zpark.css 와 ny.css 를 만듭니다.</li>
+          <li>컴파일러는 원하시는 걸로 사용해주세요!</li>
+          <li>공통으로 사용할 폴더
+            <ol>
+              <li>scss-helpers/</li>
+              <li>scss/base/</li>
+            </ol>
+          </li>
+          <li>개별로 사용할 폴더
+            <ol>
+              <li>scss/zpark/</li>
+              <li>scss/nykim/ </li>
+            </ol>
+          </li>
+          <li>스타일 작업은 개별 폴더에서 진행해 주세요. 컴파일하실 때, 자신이 작업한 파일들을 scss 에 import 하면 됩니다. 개별 폴더 내 하위폴더를 더 만드셔도 상관 없습니다(예.
+            modules/, layout/ 등). </li>
+          <li>예를 들면, zpark.scss 는 우선 scss-helpers 폴더의 scss 를 import 합니다.</li>
+          <li>그런 다음, 자신이 작업한 table.scss 등을
+            import 합니다.
+          </li>
+          <div>ex)<br>
+            @import "../../scss-helpers/mixins";<br>
+            @import "modules/table.scss"; <br>
+            @import "layout/transaction.scss";<br>
+            ...
+          </div>
+          <li>html 파일에서는 공통 CSS(base.css)와 개별 CSS(zpark.css, nykim.css)를 모두 연결합니다.</li>
+          <div>ex)<br>
+            &lt;link rel="stylesheet" href="css/base.css" /><br>
+            &lt;link rel="stylesheet" href="css/nykim.css" /><br>
+            &lt;link rel="stylesheet" href="css/zpark.css" /><br>
+          </div>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

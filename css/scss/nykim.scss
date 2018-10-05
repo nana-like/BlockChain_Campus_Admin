@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+////////////////
+// nykim.scss //
+////////////////
+
+// 변수, 믹스인
+@import "helpers/variables";
+@import "helpers/mixins";
+
+// Base css
+@import "base/font";
+@import "base/reset";
+@import "base/common";
+
+// Module
+@import "module/button";
+
+// Layout
+@import "layout/test";

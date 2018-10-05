@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// Button
+
+@mixin buttonBase-normal {
+  min-width: 260px;
+  min-height: 60px;
+  padding: 0 20px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.button-style01 {
+  // - 긍정 버튼
+  @include buttonBase-normal;
+  color: #fff;
+  background-color: #001517;
+}
+
+.button-style02 {
+  // - 부정 및 서브 버튼
+  @include buttonBase-normal;
+  color: #001517;
+  background-color: #fff;
+  border-color: #001517;
+}
+
+.button-style01:disabled,
+.button-style02:disabled {
+  // - 비활성화 버튼
+  color: #fff;
+  border-color: #dcdfe0;
+  background-color: #dcdfe0;
+  cursor: default;
+  @include pointer-none;
+  @include select-none;
+}
