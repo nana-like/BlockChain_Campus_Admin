@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+// Table
+
+.table-container {
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+}
+
+.table-basic {
+  border: 1px solid #aaa;
+
+  th {
+    height: 46px;
+    line-height: 46px;
+    padding: 0 4px;
+    font-size: 16px;
+    font-weight: $fw-m;
+    color: #fff;
+    background-color: #147caf;
+    @include ellipsis;
+  }
+
+  td {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 4px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    @include ellipsis;
+  }
+
+  tr:hover {
+    background-color: #fafafa;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: #005faf;
+    }
+  }
+}

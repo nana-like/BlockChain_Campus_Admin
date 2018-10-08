@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// Input
+
+.input-container {
+  @include flexbox;
+  @include align-items(center);
+
+  .title {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: $fw-m;
+    margin-right: 14px;
+  }
+
+  [class^="input-"] {
+    border: 1px solid #ccc;
+    width: auto;
+    @include flex-grow(1);
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}

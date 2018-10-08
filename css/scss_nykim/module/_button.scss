@@ -38,3 +38,19 @@
   @include pointer-none;
   @include select-none;
 }
+
+.button-small {
+  //검색 영역 내 버튼
+  width: 100%;
+  height: 26px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 12px;
+  background-color: #005faf;
+
+  &:disabled {
+    color: #999;
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+}

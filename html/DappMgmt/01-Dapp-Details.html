@@ -50,9 +50,9 @@
         </div>
 
         <div class="gnb-right">
-          <div class="dropdown dd-gnb-email active">
+          <div class="dropdown dd-gnb-email">
             <button class="text">hello@hello.com</button>
-            <div class="combobox active">
+            <div class="combobox">
               <button class="combobox-item">로그아웃</button>
             </div>
           </div>
@@ -83,10 +83,119 @@
 
       <div id="main">
 
-        <div class="main-top">
+        <div class="main-container">
+
+          <div class="main-top">
+
+            <div class="search-container">
+
+              <div class="input-container flex-grow-2">
+                <strong class="title">DApp 이름</strong>
+                <input type="text" class="input-text" />
+              </div>
+              <div class="input-container flex-grow-1">
+                <strong class="title">제작자</strong>
+                <input type="text" class="input-text" />
+              </div>
+              <div class="button-container">
+                <button class="button-small">초기화</button>
+                <button class="button-small" disabled>검색</button>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- end of .main-top -->
+
+          <div class="main-body">
+
+            <div class="table-container">
+
+              <div class="table-top">
+
+                <p class="table-indicator">
+                  100개중 1-15
+                </p>
+
+                <div class="table-button-container">
+                  <button>신규 등록</button>
+                </div>
+
+              </div>
+
+              <table class="table-basic">
+                <colgroup>
+                  <col width="5%" />
+                  <col width="15%" />
+                  <col width="40%" />
+                  <col width="10%" />
+                  <col width="12%" />
+                  <col width="6%" />
+                  <col width="6%" />
+                  <col width="6%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="text-center">번호</th>
+                    <th class="text-left">DApp 이름</th>
+                    <th class="text-left">간단한 설명</th>
+                    <th class="text-left">제작자</th>
+                    <th class="text-left">작성일시</th>
+                    <th class="text-left">검수 정보</th>
+                    <th class="text-center">조회수</th>
+                    <th class="text-center">즐겨찾기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">150</td>
+                    <td class="text-left"><a href="#">DApp Name 001</a></td>
+                    <td class="text-left">Aute esse mollit voluptate eiusmod do nisi amet duis aliquip adipisicing.</td>
+                    <td class="text-left">제작자이름제작자이름</td>
+                    <td class="text-left">2018-06-01 09:00</td>
+                    <td class="text-left">검수 완료</td>
+                    <td class="text-center">80</td>
+                    <td class="text-center">40</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">149</td>
+                    <td class="text-left"><a href="#">DApp Name 002</a></td>
+                    <td class="text-left">Aute esse mollit voluptate eiusmod do nisi amet duis aliquip adipisicing.</td>
+                    <td class="text-left">제작자이름</td>
+                    <td class="text-left">2018-06-01 09:00</td>
+                    <td class="text-left">반려</td>
+                    <td class="text-center">21</td>
+                    <td class="text-center">2</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">148</td>
+                    <td class="text-left"><a href="#">DApp Name 003</a></td>
+                    <td class="text-left">Culpa pariatur enim cillum ad ipsum deserunt.</td>
+                    <td class="text-left">제작자이름</td>
+                    <td class="text-left">2018-06-01 19:00</td>
+                    <td class="text-left">검수 중</td>
+                    <td class="text-center">110</td>
+                    <td class="text-center">18</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="table-bottom">
+                <div class="table-pagination">
+
+                </div>
+                <div class="table-paging">
+                  <label for="">행 표시</label>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- end of .main-body -->
 
         </div>
-        <!-- end of .main-top -->
 
       </div>
       <!-- //end of #main -->

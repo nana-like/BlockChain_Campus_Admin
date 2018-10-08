@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+// Search Container
+
+.search-container {
+  @include flexbox;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #aaa;
+
+  .input-container {
+    margin-right: 40px;
+  }
+
+  .button-container {
+    width: 110px;
+
+    button:first-child {
+      margin-bottom: 4px;
+    }
+  }
+}

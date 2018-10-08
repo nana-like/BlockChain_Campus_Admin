@@ -3,6 +3,7 @@
 // **** LNB style
 
 #lnb {
+  @include flex-shrink(0);
   position: relative;
   width: 240px;
   height: 100%;
