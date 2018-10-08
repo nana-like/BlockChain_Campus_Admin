@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+////////////////
+// base.scss //
+////////////////
+
+// 변수, 믹스인
+@import "../scss_nykim/helpers/mixins";
+@import "../scss_nykim/helpers/variables";
+
+// Base css
+@import "base/font";
+@import "base/reset";
+@import "base/common";
