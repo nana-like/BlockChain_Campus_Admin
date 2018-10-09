@@ -8,15 +8,41 @@
   padding: 10px 20px;
   border: 1px solid #aaa;
 
+  .form-container {
+    @include flexbox;
+    @include flex-grow(1);
+  }
+
   .input-container {
     margin-right: 40px;
   }
 
   .button-container {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
     width: 110px;
 
     button:first-child {
       margin-bottom: 4px;
+    }
+  }
+}
+
+// - - - - -
+// 개별 스타일링
+
+.search-container {
+  &.search-dapp {
+    //디앱 검색
+  }
+  &.search-votingApp {
+    //투표앱 검색
+    .block > .input-container:first-child {
+      margin-bottom: 5px;
+    }
+    .title {
+      min-width: 64px;
     }
   }
 }

@@ -3,8 +3,14 @@
 // Main
 
 #main {
+  position: relative;
   width: 100%;
-  overflow-y: auto;
+  overflow: hidden;
+  // overflow-y: auto;
+
+  &.scrollable {
+    overflow-y: auto;
+  }
 }
 
 .main-container {
@@ -14,7 +20,8 @@
 }
 
 .main-top {
+  // padding-top: 24px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   width: 100%;
 }

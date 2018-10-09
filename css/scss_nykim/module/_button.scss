@@ -2,11 +2,12 @@
 
 // Button
 
+////////////////////
 @mixin buttonBase-normal {
-  min-width: 260px;
-  min-height: 60px;
-  padding: 0 20px;
-  font-size: 18px;
+  min-width: 120px;
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
   text-align: center;
   letter-spacing: -0.5px;
   border: 1px solid transparent;
@@ -37,6 +38,13 @@
   cursor: default;
   @include pointer-none;
   @include select-none;
+}
+//////////////////////////
+
+.button-basic {
+  @include buttonBase-normal;
+  color: #005faf;
+  border-color: #005faf;
 }
 
 .button-small {

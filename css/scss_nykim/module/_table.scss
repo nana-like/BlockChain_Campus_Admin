@@ -7,11 +7,91 @@
     table-layout: fixed;
     width: 100%;
   }
+  .table-titleArea {
+    padding-right: 17px; //유동적
+    background-color: #147caf;
+  }
+  .table-viewArea {
+    min-height: 100px;
+    overflow: auto;
+    border: 1px solid #aaa;
+    border-top: 0;
+  }
 }
 
-.table-basic {
-  border: 1px solid #aaa;
+// + + + +
 
+.table-top {
+  //테이블 상단 영역
+
+  @include flexbox;
+  @include justify-content(space-between);
+  margin-bottom: 10px;
+
+  .table-indicator {
+    //100개 중 1-15
+    font-size: 16px;
+  }
+
+  .table-button-container {
+    //테이블 위에 있는 신규 등록 버튼 등
+    @include flexbox;
+    @include align-items(center);
+  }
+}
+
+// + + + +
+
+.table-bottom {
+  //테이블 하단 영역
+
+  @include flexbox;
+  @include justify-content(space-between);
+  margin: 20px 0;
+}
+
+.table-pagination-container {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-grow(1);
+  height: 30px;
+
+  [class^="pagination"] {
+    //전체 페이지네이션(숫자 포함)
+    display: block;
+    margin: 0 2px;
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.disabled,
+    &.disabled a {
+      color: #aaa;
+      cursor: default;
+      @include pointer-none;
+      @include select-none;
+      text-decoration: none;
+    }
+  }
+
+  [class^="pagination-"] {
+    //인디케이트 페이지네이션(처음, 이전, 다음, 끝)
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+
+.table-header {
   th {
     height: 46px;
     line-height: 46px;
@@ -21,6 +101,28 @@
     color: #fff;
     background-color: #147caf;
     @include ellipsis;
+  }
+}
+
+// + + + +
+
+.table-basic {
+  position: relative;
+  // min-height: calc(100vh - 90px - 78px - 30px - 50px);
+  // min-height: calc(100vh - 340px);
+  // height: 100%;
+
+  thead {
+    z-index: 1;
+    background-color: #147caf;
+    // position: absolute;
+    display: table-row;
+    padding-right: 15px;
+  }
+
+  tbody {
+    height: auto;
+    overflow: auto;
   }
 
   td {
@@ -43,4 +145,27 @@
       color: #005faf;
     }
   }
-}
+
+  .tr-noData {
+    &:hover {
+      background-color: #fff;
+    }
+    td {
+      position: relative;
+    }
+    .text-noData {
+      // padding: 30px 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      letter-spacing: -0.4px;
+      color: #666;
+    }
+  }
+
+  & + .table-noData {
+    font-size: 14px;
+  }
+} //end of .table-basic
