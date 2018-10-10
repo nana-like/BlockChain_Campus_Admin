@@ -4,37 +4,36 @@
 
 // dropdown에 대한 전체 스타일
 
-.dropdown {
+.dropdown-basic {
   position: relative;
-  @include flexbox;
+  // @include flexbox;
 
   .text {
     //표시되는 텍스트
-    display: block;
+    display: inline-block;
     width: 100%;
     height: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 14px;
     font-size: 15px;
-    font-weight: $fw-r;
+    font-weight: $fw-b;
     text-align: left;
     @include ellipsis;
     cursor: pointer;
-    border: 1px solid #ddd;
 
     &:after {
-      position: absolute;
-      top: 50%;
-      right: 14px;
-      display: block;
-      content: "▼";
-      font-size: 13px;
-      @include transform(translateY(-50%));
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 4px;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: icon(dropdown-arrow, #fff);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
     }
   }
 
   .combobox {
+    z-index: 1;
     display: none;
     position: absolute;
     top: 100%;
@@ -79,21 +78,34 @@
 // ------------
 
 .dd-gnb-mgmt {
-  // GNB 왼편의 관리 메뉴
+  // GNB 상단의 관리 메뉴
+  margin: 50px 0;
 
   .text {
-    padding-right: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #fff;
+
+    &:after {
+      vertical-align: sub;
+    }
   }
 }
 
 // ------------
 
-.dd-gnb-email {
-  // GNB 오른편의 이메일
-  min-width: 100px;
+.dd-lnb-email {
+  // LNB 오른편의 이메일
 
   .text {
-    padding-right: 40px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: $fw-r;
+    color: #17365b;
+
+    &:after {
+      background-image: icon(dropdown-arrow, #17365b);
+    }
   }
 }
 

@@ -35,11 +35,11 @@ _Last Modified: 2018-10-05_
 
 - 전체를 #wrap 이라는 div 로 감쌉니다.
 - #wrap 은 대부분의 화면에서 #gnb + #content 로 이루어집니다.
-  - #gnb: 상단에 항시 고정된 헤더
-  - #content: 헤더 아래 하단 영역
+  - #gnb: 왼쪽에 상시 고정된 영역
+  - #content: 오른쪽 콘텐츠 영역
 - #content 는 대부분의 화면에서 #lnb + #main 으로 이루어집니다.
-  - #lnb: 왼쪽에 고정된 메뉴 영역
-  - #main: lnb 옆에 실질적 정보가 나오는 영역
+  - #lnb: 상단에 고정된 영역
+  - #main: lnb 아래에 실질적 정보가 나오는 영역
 - #mian 은 대부분의 화면에서 .main-container > .main-top + .main-body 로 이루어집니다.
 
   - .main-top: 검색 영역 등

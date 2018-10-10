@@ -79,13 +79,67 @@ $(function() {
     setTablePadding();
   };
 
+  var commonEvt = function() {
+    // $('input[name="datepicker"]').daterangepicker();
+    $('input[name="datepicker"]').flatpickr({
+      enableTime: true
+    });
+  };
+
   $(window).on("load", function() {
     tableEvt();
+    commonEvt();
   });
 
   $(window).on("resize", function() {
     heightValue.window = $(window).height();
     heightValue.main = $("#main").height();
     tableEvt();
+  });
+});
+
+$(function() {
+  // create an instance when the DOM is ready
+  $("#jstree").jstree({
+    core: {
+      themes: { icons: true }
+    }
+  });
+
+  // bind to events triggered on the tree
+  $("#jstree").on("changed.jstree", function(e, data) {
+    console.log(data.selected);
+  });
+
+  $(window).on("load", function() {
+    $("#jstree").jstree("open_all");
+  });
+});
+
+$(function() {
+  $.contextMenu({
+    selector: ".context-menu-one",
+    callback: function(key, options) {
+      var m = "clicked: " + key;
+      (window.console && console.log(m)) || alert(m);
+    },
+    items: {
+      edit: { name: "Edit", icon: "edit" },
+      cut: { name: "Cut", icon: "cut" },
+      copy: { name: "Copy", icon: "copy" },
+      paste: { name: "Paste", icon: "paste" },
+      delete: { name: "Delete", icon: "delete" },
+      sep1: "---------",
+      quit: {
+        name: "Quit",
+        icon: function() {
+          return "context-menu-icon context-menu-icon-quit";
+        }
+      }
+    }
+  });
+
+  $(".context-menu-one").on("click", function(e) {
+    console.log("clicked", this);
   });
 });

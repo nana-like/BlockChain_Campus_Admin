@@ -3,70 +3,69 @@
 // **** LNB style
 
 #lnb {
-  @include flex-shrink(0);
-  position: relative;
-  width: 240px;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  background-color: #f2f4f7;
+} // ---end of #gnb
+
+.lnb-container {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  // width: 100%;
+  width: 1100px;
   height: 100%;
-  overflow-y: auto;
-  background-color: #005faf;
+  margin: 0 auto;
 
-  .lnb-list {
-    height: calc(100% - 40px);
-    overflow-y: auto;
-
-    .lnb-item {
-      .lnb-link {
-        display: block;
-        width: 100%;
-        padding: 0px 30px;
-        height: 60px;
-        line-height: 60px;
-        color: #fff;
-        font-size: 14px;
-
-        &:hover {
-          // background-color: #017dc3;
-          text-decoration: underline;
-        }
-
-        &.active {
-          background-color: #017dc3;
-        }
-      }
-    }
-  }
-
-  .lnb-bottom {
+  .lnb-left {
     @include flexbox;
-    @include justify-content(center);
     @include align-items(center);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: #004aa1;
+  }
 
-    .lnb-bottom-link {
-      color: #fff;
-      font-size: 13px;
+  .lnb-logo {
+    //타이틀 (로고)
+    width: 60px;
+    height: 48px;
+    margin-right: 13px;
+    @include bgi("logo");
+    text-indent: -9999px;
+  }
 
-      &:before {
-        display: inline-block;
-        width: 1px;
-        height: 10px;
-        margin: 0 10px;
-        background-color: #c1c5ff;
-        content: "";
+  .lnb-route {
+    //루트 표시 영역
+
+    .lnb-route-info {
+      //루트 내 텍스트
+      display: inline-block;
+      position: relative;
+      color: #17365b;
+      font-size: 12px;
+      font-weight: $fw-m;
+
+      &:not(:first-child) {
+        margin-left: 14px;
+
+        &:before {
+          // '>'
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -11px;
+          content: ">";
+          cursor: default;
+          @include pointer-none;
+        }
       }
 
-      &:first-child:before {
-        display: none;
-      }
-
-      &:hover {
-        text-decoration: underline;
+      &.active {
+        //활성화 시
+        font-weight: $fw-b;
       }
     }
-  }
-} // ---- end of #lnb
+  } //end of .lnb-route
+
+  .lnb-right {
+  } //end of .lnb-right
+} //end of .lnb-container
