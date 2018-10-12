@@ -96,6 +96,10 @@ button {
   &:focus {
     outline: 0;
   }
+
+  &:disabled {
+    cursor: default;
+  }
 }
 
 i {
@@ -145,6 +149,10 @@ input {
   -webkit-border-radius: 0;
   background-color: transparent;
   border: 1px solid transparent;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 //ios용

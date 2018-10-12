@@ -4,7 +4,7 @@
 
 // dropdown에 대한 전체 스타일
 
-.dropdown-basic {
+[class^="dropdown-"] {
   position: relative;
   // @include flexbox;
 
@@ -42,8 +42,8 @@
     max-height: 200px;
     overflow-y: auto;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-top: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
   }
 
   .combobox-item {
@@ -69,6 +69,16 @@
     }
     .combobox {
       display: block;
+    }
+  }
+
+  &.reverse {
+    //위로 드롭다운 펼쳐질 때
+    .combobox {
+      display: block;
+      top: initial;
+      bottom: 100%;
+      margin-bottom: 10px;
     }
   }
 }
@@ -105,6 +115,61 @@
 
     &:after {
       background-image: icon(dropdown-arrow, #17365b);
+    }
+  }
+}
+
+// ------------
+
+.dropdown-paging {
+  // 행 표시용 드롭다운
+  @include flexbox;
+  @include align-items(center);
+
+  .label {
+    color: #000;
+    font-size: 14px;
+    font-weight: $fw-r;
+    margin-right: 8px;
+    @include flex-shrink(0);
+  }
+
+  .text {
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 46px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333333;
+    border: 1px solid #c6cbd4;
+    background-color: #fff;
+
+    &:hover {
+      border-color: #11adca;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      width: 24px;
+      height: 24px;
+      background-image: icon(dropdown-list, #333);
+      background-size: 24px 24px;
+      @include transform(translateY(-50%));
+    }
+  }
+  .combobox {
+    left: initial;
+    right: 0;
+    width: 78px;
+  }
+  .combobox-item {
+    text-align: center;
+    &:hover {
+      background-color: #f2f4f7;
     }
   }
 }

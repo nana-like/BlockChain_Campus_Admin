@@ -2,63 +2,63 @@
 
 // Button
 
-////////////////////
-@mixin buttonBase-normal {
-  min-width: 120px;
-  min-height: 30px;
-  padding: 0 10px;
-  font-size: 14px;
-  text-align: center;
-  letter-spacing: -0.5px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.button-style01 {
-  // - 긍정 버튼
-  @include buttonBase-normal;
-  color: #fff;
-  background-color: #001517;
-}
-
 .button-style02 {
-  // - 부정 및 서브 버튼
-  @include buttonBase-normal;
-  color: #001517;
-  background-color: #fff;
-  border-color: #001517;
+  color: #123;
 }
 
-.button-style01:disabled,
-.button-style02:disabled {
-  // - 비활성화 버튼
-  color: #fff;
-  border-color: #dcdfe0;
-  background-color: #dcdfe0;
-  cursor: default;
-  @include pointer-none;
-  @include select-none;
-}
-//////////////////////////
-
-.button-basic {
-  @include buttonBase-normal;
-  color: #005faf;
-  border-color: #005faf;
-}
-
-.button-small {
-  //검색 영역 내 버튼
-  width: 100%;
-  height: 26px;
+.button-type-b {
+  //버튼 B타입
+  width: auto;
+  height: 32px;
+  min-width: 78px;
+  padding: 0 25px;
   margin: 0 auto;
   color: #fff;
-  font-size: 12px;
-  background-color: #005faf;
+  font-size: 14px;
+  background-color: #30b9d3;
+  border-radius: 2px;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #11adca;
+  }
 
   &:disabled {
     color: #999;
     background-color: #eee;
-    cursor: not-allowed;
+  }
+}
+
+.button-type-c {
+  @extend .button-type-b;
+  padding: 0 18px;
+  color: #4d4d4d;
+  border-color: #c6cbd4;
+  background-color: #fff;
+
+  &:hover {
+    background-color: #f2f4f7;
+    border-color: #c6cbd4;
+  }
+
+  &:disabled {
+    background-color: #f2f4f7;
+    border-color: #f2f4f7;
+  }
+}
+
+.button-type-a {
+  @extend .button-type-b;
+  padding: 0 32px;
+  color: #333;
+  background-color: #f2f4f7;
+
+  &:hover {
+    background-color: #d8e0e7;
+  }
+
+  &:disabled {
+    background-color: #f2f4f7;
+    color: #98a6b6;
   }
 }

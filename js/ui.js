@@ -71,6 +71,7 @@ $(function() {
 
     var setTablePadding = function() {
       //스크롤로 인해 생기는 여백을 thead에게도 지정해줍니다.
+      var defaultPadding = 40;
       var padding = scrollBarWidth();
       $(".table-titleArea").css("padding-right", padding);
     };
@@ -141,5 +142,16 @@ $(function() {
 
   $(".context-menu-one").on("click", function(e) {
     console.log("clicked", this);
+  });
+});
+
+$(function() {
+  $("#table-pagination").pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7, 195],
+    callback: function(data, pagination) {
+      // template method of yourself
+      var html = template(data);
+      dataContainer.html(html);
+    }
   });
 });

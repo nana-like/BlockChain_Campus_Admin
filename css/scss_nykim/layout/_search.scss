@@ -5,8 +5,8 @@
 .search-container {
   @include flexbox;
   width: 100%;
-  padding: 10px 20px;
-  border: 1px solid #aaa;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f2f4f7;
 
   .form-container {
     @include flexbox;
@@ -21,7 +21,7 @@
     @include flexbox;
     @include flex-direction(column);
     @include justify-content(center);
-    width: 110px;
+    // width: 110px;
 
     button:first-child {
       margin-bottom: 4px;

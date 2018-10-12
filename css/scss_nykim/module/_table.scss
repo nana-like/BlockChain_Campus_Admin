@@ -8,14 +8,17 @@
     width: 100%;
   }
   .table-titleArea {
-    padding-right: 17px; //유동적
-    background-color: #147caf;
+    // padding-left: 40px;
+    // padding-right: 57px; //유동적
+    background-color: #f2f4f7;
   }
   .table-viewArea {
+    // padding-left: 40px;
+    // padding-right: 40px;
     min-height: 100px;
     overflow: auto;
-    border: 1px solid #aaa;
     border-top: 0;
+    // border-bottom: 1px solid rgba(198, 203, 212, 0.3);
   }
 }
 
@@ -23,14 +26,22 @@
 
 .table-top {
   //테이블 상단 영역
-
   @include flexbox;
+  @include align-items(flex-end);
   @include justify-content(space-between);
   margin-bottom: 10px;
 
   .table-indicator {
     //100개 중 1-15
-    font-size: 16px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333;
+
+    .accent {
+      font-weight: $fw-b;
+      color: #30b9d3;
+    }
   }
 
   .table-button-container {
@@ -44,10 +55,9 @@
 
 .table-bottom {
   //테이블 하단 영역
-
   @include flexbox;
   @include justify-content(space-between);
-  margin: 20px 0;
+  margin: 25px auto 41px;
 }
 
 .table-pagination-container {
@@ -93,20 +103,29 @@
 
 .table-header {
   th {
-    height: 46px;
-    line-height: 46px;
-    padding: 0 4px;
-    font-size: 16px;
-    font-weight: $fw-m;
-    color: #fff;
-    background-color: #147caf;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    padding-right: 10px;
+    font-weight: $fw-b;
+    color: #575757;
+    background-color: #f2f4f7;
     @include ellipsis;
+
+    &:first-child {
+      padding-left: 40px;
+    }
+
+    &:last-child {
+      padding-right: 30px;
+    }
   }
 }
 
 // + + + +
 
 .table-basic {
+  text-align: left;
   position: relative;
   // min-height: calc(100vh - 90px - 78px - 30px - 50px);
   // min-height: calc(100vh - 340px);
@@ -125,13 +144,30 @@
     overflow: auto;
   }
 
+  tr {
+    border-top: 1px solid rgba(198, 203, 212, 0.3);
+
+    &:last-child {
+      border-bottom: 1px solid rgba(198, 203, 212, 0.3);
+    }
+  }
+
   td {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 4px;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
+    text-align: left;
+    height: 51px;
+    padding-right: 10px;
+    line-height: 51px;
+    font-size: 13px;
     @include ellipsis;
+    letter-spacing: -0.5px;
+
+    &:first-child {
+      padding-left: 40px;
+    }
+
+    &:last-child {
+      padding-right: 30px;
+    }
   }
 
   tr:hover {
@@ -168,4 +204,32 @@
   & + .table-noData {
     font-size: 14px;
   }
+
+  [class^="review-"] {
+    &:before {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      margin-right: 7px;
+      border-radius: 50%;
+      content: "";
+      vertical-align: middle;
+    }
+
+    &.review-onging:before {
+      background-color: #30b9d3;
+    }
+
+    &.review-done:before {
+      background-color: #8592a2;
+    }
+
+    &.review-rejected:before {
+      background-color: #f76335;
+    }
+  }
 } //end of .table-basic
+
+.table-paging-container {
+  //행 표시
+}

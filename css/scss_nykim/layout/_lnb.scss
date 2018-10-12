@@ -15,7 +15,7 @@
   @include justify-content(space-between);
   @include align-items(center);
   // width: 100%;
-  width: 1100px;
+  width: $maxWidth;
   height: 100%;
   margin: 0 auto;
 
