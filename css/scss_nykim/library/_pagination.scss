@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.pagination {
+  @include flexbox;
+  outline: 2px dashed darkcyan;
+
+  .page-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    border: solid 1px #c6cbd4;
+  }
+}
+
+#table-pagination ul {
+  @include flexbox;
+
+  li {
+    span,
+    a {
+      display: block;
+      width: auto;
+      height: 32px;
+      min-width: 32px;
+      padding: 0 12px;
+      margin-right: 4px;
+      font-size: 14px;
+      font-weight: $fw-r;
+      color: #333;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 2px;
+      border: solid 1px #c6cbd4;
+      cursor: default;
+    }
+
+    &.active {
+      span {
+        color: #fff;
+        background-color: #30b9d3;
+        border-color: #30b9d3;
+      }
+    }
+
+    &.disabled span {
+      border-color: #c6cbd4;
+      color: #c6cbd4;
+    }
+
+    .page-link {
+      cursor: pointer;
+    }
+
+    .ellipse {
+      border: 0;
+      line-height: 38px;
+    }
+
+    .prev {
+    }
+
+    .next {
+    }
+  }
+}

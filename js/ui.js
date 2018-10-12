@@ -146,12 +146,40 @@ $(function() {
 });
 
 $(function() {
+  // $("#table-pagination").twbsPagination({
+  //   totalPages: 20,
+  //   items: 20,
+  //   itemOnPage: 5,
+  //   currentPage: 1,
+  //   prevText: '<span aria-hidden="true">&laquo;</span>',
+  //   nextText: '<span aria-hidden="true">&raquo;</span>'
+  // });
+
+  function simpleTemplating(data) {
+    var html = "<ul>";
+    $.each(data, function(index, item) {
+      html += "<li>" + item + "</li>";
+    });
+    html += "</ul>";
+    return html;
+  }
+
+  // $("#table-pagination").pagination({
+  //   dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  //   pageSize: 5,
+  //   showGoInput: true,
+  //   showGoButton: true
+  //   // callback: function(data, pagination) {
+  //   //   var html = simpleTemplating(data);
+  //   //   $("#table-pagination").html(html);
+  //   // }
+  // });
+
   $("#table-pagination").pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, 195],
-    callback: function(data, pagination) {
-      // template method of yourself
-      var html = template(data);
-      dataContainer.html(html);
-    }
+    items: 100,
+    itemsOnPage: 15,
+    displayedPages: 3,
+    edges: 1,
+    ellipsePageSet: false
   });
 });
