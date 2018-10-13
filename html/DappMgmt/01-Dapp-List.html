@@ -6,22 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="../../css/base.css">
-  <!-- <link rel="stylesheet" href="../../css/zpark.css"> -->
-  <link rel="stylesheet" href="../../css/nykim.css">
+  <link rel="stylesheet" href="../../css/style.css">
 
   <link rel="shortcut icon" href="images/favicon.ico" />
 
   <script src="../../js/library/jquery.min.js"></script>
   <script src="../../js/library-all.js"></script>
   <script src="../../js/ui.js"></script>
+
   <title>BlockChain Campus</title>
 </head>
 
 <body>
   <!-- Dapp 목록 화면 -->
 
-  <div id="wrap">
+  <div id="wrap" class="no-tree-view">
     <header id="gnb" class="gnb">
 
       <!-- 
@@ -63,7 +62,6 @@
             <div class="lnb-route">
               <p class="lnb-route-info">DApp</p>
               <p class="lnb-route-info">DApp 목록</p>
-              <p class="lnb-route-info">DApp 상세 정보</p>
             </div>
           </div>
 
@@ -81,9 +79,9 @@
       </nav>
       <!-- //end of #lnb -->
 
-      <div id="main">
+      <div id="main" class="main-table">
 
-        <div class="main-container">
+        <div class="main-container dapp-list">
 
           <div class="main-top">
 
@@ -99,26 +97,27 @@
                 </div>
               </div>
               <div class="button-container">
+                <!-- 
+                  [전달사항] 
+                  버튼 비활성화 시에는 disabled 속성을 넣어주세요.
+                -->
                 <button class="button-type-c">초기화</button>
                 <button class="button-type-b" disabled>검색</button>
               </div>
             </div>
 
           </div>
-          <!-- end of .main-top -->
+          <!-- //end of .main-top -->
 
           <div class="main-body">
 
             <div class="table-container">
 
               <div class="table-top">
-
                 <div class="left">
-
                   <p class="table-indicator">
                     100개중 <span class="accent">1-15</span>
                   </p>
-
                 </div>
 
                 <div class="right">
@@ -126,11 +125,10 @@
                     <button class="button-type-a">신규등록</button>
                   </div>
                 </div>
-
               </div>
+              <!-- //end of .table-top -->
 
               <div class="table-titleArea">
-
                 <table class="table-header">
                   <!-- 8개 -->
                   <colgroup>
@@ -157,7 +155,7 @@
                   </thead>
                 </table>
               </div>
-
+              <!-- //end of .table-titleArea -->
 
               <div class="table-viewArea">
                 <table class="table-basic">
@@ -216,59 +214,17 @@
 
                 </table>
               </div>
+              <!-- //end of .table-viewArea -->
 
               <div class="table-bottom">
-                <div class="table-utils">
-                </div>
-                <div id="table-pagination">
-                  <div id="myDiv"></div>
-                </div>
-                <!-- <div class="table-pagination-container">
-                  <div class="pagination-first disabled">
-                    <a>처음</a>
-                  </div>
-                  <div class="pagination-prev disabled">
-                    <a>이전</a>
-                  </div>
-                  <div class="pagination">
-                    <a>1</a>
-                  </div>
-                  <div class="pagination">
-                    <a>2</a>
-                  </div>
-                  <div class="pagination">
-                    <a>3</a>
-                  </div>
-                  <div class="pagination">
-                    <a>4</a>
-                  </div>
-                  <div class="pagination">
-                    <a>5</a>
-                  </div>
-                  <div class="pagination">
-                    <a>6</a>
-                  </div>
-                  <div class="pagination">
-                    <a>7</a>
-                  </div>
-                  <div class="pagination">
-                    <a>8</a>
-                  </div>
-                  <div class="pagination">
-                    <a>9</a>
-                  </div>
-                  <div class="pagination">
-                    <a>10</a>
-                  </div>
-                  <div class="pagination-next">
-                    <a>다음</a>
-                  </div>
-                  <div class="pagination-last">
-                    <a>끝</a>
-                  </div>
-                </div> -->
+                <div class="table-utils"></div>
+                <div id="table-pagination"></div>
                 <div class="table-paging-container">
 
+                  <!-- 
+                    [전달사항] 
+                    dropdown에 active 클래스를 추가하면 콤보박스가 화면에 보입니다.
+                  -->
                   <div class="dropdown-paging reverse active">
                     <p class="label">행 표시</p>
                     <button class="text">15</button>
@@ -279,34 +235,21 @@
                     </div>
                   </div>
                   <!-- //end of .dropdown -->
-
-
-                  <div class="select-container">
-                    <!-- <label for="sel-table-paging" class="select-label">행 표시</label>
-                    <select name="sel-table-paging" id="sel-table-paging" class="select-combobox">
-                      <option value="15">15</option>
-                      <option value="30">30</option>
-                      <option value="100">100</option>
-                    </select></div> -->
-                  </div>
-
                 </div>
-
               </div>
+              <!-- //end of .table-bottom -->
 
             </div>
-            <!-- end of .main-body -->
+            <!-- //end of .table-container -->
 
           </div>
+          <!-- //end of .main-body -->
 
         </div>
         <!-- //end of #main -->
 
       </div>
       <!-- //end of #content -->
-
-
-
     </div>
 </body>
 

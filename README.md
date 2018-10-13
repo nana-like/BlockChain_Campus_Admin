@@ -81,3 +81,5 @@ _Last Modified: 2018-10-05_
 - 크롬 / 모던 브라우저 기준으로 작업합니다.
 
 ---
+
+http://flaviusmatis.github.io/simplePagination.js/

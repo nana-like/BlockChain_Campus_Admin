@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- Voting App 목록 화면 -->
+
+  <div id="wrap" class="no-tree-view">
+    <header id="gnb" class="gnb">
+
+      <!-- 
+        [전달사항] 
+        dropdown에 active 클래스를 추가하면 콤보박스가 화면에 보입니다.
+      -->
+      <div class="dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <!-- //end of .dropdown -->
+
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link">DApp</a>
+        </li>
+
+        <!-- 
+          [전달사항] 
+          활성화 된 gnb-link에 active 클래스를 추가해주세요.
+        -->
+        <li class="gnb-item">
+          <a href="" class="gnb-link active">Voting App</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">VOTING APP</p>
+              <p class="lnb-route-info">투표 목록</p>
+            </div>
+          </div>
+
+          <div class="lnb-right">
+            <div class="dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+            <!-- //end of .dropdown -->
+          </div>
+
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="main-table">
+
+        <div class="main-container voting-list">
+
+          <div class="main-top">
+
+            <div class="search-container search-voting">
+              <div class="form-container">
+
+                <div class="flex-line">
+                  <div class="input-container">
+                    <strong class="title">투표명</strong>
+                    <input type="text" class="input-text" />
+                  </div>
+                  <div class="input-container">
+                    <strong class="title">투표대상</strong>
+                    <input type="text" class="input-text" />
+                  </div>
+                  <div class="input-container input-sm">
+                    <strong class="title">시작일시</strong>
+                    <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="testInput" />
+                  </div>
+                  <div class="input-container input-sm">
+                    <strong class="title">종료일시</strong>
+                    <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" />
+                  </div>
+                </div>
+              </div>
+              <div class="button-container">
+                <button class="button-type-c" disabled>초기화</button>
+                <button class="button-type-b">검색</button>
+              </div>
+            </div>
+
+          </div>
+          <!-- //end of .main-top -->
+
+          <div class="main-body">
+
+            <div class="table-container">
+
+              <div class="table-top">
+                <div class="left">
+                  <p class="table-indicator">
+                    100개중 <span class="accent">1-15</span>
+                  </p>
+                </div>
+
+                <div class="right">
+                  <div class="table-button-container">
+                    <div class="checkbox-container checkbox-type-a">
+                      <input type="checkbox" id="checkbox-include-finishedVote" />
+                      <label for="checkbox-include-finishedVote">종료된 투표 포함</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //end of .table-top -->
+
+              <div class="table-titleArea">
+                <table class="table-header">
+                  <!-- column 9개 -->
+                  <colgroup>
+                    <col width="8%" />
+                    <col width="19%" />
+                    <col width="23%" />
+                    <col width="12%" />
+                    <col width="12%" />
+                    <col width="6%" />
+                    <col width="6%" />
+                    <col width="6%" />
+                    <col width="8%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>투표명</th>
+                      <th>투표 대상</th>
+                      <th>시작일시</th>
+                      <th>종료일시</th>
+                      <th>대상인원</th>
+                      <th>참여인원</th>
+                      <th>상태</th>
+                      <th>참여</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <!-- //end of .table-titleArea -->
+
+              <div class="table-viewArea">
+                <table class="table-basic">
+                  <colgroup>
+                    <col width="8%" />
+                    <col width="19%" />
+                    <col width="23%" />
+                    <col width="12%" />
+                    <col width="12%" />
+                    <col width="6%" />
+                    <col width="6%" />
+                    <col width="6%" />
+                    <col width="8%" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>120</td>
+                      <td><a href="#">테스트 투표 123</a></td>
+                      <td>산업공학과</td>
+                      <td>2018-06-01 09:00</td>
+                      <td>2018-06-01 18:00</td>
+                      <td>180</td>
+                      <td>78</td>
+                      <td>마감</td>
+                      <td>불가</td>
+                    </tr>
+                    <tr>
+                      <td>119</td>
+                      <td><a href="#">총학생회 선거</a></td>
+                      <td>전체</td>
+                      <td>2018-01-01 00:00</td>
+                      <td>2018-12-31 00:00</td>
+                      <td>482</td>
+                      <td>482</td>
+                      <td>마감</td>
+                      <td>완료</td>
+                    </tr>
+                    <tr>
+                      <td>118</td>
+                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                      <td>공과대학</td>
+                      <td>2018-01-01 09:00</td>
+                      <td>2018-01-01 09:10</td>
+                      <td>200</td>
+                      <td>111</td>
+                      <td>진행</td>
+                      <td>가능</td>
+                    </tr>
+                    <tr>
+                      <td>120</td>
+                      <td><a href="#">테스트 투표 123</a></td>
+                      <td>산업공학과</td>
+                      <td>2018-06-01 09:00</td>
+                      <td>2018-06-01 18:00</td>
+                      <td>180</td>
+                      <td>78</td>
+                      <td>마감</td>
+                      <td>불가</td>
+                    </tr>
+                    <tr>
+                      <td>119</td>
+                      <td><a href="#">총학생회 선거</a></td>
+                      <td>전체</td>
+                      <td>2018-01-01 00:00</td>
+                      <td>2018-12-31 00:00</td>
+                      <td>482</td>
+                      <td>482</td>
+                      <td>마감</td>
+                      <td>완료</td>
+                    </tr>
+                    <tr>
+                      <td>118</td>
+                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                      <td>공과대학</td>
+                      <td>2018-01-01 09:00</td>
+                      <td>2018-01-01 09:10</td>
+                      <td>200</td>
+                      <td>111</td>
+                      <td>진행</td>
+                      <td>가능</td>
+                    </tr>
+                    <tr>
+                      <td>120</td>
+                      <td><a href="#">테스트 투표 123</a></td>
+                      <td>산업공학과</td>
+                      <td>2018-06-01 09:00</td>
+                      <td>2018-06-01 18:00</td>
+                      <td>180</td>
+                      <td>78</td>
+                      <td>마감</td>
+                      <td>불가</td>
+                    </tr>
+                    <tr>
+                      <td>119</td>
+                      <td><a href="#">총학생회 선거</a></td>
+                      <td>전체</td>
+                      <td>2018-01-01 00:00</td>
+                      <td>2018-12-31 00:00</td>
+                      <td>482</td>
+                      <td>482</td>
+                      <td>마감</td>
+                      <td>완료</td>
+                    </tr>
+                    <tr>
+                      <td>118</td>
+                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                      <td>공과대학</td>
+                      <td>2018-01-01 09:00</td>
+                      <td>2018-01-01 09:10</td>
+                      <td>200</td>
+                      <td>111</td>
+                      <td>진행</td>
+                      <td>가능</td>
+                    </tr>
+                    <tr>
+                      <td>120</td>
+                      <td><a href="#">테스트 투표 123</a></td>
+                      <td>산업공학과</td>
+                      <td>2018-06-01 09:00</td>
+                      <td>2018-06-01 18:00</td>
+                      <td>180</td>
+                      <td>78</td>
+                      <td>마감</td>
+                      <td>불가</td>
+                    </tr>
+                    <tr>
+                      <td>119</td>
+                      <td><a href="#">총학생회 선거</a></td>
+                      <td>전체</td>
+                      <td>2018-01-01 00:00</td>
+                      <td>2018-12-31 00:00</td>
+                      <td>482</td>
+                      <td>482</td>
+                      <td>마감</td>
+                      <td>완료</td>
+                    </tr>
+                    <tr>
+                      <td>118</td>
+                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                      <td>공과대학</td>
+                      <td>2018-01-01 09:00</td>
+                      <td>2018-01-01 09:10</td>
+                      <td>200</td>
+                      <td>111</td>
+                      <td>진행</td>
+                      <td>가능</td>
+                    </tr>
+                  </tbody>
+
+                  <!-- <tbody>
+                  <tr class="tr-noData">
+                    <td colspan="8">
+                      <div class="text-noData">
+                        No search results found
+                      </div>
+                    </td>
+                  </tr>
+                </tbody> -->
+
+                </table>
+              </div>
+              <!-- //end of .table-viewArea -->
+
+              <div class="table-bottom">
+                <div class="table-utils"></div>
+                <div id="table-pagination"></div>
+                <div class="table-paging-container">
+
+                  <!-- 
+                    [전달사항] 
+                    dropdown에 active 클래스를 추가하면 콤보박스가 화면에 보입니다.
+                  -->
+                  <div class="dropdown-paging reverse active">
+                    <p class="label">행 표시</p>
+                    <button class="text">15</button>
+                    <div class="combobox">
+                      <button class="combobox-item">15</button>
+                      <button class="combobox-item">30</button>
+                      <button class="combobox-item">100</button>
+                    </div>
+                  </div>
+                  <!-- //end of .dropdown -->
+                </div>
+              </div>
+              <!-- //end of .table-bottom -->
+
+            </div>
+            <!-- //end of .table-container -->
+
+          </div>
+          <!-- //end of .main-body -->
+
+        </div>
+        <!-- //end of #main -->
+
+      </div>
+      <!-- //end of #content -->
+    </div>
+</body>
+
+</html>

@@ -75,7 +75,6 @@
   &.reverse {
     //위로 드롭다운 펼쳐질 때
     .combobox {
-      display: block;
       top: initial;
       bottom: 100%;
       margin-bottom: 10px;
@@ -125,6 +124,15 @@
   // 행 표시용 드롭다운
   @include flexbox;
   @include align-items(center);
+
+  &.active {
+    .text {
+      border-color: #11adca;
+    }
+    .combobox {
+      display: block;
+    }
+  }
 
   .label {
     color: #000;

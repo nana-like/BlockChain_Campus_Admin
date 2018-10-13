@@ -6,6 +6,19 @@
 // [ 1. color pallete ]
 // -------------------------
 
+// ======== zpark
+$color-blue: #3b5675;
+$color-lightgray: #f2f3f7;
+$color-6-border: #c6cbd4;
+$color-greenblue: #11adca;
+$color-table: #575757;
+$color-end: #98a6b6;
+$color-vote-table: #c6cbd4;
+$color-login-bottom: #17365b;
+$color-placeholder: #8592a2;
+$color-red-wrong: #ee6262;
+// ======== zpark
+
 // -------------------------
 // [ 2. z-index ]
 // -------------------------
@@ -33,4 +46,5 @@ $fw-t: 300;
 // [ 6. common layout ]
 // -------------------------
 
-$maxWidth: 1100px;
+$maxWidth: 1000px;
+$maxWidth-noTreeView: 1100px; //기본 1000, 파일트리없으면 1100

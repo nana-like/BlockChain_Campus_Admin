@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- Dapp 상세 정보 -->
+
+  <div id="wrap" class="no-tree-view">
+
+    <header id="gnb" class="gnb">
+      <div class="dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link active">DApp</a>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link">Voting App</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">DApp</p>
+              <p class="lnb-route-info">DApp 목록</p>
+              <p class="lnb-route-info">DApp 상세 정보</p>
+            </div>
+          </div>
+          <div class="lnb-right">
+            <div class="dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="scrollable">
+
+        <div class="main-container dapp-details">
+
+          <div class="details-top">
+            <strong class="daap-title"></strong>
+            <div class="flex-line">
+              <div class="title-container">
+                <button class="button-back"></button>
+                <input type="text" class="input-text" value="DApp Name 001" readonly />
+                <!--
+                  [전달사항]
+                  에러 발생 시, .message에 메시지 내용을 넣어주세요.
+                -->
+                <div class="message">
+                  사용할 수 없는 DApp 이름입니다.
+                </div>
+              </div>
+              <div class="button-container">
+                <button class="button-type-a">계정 삭제</button>
+                <button class="button-type-a">수정</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-info">
+            <div class="flex-line">
+              <div class="info-list">
+                <strong>제작자:</strong>
+                <p class="text mail">arlee@postech.ac.kr</p>
+                <button class="button-type-d">웹사이트</button>
+              </div>
+              <div class="info-list">
+                <strong>등록일:</strong>
+                <p class="text">2018-03-20</p>
+              </div>
+              <div class="info-list">
+                <strong>최종수정일:</strong>
+                <p class="text">2018-03-20</p>
+              </div>
+              <div class="info-list">
+                <strong>어드레스:</strong>
+                <p class="text address">0x758......000</p>
+              </div>
+              <div class="info-list">
+                <strong>검수정보:</strong>
+                <p class="text">검수 완료</p>
+              </div>
+              <div class="info-list">
+                <strong>DApp 소스</strong>
+                <button class="button-type-d">다운로드</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-body">
+
+            <div class="dapp-details-description">
+              <strong class="title">앱 설명</strong>
+              <textarea name="textarea-dapp-description" id="textarea-dapp-description" class="textarea-basic" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+            </div>
+
+            <div class="dapp-details-image">
+              <img src="../../images/thumbnail-app.png" alt="dapp image">
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- //end of .dapp-details -->
+
+
+      </div>
+      <!-- //end of #main -->
+
+    </div>
+    <!-- //end of #content -->
+  </div>
+</body>
+
+</html>

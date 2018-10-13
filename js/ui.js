@@ -81,21 +81,66 @@ $(function() {
   };
 
   var commonEvt = function() {
-    // $('input[name="datepicker"]').daterangepicker();
-    $('input[name="datepicker"]').flatpickr({
-      enableTime: true
-    });
+    // $(".input-datepicker").flatpickr({
+    //   enableTime: true,
+    //   appendTo: window.document.querySelector("#main")
+    // });
+
+    $(".input-datepicker").daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: true,
+        timePicker24Hour: true,
+        timePickerIncrement: 10,
+        parentEl: "#wrap",
+        opens: "center",
+        autoApply: true,
+        locale: {
+          format: "YYYY-MM-DD H:mm",
+          applyLabel: "확인",
+          cancelLabel: "취소",
+          customRangeLabel: "Custom",
+          daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        }
+      },
+      function(start, end, label) {
+        console.log(
+          "New date range selected: " +
+            start.format("YYYY-MM-DD") +
+            " to " +
+            end.format("YYYY-MM-DD") +
+            " (predefined range: " +
+            label +
+            ")"
+        );
+      }
+    );
   };
 
   $(window).on("load", function() {
-    tableEvt();
     commonEvt();
+
+    if ($("#main").hasClass("main-table")) {
+      console.log("테이블 이벤트 시작");
+      tableEvt();
+    } else {
+      console.log("테이블 이벤트 없음");
+    }
   });
 
   $(window).on("resize", function() {
-    heightValue.window = $(window).height();
-    heightValue.main = $("#main").height();
-    tableEvt();
+    // heightValue.window = $(window).height();
+    // heightValue.main = $("#main").height();
+    // tableEvt();
+
+    if ($("#main").hasClass("main-table")) {
+      console.log("테이블 이벤트 시작");
+      heightValue.window = $(window).height();
+      heightValue.main = $("#main").height();
+      tableEvt();
+    } else {
+      console.log("테이블 이벤트 없음");
+    }
   });
 });
 
@@ -181,5 +226,88 @@ $(function() {
     displayedPages: 3,
     edges: 1,
     ellipsePageSet: false
+  });
+
+  autosize(document.querySelectorAll("textarea"));
+});
+
+$(function() {
+  var statusH = $(".voting-details-status").outerHeight();
+  console.log(statusH);
+
+  $(".status-chart").height(statusH - 25);
+
+  var ctx = document.getElementById("myChart");
+
+  var myChart = new Chart(ctx, {
+    type: "horizontalBar",
+    data: {
+      labels: [
+        "리오넬 메시",
+        "루이스 수아레스",
+        "크리스티아누 호날두",
+        "데이비드 베컴",
+        "에릭 칸토나",
+        "에릭 칸토나칸토나칸토나칸토나칸토나칸토나"
+      ],
+      datasets: [
+        {
+          // label: "# of Votes",
+          data: [219, 100, 150, 35, 7, 81],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderColor: [
+            "rgba(255,99,132,1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      // categoryPercentage: 0.2,
+      // barPercentage: 1.0,
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              beginAtZero: true
+            },
+            gridLines: {
+              display: false
+            }
+          }
+        ],
+        yAxes: [
+          {
+            ticks: {
+              display: false,
+              beginAtZero: true
+            },
+            gridLines: {
+              display: false
+            },
+            barThickness: 40
+            // barPercentage: 0.5,
+            // categoryPercentage: 1.0
+          }
+        ]
+      }
+    }
   });
 });

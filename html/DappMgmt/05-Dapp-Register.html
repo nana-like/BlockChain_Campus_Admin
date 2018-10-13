@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- Dapp 신규 등록 -->
+
+  <div id="wrap" class="no-tree-view">
+
+    <header id="gnb" class="gnb">
+      <div class="dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link active">DApp</a>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link">Voting App</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">DApp</p>
+              <p class="lnb-route-info">DApp 목록</p>
+              <p class="lnb-route-info">DApp 신규 등록</p>
+            </div>
+          </div>
+          <div class="lnb-right">
+            <div class="dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="scrollable">
+
+        <div class="main-container dapp-details dapp-register">
+
+          <div class="dapp-details-top">
+            <strong class="title">Dapp 이름</strong>
+            <div class="flex-line">
+              <div class="dapp-title">
+                <button class="button-back"></button>
+                <input type="text" class="input-text" value="" />
+                <div class="message">
+                </div>
+              </div>
+              <div class="button-container">
+                <button class="button-type-a">등록</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dapp-details-body">
+
+            <div class="dapp-details-description">
+              <strong class="title">앱 설명</strong>
+              <textarea name="textarea-dapp-description" id="textarea-dapp-description" class="textarea-basic"></textarea>
+            </div>
+
+            <div class="dapp-details-modify-info">
+
+              <div class="flex-line">
+                <div class="input-container">
+                  <strong class="title">제작자</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+
+                <div class="input-container">
+                  <strong class="title">어드레스</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+
+                <div class="input-container">
+                  <strong class="title">웹사이트</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+              </div>
+
+              <div class="flex-line">
+
+                <div class="input-container">
+                  <strong class="title">이미지</strong>
+                  <div class="upload-container">
+                    <input type="file" id="file-upload-image" class="input-file" />
+                    <label for="file-upload-image">
+                      <span class="fileName">arlee.png (600KB)</span>
+                      <div class="button-type-d">업로드</div>
+                    </label>
+                  </div>
+                  <div class="message">
+                    이미지를 다시 업로드 하세요.
+                  </div>
+                </div>
+
+                <div class="input-container">
+                  <strong class="title">DApp</strong>
+                  <div class="upload-container">
+                    <input type="file" id="file-upload-dapp" class="input-file" />
+                    <label for="file-upload-dapp">
+                      <span class="fileName"></span>
+                      <div class="button-type-d">업로드</div>
+                    </label>
+                  </div>
+                  <div class="message">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- //end of .dapp-details -->
+
+
+      </div>
+      <!-- //end of #main -->
+
+    </div>
+    <!-- //end of #content -->
+  </div>
+</body>
+
+</html>

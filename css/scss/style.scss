@@ -10,9 +10,9 @@
 @import "helpers/svg";
 
 // Base css
-// @import "base/font";
-// @import "base/reset";
-// @import "base/common";
+@import "base/font";
+@import "base/reset";
+@import "base/common";
 
 // Module
 @import "module/button";
@@ -26,6 +26,8 @@
 @import "layout/lnb";
 @import "layout/main";
 @import "layout/search";
+@import "layout/dapp";
+@import "layout/voting";
 
 // Library
 @import "library/jstree";

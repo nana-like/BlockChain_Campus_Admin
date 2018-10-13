@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- 투표 상세 정보 -->
+
+  <div id="wrap" class="no-tree-view">
+
+    <header id="gnb" class="gnb">
+      <div class="dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link">DApp</a>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link active">Voting App</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">VOTING APP</p>
+              <p class="lnb-route-info">투표 목록</p>
+              <p class="lnb-route-info">투표 상세 정보</p>
+            </div>
+          </div>
+          <div class="lnb-right">
+            <div class="dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="scrollable">
+
+        <div class="main-container voting-details">
+
+          <div class="details-top">
+            <div class="flex-line">
+              <div class="title-container">
+                <button class="button-back"></button>
+                <input type="text" class="input-text" value="2019 총학생회 선거" readonly />
+                <div class="message">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-info">
+            <div class="flex-line">
+              <div class="info-list">
+                <strong>투표 대상:</strong>
+                <p class="text target">물리학과/1학년,2학년/남자, 공과대학/4학년/전체, 교직원/전체/전체</p>
+              </div>
+              <div class="info-list">
+                <strong>투표 기간:</strong>
+                <p class="text">2018년 4월 30일 00:00 ~ 2018년 5월 05일 00:00</p>
+              </div>
+              <div class="info-list">
+                <strong>상태:</strong>
+                <p class="text">마감</p>
+              </div>
+              <div class="info-list">
+                <strong>대상 인원:</strong>
+                <p class="text">482</p>
+              </div>
+              <div class="info-list">
+                <strong>참여 인원:</strong>
+                <p class="text">482</p>
+              </div>
+              <div class="info-list">
+                <strong>기명투표 명단</strong>
+                <button class="button-type-d">다운로드</button>
+              </div>
+            </div>
+            <div class="flex-line">
+              <div class="info-list flex-line">
+                <strong>투표종료 기준:</strong>
+                <div class="radio-container">
+                  <div class="radio-type-a">
+                    <input type="radio" name="radio-endCondition" id="radio-endCondition-date" disabled checked>
+                    <label for="radio-endCondition-date">일시</label>
+                  </div>
+                  <div class="radio-type-a">
+                    <input type="radio" name="radio-endCondition" id="radio-endCondition-number" disabled>
+                    <label for="radio-endCondition-number">사람 수</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="details-body">
+
+            <div class="voting-details-block">
+              <strong class="voting-details-title">투표 현황</strong>
+              <div class="voting-details-status">
+
+                <div class="status-text">
+                  <table class="table-status">
+                    <colgroup>
+                      <col width="15%" />
+                      <col width="50%" />
+                      <col width="15%" />
+                      <col width="20%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>리오넬 메시</td>
+                        <td><span class="people">100</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>루이스 수아레스</td>
+                        <td><span class="people">12</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>크리스티아누 호날두</td>
+                        <td><span class="people">50</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>데이비드 베컴</td>
+                        <td><span class="people">100</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>에릭 칸토나</td>
+                        <td><span class="people">1</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>에릭 칸토나칸토나칸토나칸토나칸토나칸토나</td>
+                        <td><span class="people">11</span></td>
+                        <td><button class="button-type-d">이미지 보기</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="status-chart">
+                  <canvas id="myChart" width="400" height="320"></canvas>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="voting-details-block">
+              <strong class="voting-details-title">첨부 이미지</strong>
+              <img src="../../images/thumbnail-app.png" class="voting-details-image" alt="voting app image">
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- //end of .voting-details -->
+
+
+      </div>
+      <!-- //end of #main -->
+
+    </div>
+    <!-- //end of #content -->
+  </div>
+</body>
+
+</html>

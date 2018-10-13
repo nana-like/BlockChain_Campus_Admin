@@ -62,3 +62,25 @@
     color: #98a6b6;
   }
 }
+
+.button-type-d {
+  min-width: 70px;
+  height: 24px;
+  padding: 0 14px;
+  line-height: 22px;
+  font-size: 12px;
+  border-radius: 12px;
+  color: #4d4d4d;
+  border: solid 1px #c6cbd4;
+  background-color: #ffffff;
+
+  &:hover {
+    background-color: #f2f4f7;
+  }
+
+  &:disabled {
+    color: #98a6b6;
+    background-color: #f2f4f7;
+    border-color: #f2f4f7;
+  }
+}

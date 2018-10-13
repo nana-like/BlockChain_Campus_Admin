@@ -52,14 +52,22 @@
     }
 
     .ellipse {
+      min-width: auto;
+      display: block;
+      padding-left: 4px;
+      margin-right: 8px;
+      padding: 0;
       border: 0;
       line-height: 38px;
+      color: #333 !important;
     }
 
     .prev {
+      margin-right: 8px;
     }
 
     .next {
+      margin-left: 4px;
     }
   }
 }
