@@ -69,7 +69,6 @@ a:hover,
 a:active {
   text-decoration: none;
   @include font-main;
-  color: #000;
   outline: 0;
 }
 
@@ -121,6 +120,10 @@ textarea {
 
 table {
   border-collapse: collapse;
+
+  a {
+    color: #000;
+  }
 }
 caption {
   padding-top: 0.75rem;

@@ -33,7 +33,7 @@
   }
 
   .combobox {
-    z-index: 1;
+    z-index: 2;
     display: none;
     position: absolute;
     top: 100%;
@@ -99,6 +99,13 @@
       vertical-align: sub;
     }
   }
+
+  .combobox {
+    margin-top: 10px;
+    width: 85%;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
 }
 
 // ------------
@@ -115,6 +122,10 @@
     &:after {
       background-image: icon(dropdown-arrow, #17365b);
     }
+  }
+
+  .combobox {
+    margin-top: 4px;
   }
 }
 

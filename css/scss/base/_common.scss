@@ -56,15 +56,15 @@
   }
 }
 
-.people {
+.person {
   vertical-align: middle;
   &:before {
     display: inline-block;
     width: 12px;
     height: 14px;
     margin-right: 3px;
-    background-color: red;
+    @include bgi("icon-person", "svg");
     content: "";
-    vertical-align: middle;
+    vertical-align: sub;
   }
 }

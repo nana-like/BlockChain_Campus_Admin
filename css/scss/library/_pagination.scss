@@ -32,6 +32,7 @@
       border-radius: 2px;
       border: solid 1px #c6cbd4;
       cursor: default;
+      @include select-none; //드래그 방지용
     }
 
     &.active {
@@ -47,6 +48,11 @@
       color: #c6cbd4;
     }
 
+    &.disabled .prev,
+    &.disabled .next {
+      opacity: 0.5;
+    }
+
     .page-link {
       cursor: pointer;
     }
@@ -54,20 +60,31 @@
     .ellipse {
       min-width: auto;
       display: block;
-      padding-left: 4px;
-      margin-right: 8px;
+      margin-left: 5px;
+      margin-right: 10px;
       padding: 0;
       border: 0;
       line-height: 38px;
       color: #333 !important;
     }
 
-    .prev {
+    .prev,
+    .next {
       margin-right: 8px;
+      width: 32px;
+      text-indent: -999px;
+      overflow-x: hidden;
+      background-position: 50%;
+    }
+
+    .prev {
+      overflow: hidden;
+      background-image: icon(arrow-left, #5c5c5c);
     }
 
     .next {
       margin-left: 4px;
+      background-image: icon(arrow-right, #5c5c5c);
     }
   }
 }

@@ -64,13 +64,14 @@
 }
 
 .button-type-d {
+  display: inline-block;
   min-width: 70px;
   height: 24px;
   padding: 0 14px;
   line-height: 22px;
   font-size: 12px;
   border-radius: 12px;
-  color: #4d4d4d;
+  color: #4d4d4d !important;
   border: solid 1px #c6cbd4;
   background-color: #ffffff;
 
@@ -78,10 +79,12 @@
     background-color: #f2f4f7;
   }
 
+  &.disabled,
   &:disabled {
-    color: #98a6b6;
+    color: #98a6b6 !important;
     background-color: #f2f4f7;
     border-color: #f2f4f7;
+    cursor: default;
   }
 }
 

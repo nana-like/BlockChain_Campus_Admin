@@ -9,18 +9,24 @@
   .button-back {
     width: 32px;
     height: 32px;
-    background-color: red;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: icon(button-back, "transparent");
     //
     margin-left: 10px;
     margin-right: 10px;
+
+    &:hover {
+      background-image: icon(button-back, "#F2F4F7");
+    }
   }
 
-  & > .daap-title {
+  & > .dapp-title {
     display: block;
     font-size: 16px;
     font-weight: $fw-m;
     margin-top: -10px;
-    margin-left: 56px;
+    margin-left: 60px;
     margin-bottom: 8px;
   }
   & > .flex-line {
@@ -44,7 +50,7 @@
     }
 
     .message {
-      left: 60px;
+      left: 62px;
       bottom: -22px;
       position: absolute;
     }
@@ -128,15 +134,16 @@
       vertical-align: middle;
 
       &.address {
-        max-width: 90px;
+        max-width: 100px;
       }
 
       &.mail {
-        max-width: 130px;
+        max-width: 160px;
       }
     }
 
-    button {
+    button,
+    a {
       margin-left: 4px;
       display: inline-block;
       vertical-align: middle;
@@ -180,13 +187,14 @@
       img {
         display: block;
         margin: 0 auto;
+        max-width: 90%;
       }
     } // --- end of .dapp-details-image
   } // ---- end of .dapp-details-body
 }
 
 .dapp-details-modify-info {
-  margin-bottom: 43px;
+  margin-bottom: 70px;
   .flex-line {
     padding-top: 28px;
   }
@@ -202,6 +210,15 @@
 
 .dapp-details-history {
   margin-bottom: 67px;
+
+  .title {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-left: 8px;
+    margin-bottom: 12px;
+  }
 }
 
 .dapp-register {

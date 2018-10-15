@@ -1,72 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="description" content="File List | BC WebApp">
+  <meta name="author" content="NY KIM">
 
-  <!-- HTML에 3개의 CSS를 모두 연결합니다! -->
-  <link rel="stylesheet" href="css/nykim.css" />
+  <title>File List</title>
 
-  <title>example</title>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
+      box-sizing: border-box;
+      font-family: 'Inconsolata', 'Noto Sans KR', monospace;
+    }
+
+    html {
+      font-size: 62.5%
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+    }
+
+    #wrap {
+      position: relative;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px;
+      min-width: 800px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    hr {
+      width: 90%;
+      margin: 110px auto 80px;
+      border: 0;
+      border-bottom: 2px solid #666;
+    }
+
+    caption {
+      display: none;
+    }
+
+    table {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      font-size: 1.5rem;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 50px 80px -50px rgba(50, 50, 50, 0.12), 0 50px 50px -30px rgba(20, 20, 20, 0.1);
+      color: #555;
+    }
+
+    th {
+      padding: 12px;
+      font-size: 1.6rem;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      border: 0;
+      background-color: #61c0bf;
+    }
+
+    table.first th {
+      background-color: #ff7473;
+    }
+
+    td {
+      padding: 14px 20px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-top: 1px solid #ededed;
+      background-color: #fff;
+      border: 1px solid #ededed;
+      border-right: 0;
+    }
+
+    tr>td:first-child {
+      font-weight: 500;
+      color: #000;
+      border-left: 0;
+      letter-spacing: -0.03em;
+    }
+
+    td[rowspan] {
+      /* font-size: 15px; */
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    .link {
+      letter-spacing: 0.03em;
+      font-weight: 600;
+    }
+
+    a {
+      color: #333;
+      line-height: 130%;
+    }
+
+    a:hover,
+    a:focus {
+      color: #4bbcf4;
+      outline: 0;
+    }
+
+    .first a:hover {
+      color: #4bbcf4;
+    }
+
+    .first a:hover {
+      color: #4bbcf4;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    h2 {
+      margin: 30px 0;
+      text-align: center;
+      font-size: 2.8rem;
+      letter-spacing: -0.06rem;
+      color: #a6cebf;
+      font-weight: bold;
+    }
+
+    .horizon {
+      width: 80%;
+      height: 1px;
+      margin: 40px auto;
+      background-color: #aaa;
+    }
+
+    .update {
+      display: inline-block;
+      margin: 18px 0 30px 0;
+      padding: 18px 26px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.9rem;
+      border: 1px solid #888;
+      background: #fff;
+    }
+
+    .update small {
+      display: block;
+      margin-top: 4px;
+      font-size: 70%;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .update .version1 {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      background-color: rgba(255, 180, 182, 0.4);
+    }
+
+    .rmks {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .borderTop {
+      border-top: 2px solid #e4e4e4;
+    }
+
+    .borderTop2 {
+      border-top: 2px solid #d3d3d3;
+    }
+
+    @media screen and (max-width: 800px) {
+      html {
+        font-size: 55%;
+      }
+
+      #wrap {
+        min-width: 320px;
+      }
+
+      thead>tr>th:first-child,
+      thead>tr>th:nth-child(4),
+      thead>tr>th:nth-child(5) {
+        display: none;
+      }
+
+      td[rowspan] {
+        display: none;
+      }
+
+      .desc,
+      .rmks {
+        display: none;
+      }
+
+    }
+
+    .new td {
+      background-color: rgba(214, 255, 180, 0.2);
+    }
+
+    .new td[rowspan] {
+      background-color: #fff;
+    }
+  </style>
+
+
 </head>
 
 <body>
-  <div class="wrap">
+  <div id="wrap">
+    <h1>nykim@nykim.net</h1>
+    <p class="update"> BlockChain Campus Admin<br><small>Last Update: 18-10-15</small></p>
 
-    <div class="test">
+    <table>
+      <colgroup>
+        <col width="130px" />
+        <col width="250px" />
+        <col width="240px" />
+        <col />
+        <col />
+      </colgroup>
+      <thead>
 
-      <h1>Test Page</h1>
-      <article>
-        <ul>
-          <li>css/ 폴더 내 scss/, scss-helpers/ 폴더가 있습니다.</li>
-          <li>scss-helpers/ 폴더는 믹스인이나 변수 등을 담고 있습니다. 필요시 추가하시면 됩니다.</li>
-          <li>scss/ 폴더 내에는 base/, zpark/, nykim/ 폴더가 있습니다.
-            <ol>
-              <li>base: 리셋, 폰트를 정의하고 있습니다. 수정 시 충돌이 일어날 가능성이 높아서, base 를 덮어씌우려면 개별 폴더 내에서 따로 정의해야할 것 같습니다.</li>
-              <li><strong>zpark: 지윤씨는 여기서 작업해주세요 :) 컴파일한 zpark.css 가 css/ 폴더 내에 들어가도록 해주세요.</strong></li>
-              <li>nykim: 저는 여기서 작업합니다~</li>
-            </ol>
-          <li>scss 파일들은 **각각 컴파일**하여, base.css, zpark.css 와 ny.css 를 만듭니다.</li>
-          <li>컴파일러는 원하시는 걸로 사용해주세요!</li>
-          <li>공통으로 사용할 폴더
-            <ol>
-              <li>scss-helpers/</li>
-              <li>scss/base/</li>
-            </ol>
-          </li>
-          <li>개별로 사용할 폴더
-            <ol>
-              <li>scss/zpark/</li>
-              <li>scss/nykim/ </li>
-            </ol>
-          </li>
-          <li>스타일 작업은 개별 폴더에서 진행해 주세요. 컴파일하실 때, 자신이 작업한 파일들을 scss 에 import 하면 됩니다. 개별 폴더 내 하위폴더를 더 만드셔도 상관 없습니다(예.
-            modules/, layout/ 등). </li>
-          <li>예를 들면, zpark.scss 는 우선 scss-helpers 폴더의 scss 를 import 합니다.</li>
-          <li>그런 다음, 자신이 작업한 table.scss 등을
-            import 합니다.
-          </li>
-          <div>ex)<br>
-            @import "../../scss-helpers/mixins";<br>
-            @import "modules/table.scss"; <br>
-            @import "layout/transaction.scss";<br>
-            ...
-          </div>
-          <li>html 파일에서는 공통 CSS(base.css)와 개별 CSS(zpark.css, nykim.css)를 모두 연결합니다.</li>
-          <div>ex)<br>
-            &lt;link rel="stylesheet" href="css/base.css" /><br>
-            &lt;link rel="stylesheet" href="css/nykim.css" /><br>
-            &lt;link rel="stylesheet" href="css/zpark.css" /><br>
-          </div>
-          </li>
-        </ul>
-      </article>
+        <tr>
+          <th>그룹</th>
+          <th>파일명(LINK)</th>
+          <th>화면 내용</th>
+          <th>기획서 화면 이름</th>
+          <th>비고</th>
+        </tr>
 
-    </div>
+      </thead>
+      <tbody>
+
+        <!-- LOGIN -->
+
+        <tr>
+          <td rowspan="1">
+            <strong>Login</strong>
+          </td>
+          <td>
+            <a class="link" href="html/Login/01-Login.html" target="_blank">01-Login</a>
+          </td>
+          <td>로그인</td>
+          <td class="desc">001-1 - Login</td>
+          <td class="rmks"></td>
+        </tr>
+
+
+        <!-- DAPP -->
+
+        <tr>
+          <td rowspan="6" class="borderTop2">
+            <strong>DApp</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/DappMgmt/01-Dapp-List.html" target="_blank">01-Dapp-List</a>
+          </td>
+          <td class="borderTop2">DApp 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/DappMgmt/02-Dapp-List-NoData.html" target="_blank">02-Dapp-List-NoData</a>
+          </td>
+          <td>DApp 목록 - 내용 없음</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/DappMgmt/03-Dapp-Details.html" target="_blank">03-Dapp-Details</a>
+          </td>
+          <td>DApp 상세 정보</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/DappMgmt/04-Dapp-Details-Edit.html" target="_blank">04-Dapp-Details-Edit</a>
+          </td>
+          <td>DApp 상세 정보 수정</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/DappMgmt/05-Dapp-Details-Edit(alt).html" target="_blank">05-Dapp-Details-Edit(alt)</a>
+          </td>
+          <td>DApp 상세 정보 수정 (alt.)</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/DappMgmt/06-Dapp-Register.html" target="_blank">06-Dapp-Register</a>
+          </td>
+          <td>DApp 신규 등록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+
+        <!-- VOTING APP -->
+
+        <tr>
+          <td rowspan="6" class="borderTop2">
+            <strong>Voting</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/Voting/01-Voting-List.html" target="_blank">01-Voting-List</a>
+          </td>
+          <td class="borderTop2">투표 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <a class="link" href="html/Voting/02-Voting-Details.html" target="_blank">02-Voting-Details</a>
+          </td>
+          <td>DApp 상세 정보</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
 
   </div>
 </body>
-
-</html>

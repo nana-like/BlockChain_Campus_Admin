@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <!-- Dapp 신규 등록 -->
+  <!-- Dapp 상세 정보 수정 -->
 
   <div id="wrap" class="no-tree-view">
 
@@ -54,7 +54,7 @@
             <div class="lnb-route">
               <p class="lnb-route-info">DApp</p>
               <p class="lnb-route-info">DApp 목록</p>
-              <p class="lnb-route-info">DApp 신규 등록</p>
+              <p class="lnb-route-info">DApp 상세 정보</p>
             </div>
           </div>
           <div class="lnb-right">
@@ -70,29 +70,34 @@
       <!-- //end of #lnb -->
 
       <div id="main" class="scrollable">
+        <div class="main-container dapp-details">
 
-        <div class="main-container dapp-details dapp-register">
-
-          <div class="dapp-details-top">
-            <strong class="title">Dapp 이름</strong>
+          <div class="details-top">
+            <strong class="dapp-title"></strong>
             <div class="flex-line">
-              <div class="dapp-title">
+              <div class="title-container">
                 <button class="button-back"></button>
-                <input type="text" class="input-text" value="" />
+                <input type="text" class="input-text" value="DApp Name 001" />
+                <!--
+                  [전달사항]
+                  에러 발생 시, .message에 메시지 내용을 넣어주세요.
+                -->
                 <div class="message">
+                  사용할 수 없는 DApp 이름입니다.
                 </div>
               </div>
               <div class="button-container">
-                <button class="button-type-a">등록</button>
+                <button class="button-type-a">계정 삭제</button>
+                <button class="button-type-a">저장</button>
               </div>
             </div>
           </div>
 
-          <div class="dapp-details-body">
+          <div class="details-body">
 
             <div class="dapp-details-description">
               <strong class="title">앱 설명</strong>
-              <textarea name="textarea-dapp-description" id="textarea-dapp-description" class="textarea-basic"></textarea>
+              <textarea name="textarea-dapp-description" id="textarea-dapp-description" class="textarea-basic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
             </div>
 
             <div class="dapp-details-modify-info">
@@ -100,17 +105,17 @@
               <div class="flex-line">
                 <div class="input-container">
                   <strong class="title">제작자</strong>
-                  <input type="text" class="input-text" value="" />
+                  <input type="text" class="input-text" value="arlee@postech.ac.kr" />
                 </div>
 
                 <div class="input-container">
                   <strong class="title">어드레스</strong>
-                  <input type="text" class="input-text" value="" />
+                  <input type="text" class="input-text" value="0x75887cvb5d8v56n7ef000" />
                 </div>
 
                 <div class="input-container">
                   <strong class="title">웹사이트</strong>
-                  <input type="text" class="input-text" value="" />
+                  <input type="text" class="input-text" value="http://www.arlee.com" />
                 </div>
               </div>
 
@@ -119,27 +124,27 @@
                 <div class="input-container">
                   <strong class="title">이미지</strong>
                   <div class="upload-container">
+                    <a href="#" target="_blank" class="fileName"><span class="name"></span> <span class="size"></span></a>
                     <input type="file" id="file-upload-image" class="input-file" />
                     <label for="file-upload-image">
-                      <span class="fileName">arlee.png (600KB)</span>
                       <div class="button-type-d">업로드</div>
                     </label>
                   </div>
                   <div class="message">
-                    이미지를 다시 업로드 하세요.
                   </div>
                 </div>
 
                 <div class="input-container">
                   <strong class="title">DApp</strong>
                   <div class="upload-container">
+                    <a href="#" target="_blank" class="fileName"><span class="name">arlee_dapp.zip</span> <span class="size">(15MB)</span></a>
                     <input type="file" id="file-upload-dapp" class="input-file" />
                     <label for="file-upload-dapp">
-                      <span class="fileName"></span>
                       <div class="button-type-d">업로드</div>
                     </label>
                   </div>
                   <div class="message">
+                    DApp을 다시 업로드 하세요.
                   </div>
                 </div>
 
@@ -147,12 +152,56 @@
 
             </div>
 
-          </div>
+            <div class="dapp-details-history">
+              <strong class="title">히스토리</strong>
 
+              <div class="table-titleArea">
+                <table class="table-header">
+                  <!-- 3개 -->
+                  <colgroup>
+                    <col width="9%" />
+                    <col width="13%" />
+                    <col width="78%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>수정일시</th>
+                      <th>수정내역</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <!-- //end of .table-titleArea -->
+              <div class="table-viewArea">
+                <table class="table-basic">
+                  <colgroup>
+                    <col width="9%" />
+                    <col width="13%" />
+                    <col width="78%" />
+                  </colgroup>
+                  <!--
+                    [전달사항]
+                    리스트가 없는 경우,
+                    아래 tbody가 노출되도록 해주세요.
+                  -->
+                  <tbody>
+                    <tr class="tr-noData">
+                      <td colspan="3">
+                        <div class="text-noData">
+                          No history data
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
 
         </div>
         <!-- //end of .dapp-details -->
-
 
       </div>
       <!-- //end of #main -->

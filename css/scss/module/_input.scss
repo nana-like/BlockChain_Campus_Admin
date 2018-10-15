@@ -71,6 +71,42 @@
 .upload-container {
   position: relative;
   display: inline-block;
+  @include flexbox;
+  @include align-items(center);
+
+  & + .message {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+  }
+
+  .fileName {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: $fw-r;
+    color: #000;
+    letter-spacing: -0.5px;
+    vertical-align: middle;
+    max-width: 200px;
+    @include ellipsis;
+  }
+
+  &:before {
+    position: relative;
+    // top: 50%;
+    // left: 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    background-image: icon(icon-upload, #c6cbd4);
+    background-repeat: no-repeat;
+    vertical-align: sub;
+    content: "";
+    // @include transform(translateY(-50%));
+  }
 }
 
 .input-file {
@@ -86,37 +122,7 @@
 
   & + label {
     position: relative;
-    @include flexbox;
-    @include align-items(center);
-
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      display: inline-block;
-      width: 19px;
-      height: 16px;
-      // margin-top: 4px;
-      background-color: #555;
-      vertical-align: sub;
-      content: "";
-      @include transform(translateY(-50%));
-    }
-
-    .fileName {
-      display: inline-block;
-      font-size: 13px;
-      text-decoration: underline;
-      font-weight: $fw-r;
-      color: #000;
-      letter-spacing: -0.5px;
-      vertical-align: middle;
-      max-width: 160px;
-      @include ellipsis;
-      margin-left: 26px;
-    }
     .button-type-d {
-      margin-left: 9px;
       display: block;
       text-align: center;
       cursor: pointer;
@@ -148,7 +154,7 @@
 
       &:checked + label {
         &:before {
-          background-color: red;
+          background-image: icon(icon-checkbox-active, "#C6CBD4");
         }
       }
     }
@@ -173,7 +179,8 @@
         width: 20px;
         height: 20px;
         content: "";
-        background-color: orange;
+        background-image: icon(icon-checkbox, "#C6CBD4");
+        background-repeat: none;
       }
     }
   }
@@ -206,7 +213,7 @@
     height: 0;
 
     &:checked + label:before {
-      background-color: blue;
+      background-image: icon(icon-radio-active, #000);
     }
   }
 
@@ -226,7 +233,7 @@
       width: 20px;
       height: 20px;
       content: "";
-      background-color: orange;
+      background-image: icon(icon-radio, #000);
     }
   }
 }

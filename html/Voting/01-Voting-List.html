@@ -104,11 +104,11 @@
                   </div>
                   <div class="input-container input-sm">
                     <strong class="title">시작일시</strong>
-                    <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="testInput" />
+                    <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="datepicker-startDate" />
                   </div>
                   <div class="input-container input-sm">
                     <strong class="title">종료일시</strong>
-                    <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" />
+                    <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" id="datepicker-endDate" />
                   </div>
                 </div>
               </div>
@@ -322,15 +322,22 @@
                     </tr>
                   </tbody>
 
-                  <!-- <tbody>
-                  <tr class="tr-noData">
-                    <td colspan="8">
-                      <div class="text-noData">
-                        No search results found
-                      </div>
-                    </td>
-                  </tr>
-                </tbody> -->
+
+                  <!-- 
+                    [전달사항] 
+                    표시할 목록이 없으면 아래 tbody가 표시되도록 해주세요.
+                  -->
+                  <!-- 
+                  <tbody>
+                    <tr class="tr-noData">
+                      <td colspan="8">
+                        <div class="text-noData">
+                          No data
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody> 
+                  -->
 
                 </table>
               </div>
@@ -351,6 +358,7 @@
                     <div class="combobox">
                       <button class="combobox-item">15</button>
                       <button class="combobox-item">30</button>
+                      <button class="combobox-item">50</button>
                       <button class="combobox-item">100</button>
                     </div>
                   </div>

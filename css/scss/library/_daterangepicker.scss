@@ -120,7 +120,7 @@
 }
 
 .daterangepicker .drp-calendar.left {
-  padding: 20px 0 30px 30px;
+  padding: 20px 0 22px 30px;
 }
 
 .daterangepicker .drp-calendar.right {
@@ -131,14 +131,23 @@
   border: none;
 }
 
-.daterangepicker .calendar-table .next span,
-.daterangepicker .calendar-table .prev span {
-  color: #fff;
-  border: solid black;
-  border-width: 0 2px 2px 0;
-  border-radius: 0;
-  display: inline-block;
-  padding: 3px;
+.daterangepicker .calendar-table .next,
+.daterangepicker .calendar-table .prev {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 90%;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.daterangepicker .calendar-table .prev {
+  background-image: icon(arrow-left, #5c5c5c);
+}
+.daterangepicker .calendar-table .next {
+  background-image: icon(arrow-right, #5c5c5c);
 }
 
 .daterangepicker .calendar-table .next span {
@@ -277,9 +286,11 @@
   -moz-appearance: none;
   appearance: none;
   padding: 6px 40px 6px 12px;
-  background: #fff url(../../images/icon-selectbox.png) no-repeat right 9px
-    center;
-  background-size: 22px;
+  // background: #fff url(../../images/icon-selectbox.png) no-repeat right 9px center;
+  background-image: icon(arrow-down, #5c5c5c);
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 26px;
   border: 1px solid #aaa;
   border-radius: 4px;
 
@@ -290,7 +301,7 @@
 
 .daterangepicker .calendar-time {
   text-align: center;
-  margin: 14px 20px 0 auto;
+  margin: 10px 20px 0 auto;
   line-height: 30px;
   position: relative;
 }
@@ -482,7 +493,7 @@
 
 ///
 .daterangepicker thead tr:first-child th {
-  padding-bottom: 8px;
+  // padding-bottom: 4px;
 }
 .daterangepicker thead tr:nth-child(2) th {
   font-weight: $fw-b;

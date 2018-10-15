@@ -86,35 +86,44 @@ $(function() {
     //   appendTo: window.document.querySelector("#main")
     // });
 
-    $(".input-datepicker").daterangepicker(
-      {
-        singleDatePicker: true,
-        timePicker: true,
-        timePicker24Hour: true,
-        timePickerIncrement: 10,
-        parentEl: "#wrap",
-        opens: "center",
-        autoApply: true,
-        locale: {
-          format: "YYYY-MM-DD H:mm",
-          applyLabel: "확인",
-          cancelLabel: "취소",
-          customRangeLabel: "Custom",
-          daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-        }
-      },
-      function(start, end, label) {
-        console.log(
-          "New date range selected: " +
-            start.format("YYYY-MM-DD") +
-            " to " +
-            end.format("YYYY-MM-DD") +
-            " (predefined range: " +
-            label +
-            ")"
-        );
+    var startDate = moment().subtract(30, "days");
+    var endDate = moment();
+
+    $("#datepicker-startDate").daterangepicker({
+      singleDatePicker: true,
+      timePicker: true,
+      timePicker24Hour: true,
+      timePickerIncrement: 10,
+      parentEl: "#wrap",
+      opens: "center",
+      autoApply: true,
+      startDate: startDate,
+      // endDate: endDate,
+      locale: {
+        format: "YYYY-MM-DD H:mm",
+        applyLabel: "확인",
+        cancelLabel: "취소",
+        customRangeLabel: "Custom",
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       }
-    );
+    });
+    $("#datepicker-endDate").daterangepicker({
+      singleDatePicker: true,
+      timePicker: true,
+      timePicker24Hour: true,
+      timePickerIncrement: 10,
+      parentEl: "#wrap",
+      opens: "center",
+      autoApply: true,
+      startDate: endDate,
+      locale: {
+        format: "YYYY-MM-DD HH:mm",
+        applyLabel: "확인",
+        cancelLabel: "취소",
+        customRangeLabel: "Custom",
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      }
+    });
   };
 
   $(window).on("load", function() {
@@ -220,12 +229,15 @@ $(function() {
   //   // }
   // });
 
+  //simple pagination js
   $("#table-pagination").pagination({
     items: 100,
     itemsOnPage: 15,
     displayedPages: 3,
     edges: 1,
     ellipsePageSet: false
+    // prevText: "앞",
+    // nextText: ""
   });
 
   autosize(document.querySelectorAll("textarea"));
@@ -371,5 +383,33 @@ $(function() {
       console.log("!액티브지님??");
       $dropdown.removeClass("active");
     }
+  });
+
+  $(".input-file").change(function() {
+    //임시
+    var fileValue = $(this)
+      .val()
+      .split("\\");
+    var fileName = fileValue[fileValue.length - 1];
+    var fileSize_byte = this.files[0].size;
+
+    var fSExt = new Array("Bytes", "KB", "MB", "GB");
+    fSize = fileSize_byte;
+    i = 0;
+    while (fSize > 900) {
+      fSize /= 1024;
+      i++;
+    }
+
+    var fiileSize = "(" + (Math.round(fSize * 100) / 100 + fSExt[i]) + ")";
+
+    $(this)
+      .prev(".fileName")
+      .children(".name")
+      .text(fileName);
+    $(this)
+      .prev(".fileName")
+      .children(".size")
+      .text(fiileSize);
   });
 });
