@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+// **** Login
+
+#wrap.login-view {
+  min-width: 1100px;
+  background-color: #f1f4f7;
+  #content {
+    overflow-y: auto;
+  }
+
+  .login-header {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    padding-right: 50px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto 0;
+    padding: 40px;
+
+    li {
+      position: relative;
+      margin-left: 40px;
+
+      &:first-child {
+        margin-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        top: 4px;
+        left: -20px;
+        display: block;
+        width: 2px;
+        height: 14px;
+        background-color: #d8d8d8;
+        content: "";
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        font-weight: $fw-m;
+        color: #333;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  } // --- end of .login-header
+
+  .login-body {
+    width: 360px;
+    margin: 50px auto 0;
+
+    .login-logo {
+      margin-bottom: 20px;
+      text-align: center;
+
+      .logo {
+        //블록체인 캠퍼스 로고
+        display: inline-block;
+        overflow: hidden;
+        width: 16rem;
+        height: 24rem;
+        text-align: center;
+        text-indent: -9999rem;
+        @include bgi("logo-login");
+        background-size: 100%;
+      }
+    }
+
+    .input-container {
+      margin-top: 12px;
+      width: 100%;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .title {
+        margin: 0 0 12px 0;
+        color: #323b45;
+        font-size: 16px;
+      }
+    }
+
+    .button-wrap {
+      margin-top: 30px;
+
+      button {
+        height: 50px;
+      }
+    }
+  } // --- end of .login-body
+
+  .login-footer {
+    margin-top: 85px;
+    margin-bottom: 90px;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #17365b;
+    text-align: center;
+  } // ---- end of .login-footer
+}

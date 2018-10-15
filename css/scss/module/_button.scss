@@ -84,3 +84,13 @@
     border-color: #f2f4f7;
   }
 }
+
+.button-wrap {
+  @include flexbox;
+  @include align-items(center);
+
+  button {
+    width: 100%;
+    @include flex-grow(1);
+  }
+}

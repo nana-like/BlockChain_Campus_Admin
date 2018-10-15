@@ -311,3 +311,65 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  //인풋 클릭 시 드롭다운 노출
+
+  $(".dropdown").on("click", function(evt) {
+    evt.stopPropagation();
+    $(this).toggleClass("active");
+  });
+
+  // $(document).on("click", ".combobox-item", function() {
+  //   var text = $(this).text();
+  //   $(this)
+  //     .parents()
+  //     .prevAll(".text-value")
+  //     .val(text);
+  // });
+
+  $(".dropdown-input, .dropdown-paging").on("mousedown", function(evt) {
+    evt.stopPropagation();
+    if (event.target.tagName == "BUTTON") {
+      var text = event.target.innerText;
+
+      console.log("dropdown-input의 텍스트:", text);
+      $(this)
+        .find(".text-value")
+        .val(text);
+    }
+  });
+
+  // $(".dropdown").on("mousedown", function(evt) {
+  //   if (event.target.tagName == "BUTTON") {
+  //     var text = event.target.innerText;
+
+  //     console.log("dropdown-input의 텍스트:", text);
+  //     $(this)
+  //       .find(".text-value")
+  //       .val(text);
+  //   }
+  // });
+  // $(document).on("click", ".dropdown-paging", function() {
+  //   if (event.target.tagName == "BUTTON") {
+  //     var text = event.target.innerText;
+
+  //     console.log("dropdown-paging의 텍스트:", text);
+  //     $(this)
+  //       .find(".text-value")
+  //       .val(text);
+  //   }
+  // });
+
+  // $(".combobox").on("click", function(evt) {
+  //   evt.stopPropagation();
+  // });
+
+  $("body").on("click", function() {
+    var $dropdown = $(".dropdown");
+    if ($dropdown.hasClass("active")) {
+      console.log("!액티브지님??");
+      $dropdown.removeClass("active");
+    }
+  });
+});
