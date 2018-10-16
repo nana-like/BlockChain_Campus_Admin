@@ -9,10 +9,6 @@
   height: 100%;
   overflow: hidden;
   // overflow-y: auto;
-
-  &.scrollable {
-    overflow-y: auto;
-  }
 }
 
 .main-tree {
@@ -27,8 +23,12 @@
   // max-width: 1920px;
   // margin: 0 auto;
   // padding: 0 30px;
-  width: $maxWidth;
-  margin: 0 auto;
+  width: 100%;
+  .scroll-area {
+    // width: $maxWidth;
+    // margin: 0 auto;
+    padding: 0 40px;
+  }
 }
 
 .main-top {

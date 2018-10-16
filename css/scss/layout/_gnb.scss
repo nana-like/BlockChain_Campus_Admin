@@ -22,39 +22,97 @@
       &:first-child {
         border-top: 1px solid rgba(255, 255, 255, 0.04);
       }
+    }
+  }
 
-      .gnb-link {
-        position: relative;
-        display: block;
-        width: 100%;
-        padding: 0px 40px;
-        height: 40px;
-        line-height: 40px;
-        color: #fff;
-        font-weight: $fw-m;
-        font-size: 14px;
-        background-color: #1d1d1d;
+  .gnb-list-sub {
+    //숨겨져 있다가 보일 하위메뉴 묶음
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 
-        &:hover {
-          background-color: #0a0a0a;
-        }
+  .gnb-accordion {
+    position: relative;
+    cursor: pointer;
 
-        &:before {
-          position: absolute;
-          top: 50%;
-          left: 20px;
-          display: block;
-          content: "";
-          width: 5px;
-          height: 5px;
-          border-radius: 1.5px;
-          background-color: #666;
-          @include transform(translateY(-50%));
-        }
+    &:after {
+      position: absolute;
+      top: 9px;
+      right: 14px;
+      display: block;
+      content: "";
+      width: 22px;
+      height: 22px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: icon(gnb-arrow-down, #fff);
+      transition: transform 0.25s;
+    }
+    &.opened {
+      &:after {
+        @include transform(rotate(180deg));
+        transition: transform 0.25s;
+      }
 
-        &.active:before {
-          background-color: #3de7c9;
-        }
+      & + .gnb-list-sub {
+        max-height: 500px;
+        overflow-y: scroll;
+        transition: max-height 0.35s ease-in;
+      }
+    }
+  }
+
+  .gnb-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0px 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: $fw-m;
+    font-size: 14px;
+    background-color: #1d1d1d;
+
+    &:hover {
+      background-color: #0a0a0a;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      display: block;
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 1.5px;
+      background-color: #666;
+      @include transform(translateY(-50%));
+    }
+
+    &.active:before {
+      background-color: #3de7c9;
+    }
+  }
+
+  .gnb-item-sub {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0 5px;
+    @include ellipsis;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 60px;
+      color: #666;
+
+      &:hover {
+        color: #999;
       }
     }
   }

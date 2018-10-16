@@ -78,135 +78,140 @@
 
         <div class="main-container dapp-list">
 
-          <div class="main-top">
+          <div class="scroll-area">
 
-            <div class="search-container search-dapp">
-              <div class="form-container">
-                <div class="input-container">
-                  <strong class="title">DApp 이름</strong>
-                  <input type="text" class="input-text" value="DApp Name" />
-                </div>
-                <div class="input-container">
-                  <strong class="title">제작자</strong>
-                  <input type="text" class="input-text" />
-                </div>
-              </div>
-              <div class="button-container">
-                <!-- 
-                  [전달사항] 
-                  버튼 비활성화 시에는 disabled 속성을 넣어주세요.
-                -->
-                <button class="button-type-c">초기화</button>
-                <button class="button-type-b" disabled>검색</button>
-              </div>
-            </div>
+            <div class="main-top">
 
-          </div>
-          <!-- //end of .main-top -->
-
-          <div class="main-body">
-
-            <div class="table-container">
-
-              <div class="table-top">
-                <div class="left">
-                  <p class="table-indicator">
-                    100개중 <span class="accent">1-15</span>
-                  </p>
-                </div>
-
-                <div class="right">
-                  <div class="table-button-container">
-                    <button class="button-type-a">신규등록</button>
+              <div class="search-container search-dapp">
+                <div class="form-container">
+                  <div class="input-container">
+                    <strong class="title">DApp 이름</strong>
+                    <input type="text" class="input-text" value="DApp Name" />
+                  </div>
+                  <div class="input-container">
+                    <strong class="title">제작자</strong>
+                    <input type="text" class="input-text" />
                   </div>
                 </div>
-              </div>
-              <!-- //end of .table-top -->
-
-              <div class="table-titleArea">
-                <table class="table-header">
-                  <!-- 8개 -->
-                  <colgroup>
-                    <col width="8%" />
-                    <col width="10%" />
-                    <col width="30%" />
-                    <col width="14%" />
-                    <col width="14%" />
-                    <col width="8%" />
-                    <col width="7%" />
-                    <col width="9%" />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>번호</th>
-                      <th>DApp 이름</th>
-                      <th>간단한 설명</th>
-                      <th>제작자</th>
-                      <th>작성일시</th>
-                      <th>검수정보</th>
-                      <th>조회수</th>
-                      <th>즐겨찾기</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-              <!-- //end of .table-titleArea -->
-
-              <div class="table-viewArea">
-                <table class="table-basic">
-                  <colgroup>
-                    <col width="8%" />
-                    <col width="10%" />
-                    <col width="30%" />
-                    <col width="14%" />
-                    <col width="14%" />
-                    <col width="8%" />
-                    <col width="7%" />
-                    <col width="9%" />
-                  </colgroup>
-
-                  <!--
-                    [전달사항]
-                    리스트가 없는 경우,
-                    아래 tbody가 노출되도록 해주세요.
+                <div class="button-container">
+                  <!-- 
+                    [전달사항] 
+                    버튼 비활성화 시에는 disabled 속성을 넣어주세요.
                   -->
-                  <tbody>
-                    <tr class="tr-noData">
-                      <td colspan="8">
-                        <div class="text-noData">
-                          No search results found
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-
-                </table>
+                  <button class="button-type-c">초기화</button>
+                  <button class="button-type-b" disabled>검색</button>
+                </div>
               </div>
-              <!-- //end of .table-viewArea -->
 
-              <div class="table-bottom">
-                <div class="table-utils"></div>
-                <div id="table-pagination"></div>
-                <div class="table-paging-container">
-                  <div class="dropdown dropdown-paging reverse">
-                    <p class="label">행 표시</p>
-                    <input class="text-value" readonly value="15">
-                    <div class="combobox">
-                      <button class="combobox-item">15</button>
-                      <button class="combobox-item">30</button>
-                      <button class="combobox-item">100</button>
+            </div>
+            <!-- //end of .main-top -->
+
+            <div class="main-body">
+
+              <div class="table-container">
+
+                <div class="table-top">
+                  <div class="left">
+                    <p class="table-indicator">
+                      100개중 <span class="accent">1-15</span>
+                    </p>
+                  </div>
+
+                  <div class="right">
+                    <div class="table-button-container">
+                      <button class="button-type-a">신규등록</button>
                     </div>
                   </div>
-                  <!-- //end of .dropdown -->
                 </div>
+                <!-- //end of .table-top -->
+
+                <div class="table-titleArea">
+                  <table class="table-header">
+                    <!-- 8개 -->
+                    <colgroup>
+                      <col width="8%" />
+                      <col width="10%" />
+                      <col width="30%" />
+                      <col width="14%" />
+                      <col width="14%" />
+                      <col width="8%" />
+                      <col width="7%" />
+                      <col width="9%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>DApp 이름</th>
+                        <th>간단한 설명</th>
+                        <th>제작자</th>
+                        <th>작성일시</th>
+                        <th>검수정보</th>
+                        <th>조회수</th>
+                        <th>즐겨찾기</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <!-- //end of .table-titleArea -->
+
+                <div class="table-viewArea">
+                  <table class="table-basic">
+                    <colgroup>
+                      <col width="8%" />
+                      <col width="10%" />
+                      <col width="30%" />
+                      <col width="14%" />
+                      <col width="14%" />
+                      <col width="8%" />
+                      <col width="7%" />
+                      <col width="9%" />
+                    </colgroup>
+
+                    <!--
+                      [전달사항]
+                      리스트가 없는 경우,
+                      아래 tbody가 노출되도록 해주세요.
+                    -->
+                    <tbody>
+                      <tr class="tr-noData">
+                        <td colspan="8">
+                          <div class="text-noData">
+                            No search results found
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- //end of .table-viewArea -->
+
+                <div class="table-bottom">
+                  <div class="table-utils"></div>
+                  <div id="table-pagination"></div>
+                  <div class="table-paging-container">
+                    <div class="dropdown dropdown-paging reverse">
+                      <p class="label">행 표시</p>
+                      <input class="text-value" readonly value="15">
+                      <div class="combobox">
+                        <button class="combobox-item">15</button>
+                        <button class="combobox-item">30</button>
+                        <button class="combobox-item">100</button>
+                      </div>
+                    </div>
+                    <!-- //end of .dropdown -->
+                  </div>
+                </div>
+                <!-- //end of .table-bottom -->
+
               </div>
-              <!-- //end of .table-bottom -->
+              <!-- //end of .table-container -->
 
             </div>
-            <!-- //end of .table-container -->
+            <!-- //end of .main-body -->
 
           </div>
-          <!-- //end of .main-body -->
+          <!-- //end of .scroll-area -->
 
         </div>
         <!-- //end of #main -->

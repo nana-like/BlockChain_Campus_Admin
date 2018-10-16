@@ -1,95 +1,49 @@
-// var bcTableSizing;
-
-// $(function() {
-//   console.log("!");
-
-//   bcTableSizing = {
-//     windowH: $(window).height(),
-//     mainH: $("#main").height(),
-//     mainTopH: $(".main-top").height(),
-//     tableTopH: $(".table-top").height(),
-//     tableBottomH: $(".table-bottom").height(),
-//     tableH: function() {
-//       var resizedH = mainH - mainTopH - tableTopH - tableBottomH;
-//       $(".table-viewArea").height(resizedH);
-//     },
-//     init: function() {
-//       bcTableSizing.tableH();
-//     }
-//   };
-
-//   bcTableSizing.tableH();
-
-//   $(window).resize(function() {
-//     bcTableSizing.windowH = $(window).height();
-//     bcTableSizing.mainH = $("#main").height();
-//     ICONest.init();
-//   });
-// });
-
 $(function() {
+  //셀렉팅용
+  var $window = $(window);
+  var $main = $("#main");
+  var $mainTop = $main.find(".main-top");
+  var $table_titleArea = $(".table-titleArea");
+  var $table_viewArea = $(".table-viewArea");
+  var $datepicker = $(".input-datepicker");
+  var $statusChart = $(".status-chart");
+  var $dropdown = $(".dropdown");
+
+  //레이아웃 조절을 위한 높이 값
   var heightValue = {
-    window: $(window).height(),
-    main: $("#main").height(),
-    mainTop: $(".main-top").outerHeight(true),
+    window: $window.height(),
+    main: $main.height(),
+    mainTop: $mainTop.outerHeight(true),
     tableTop: $(".table-top").outerHeight(true),
-    tableTitle: $(".table-titleArea").height(),
+    tableTitle: $table_titleArea.height(),
     tableBottom: $(".table-bottom").outerHeight(true)
   };
 
-  var tableEvt = function() {
-    var resizeTableHeight = function() {
-      var resizedH =
-        heightValue.main -
-        heightValue.mainTop -
-        heightValue.tableTop -
-        heightValue.tableTitle -
-        heightValue.tableBottom;
+  //브라우저에 따른 스크롤 너비 구하는 함수
+  var scrollBarWidth = function() {
+    document.body.style.overflow = "hidden";
+    var width = document.body.clientWidth;
 
-      if (resizedH < 100) {
-        $("#main").addClass("scrollable");
-        resizedH = 100;
-      } else {
-        $("#main").removeClass("scrollable");
-      }
-      $(".table-viewArea").height(resizedH);
-    };
+    document.body.style.overflow = "scroll";
+    width -= document.body.clientWidth;
 
-    function scrollBarWidth() {
-      document.body.style.overflow = "hidden";
-      var width = document.body.clientWidth;
+    if (!width) width = document.body.offsetWidth - document.body.clientWidth;
 
-      document.body.style.overflow = "scroll";
-      width -= document.body.clientWidth;
+    document.body.style.overflow = "";
 
-      if (!width) width = document.body.offsetWidth - document.body.clientWidth;
-
-      document.body.style.overflow = "";
-
-      return width;
-    }
-
-    var setTablePadding = function() {
-      //스크롤로 인해 생기는 여백을 thead에게도 지정해줍니다.
-      var defaultPadding = 40;
-      var padding = scrollBarWidth();
-      $(".table-titleArea").css("padding-right", padding);
-    };
-
-    resizeTableHeight();
-    setTablePadding();
+    return width;
   };
 
-  var commonEvt = function() {
-    // $(".input-datepicker").flatpickr({
-    //   enableTime: true,
-    //   appendTo: window.document.querySelector("#main")
-    // });
-
-    var startDate = moment().subtract(30, "days");
+  // [*] 데이트피커 함수 (임시)
+  // http://www.daterangepicker.com/
+  var datePickerEvt = function() {
+    console.log("TODO: Datepicker!");
+    var $datepicker_start = $("#datepicker-startDate");
+    var $datepicker_end = $("#datepicker-endDate");
+    var startDate = moment().subtract(30, "days"); //30일 전 (moment.js 의존)
     var endDate = moment();
 
-    $("#datepicker-startDate").daterangepicker({
+    var commonOpt = {
       singleDatePicker: true,
       timePicker: true,
       timePicker24Hour: true,
@@ -97,8 +51,6 @@ $(function() {
       parentEl: "#wrap",
       opens: "center",
       autoApply: true,
-      startDate: startDate,
-      // endDate: endDate,
       locale: {
         format: "YYYY-MM-DD H:mm",
         applyLabel: "확인",
@@ -106,310 +58,482 @@ $(function() {
         customRangeLabel: "Custom",
         daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       }
+    };
+
+    $datepicker.daterangepicker(commonOpt);
+    $datepicker_start.data("daterangepicker").setStartDate(startDate);
+    $datepicker_end.data("daterangepicker").setStartDate(endDate);
+  };
+
+  // [*] 페이지네이션 함수 (임시)
+  // http://flaviusmatis.github.io/simplePagination.js/
+  var paginationEvt = function() {
+    console.log("TODO: Pagination!");
+    var $tablePagination = $("#table-pagination");
+
+    $tablePagination.pagination({
+      items: 100, //모든 아이템 수
+      itemsOnPage: 15, //각 페이지에 노출될 아이템 수
+      displayedPages: 3, //페이지네이션 개수 (최소치: 3)
+      edges: 1, //처음과 끝에 보여줄 페이지 수
+      ellipsePageSet: false //... 클릭 시 타이핑 가능하게 하는 기능 방지
     });
-    $("#datepicker-endDate").daterangepicker({
-      singleDatePicker: true,
-      timePicker: true,
-      timePicker24Hour: true,
-      timePickerIncrement: 10,
-      parentEl: "#wrap",
-      opens: "center",
-      autoApply: true,
-      startDate: endDate,
-      locale: {
-        format: "YYYY-MM-DD HH:mm",
-        applyLabel: "확인",
-        cancelLabel: "취소",
-        customRangeLabel: "Custom",
-        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  };
+
+  // [*] 차트 함수 (임시)
+  // http://www.chartjs.org/docs/latest/
+  var chartEvt = function() {
+    console.log("TODO: Chart!");
+
+    var statusH = $(".voting-details-status").outerHeight();
+    $statusChart.height(statusH - 25);
+
+    var ctx = document.getElementById("votingChart");
+
+    var votingChart = new Chart(ctx, {
+      type: "horizontalBar",
+      data: {
+        labels: [
+          "리오넬 메시",
+          "루이스 수아레스",
+          "크리스티아누 호날두",
+          "데이비드 베컴",
+          "에릭 칸토나",
+          "에릭 칸토나칸토나칸토나칸토나칸토나칸토나"
+        ],
+        datasets: [
+          {
+            data: [219, 100, 150, 35, 7, 81],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)"
+            ],
+            borderColor: [
+              "rgba(255,99,132,1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)"
+            ],
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          yAxes: [
+            {
+              ticks: {
+                display: false,
+                beginAtZero: true
+              },
+              gridLines: {
+                display: false
+              },
+              barThickness: 40
+            }
+          ]
+        }
       }
     });
   };
 
-  $(window).on("load", function() {
-    commonEvt();
+  // [*] 테이블 높이 조절 함수
+  var resizeTableHeight = function() {
+    console.log("TODO: Resize Table!");
+    var resizedH =
+      heightValue.main -
+      heightValue.mainTop -
+      heightValue.tableTop -
+      heightValue.tableTitle -
+      heightValue.tableBottom;
 
-    if ($("#main").hasClass("main-table")) {
-      console.log("테이블 이벤트 시작");
-      tableEvt();
+    if (resizedH < 100) {
+      //윈도 높이가 극단적으로 낮다면 스크롤 가능하도록 합니다
+      $(".main-container").addClass("scrollable");
+      resizedH = 100;
     } else {
-      console.log("테이블 이벤트 없음");
+      //그렇지 않다면 스크롤을 막습니다
+      // $main.removeClass("scrollable");
+      $(".main-container").removeClass("scrollable");
     }
+    $table_viewArea.height(resizedH);
+  };
+
+  // [*] 테이블 함수
+  var tableEvt = function() {
+    console.log("TODO: Table All!");
+
+    //패딩 지정 함수
+    var setTablePadding = function() {
+      //스크롤로 인해 생기는 여백을 thead 오른쪽에도 지정합니다 (윈도 크롬 기준 17px 정도)
+      var padding = scrollBarWidth();
+      $table_titleArea.css("padding-right", padding);
+    };
+
+    resizeTableHeight();
+    setTablePadding();
+    paginationEvt();
+  };
+
+  // [*] 커먼 함수
+  var commonEvt = function() {
+    // 드롭다운 이벤트
+    var dropdownEvt = function() {
+      // 드롭다운 클릭 시 active클래스 추가
+      $dropdown.on("click", function(evt) {
+        evt.stopPropagation();
+        $(this).toggleClass("active");
+      });
+
+      // 드롭다운 콤보박스의 클릭한 텍스트를 보여줘야하는 경우
+      $(".dropdown-input, .dropdown-paging").on("mousedown", function(evt) {
+        evt.stopPropagation();
+        if (event.target.tagName == "BUTTON") {
+          var text = event.target.innerText;
+          $(this)
+            .find(".text-value")
+            .val(text);
+        }
+      });
+
+      // 바디 클릭 시 드롭다운 닫기
+      $("body").on("click", function() {
+        if ($dropdown.hasClass("active")) {
+          $dropdown.removeClass("active");
+        }
+      });
+    };
+
+    // 인풋 파일 이벤트
+    var inputFileEvt = function() {
+      var $inputFileButton = $(".input-file");
+      $inputFileButton.change(function() {
+        //임시
+        var fileValue = $(this)
+          .val()
+          .split("\\");
+        var fileName = fileValue[fileValue.length - 1];
+        var fileSize_byte = this.files[0].size;
+
+        var fSExt = new Array("Bytes", "KB", "MB", "GB");
+        fSize = fileSize_byte;
+        i = 0;
+        while (fSize > 900) {
+          fSize /= 1024;
+          i++;
+        }
+        var fiileSize = "(" + (Math.round(fSize * 100) / 100 + fSExt[i]) + ")";
+
+        $(this)
+          .prev(".fileName")
+          .children(".name")
+          .text(fileName);
+        $(this)
+          .prev(".fileName")
+          .children(".size")
+          .text(fiileSize);
+      });
+    };
+
+    // GNB 아코디언 이벤트
+    var gnbAccordionEvt = function() {
+      $(".gnb-accordion").on("click", function() {
+        $(this).toggleClass("opened");
+      });
+    };
+
+    dropdownEvt();
+    inputFileEvt();
+    gnbAccordionEvt();
+  };
+
+  // [*] 초기 실행 함수
+  var init = function() {
+    if ($main.hasClass("main-table")) {
+      heightValue.window = $window.height();
+      heightValue.main = $main.height();
+      tableEvt();
+    }
+
+    if ($datepicker.length > 0) {
+      datePickerEvt();
+    }
+
+    if ($statusChart.length > 0) {
+      chartEvt();
+    }
+
+    commonEvt();
+  };
+
+  $(window).on("load", function() {
+    init();
   });
 
   $(window).on("resize", function() {
-    // heightValue.window = $(window).height();
-    // heightValue.main = $("#main").height();
-    // tableEvt();
-
-    if ($("#main").hasClass("main-table")) {
-      console.log("테이블 이벤트 시작");
-      heightValue.window = $(window).height();
-      heightValue.main = $("#main").height();
-      tableEvt();
-    } else {
-      console.log("테이블 이벤트 없음");
+    if ($main.hasClass("main-table")) {
+      heightValue.window = $window.height();
+      heightValue.main = $main.height();
+      resizeTableHeight();
     }
   });
 });
 
+///////////////////////////////
+// [*] jsTree
+// - API: https://www.jstree.com/api/
+// - ContextMenu API: https://www.jstree.com/api/#/?q=$.jstree.defaults.contextmenu
+
+// $(function() {
+//   $("#jstree").jstree({
+//     core: {
+//       themes: { stripes: true }
+//     },
+//     plugins: ["contextmenu"],
+//     contextmenu: {
+//       items: function($node) {
+//         var tree = $("#jstree").jstree(true);
+//         return {
+//           Create: {
+//             separator_before: false,
+//             separator_after: false,
+//             label: "신규등록",
+//             action: false,
+//             submenu: {
+//               File: {
+//                 seperator_before: false,
+//                 seperator_after: false,
+//                 label: "File",
+//                 action: function(obj) {
+//                   $node = tree.create_node($node, {
+//                     text: "New File",
+//                     type: "file",
+//                     icon: "glyphicon glyphicon-file"
+//                   });
+//                   tree.deselect_all();
+//                   tree.select_node($node);
+//                 }
+//               },
+//               Folder: {
+//                 seperator_before: false,
+//                 seperator_after: false,
+//                 label: "Folder",
+//                 action: function(obj) {
+//                   $node = tree.create_node($node, {
+//                     text: "New Folder",
+//                     type: "default"
+//                   });
+//                   tree.deselect_all();
+//                   tree.select_node($node);
+//                 }
+//               }
+//             }
+//           },
+//           Rename: {
+//             separator_before: false,
+//             separator_after: false,
+//             label: "Rename",
+//             action: function(obj) {
+//               tree.edit($node);
+//             }
+//           },
+//           Remove: {
+//             separator_before: false,
+//             separator_after: false,
+//             label: "Remove",
+//             action: function(obj) {
+//               tree.delete_node($node);
+//             }
+//           }
+//         };
+//       }
+//     }
+//   });
+
+//   // bind to events triggered on the tree
+//   // $("#jstree").on("changed.jstree", function(e, data) {
+//   //   console.log(data.selected);
+//   // });
+
+//   $(window).on("load", function() {
+//     $("#jstree").jstree("open_all");
+//   });
+// });
+
 $(function() {
-  // create an instance when the DOM is ready
-  $("#jstree").jstree({
+  var jsondata = [
+    {
+      id: "all",
+      parent: "#",
+      text: "전체",
+      state: {
+        opened: true,
+        selected: true
+      }
+    },
+    {
+      id: "postech",
+      parent: "all",
+      text: "POSTECH",
+      state: {
+        opened: true
+      }
+    },
+    {
+      id: "test_1",
+      parent: "postech",
+      text: "분류_1"
+    },
+    {
+      id: "test_2",
+      parent: "postech",
+      text: "분류_2"
+    },
+    {
+      id: "test_1_1",
+      parent: "test_1",
+      text: "분류_1_1"
+    },
+    {
+      id: "test_1_2",
+      parent: "test_1",
+      text: "분류_1_2"
+    }
+  ];
+
+  createJSTree(jsondata);
+});
+
+function customMenu($node) {
+  var tree = $("#SimpleJSTree").jstree(true);
+
+  var items = {
+    Create: {
+      separator_before: false,
+      separator_after: true,
+      label: "신규등록",
+      action: function(obj) {
+        var name = prompt("분류를 신규등록합니다.");
+        if (name) {
+          $node = tree.create_node($node, {
+            text: name,
+            type: "default"
+          });
+          tree.deselect_all();
+          tree.select_node($node);
+        }
+      }
+    },
+    Rename: {
+      separator_before: false,
+      separator_after: false,
+      label: "수정",
+      action: function(obj) {
+        var name = prompt("분류를 수정합니다.");
+        if (name) {
+          tree.edit($node, name);
+        }
+      }
+    },
+    Remove: {
+      separator_before: false,
+      separator_after: false,
+      label: "삭제",
+      action: function(obj) {
+        if (confirm("분류를 삭제합니다.")) {
+          tree.delete_node($node);
+        } else {
+          return false;
+        }
+      }
+    }
+  };
+
+  return items;
+}
+
+function createJSTree(jsondata) {
+  $("#SimpleJSTree").jstree({
     core: {
-      themes: { icons: true }
-    }
-  });
-
-  // bind to events triggered on the tree
-  $("#jstree").on("changed.jstree", function(e, data) {
-    console.log(data.selected);
-  });
-
-  $(window).on("load", function() {
-    $("#jstree").jstree("open_all");
-  });
-});
-
-$(function() {
-  $.contextMenu({
-    selector: ".context-menu-one",
-    callback: function(key, options) {
-      var m = "clicked: " + key;
-      (window.console && console.log(m)) || alert(m);
+      check_callback: true,
+      data: jsondata,
+      themes: { stripes: true }
     },
-    items: {
-      edit: { name: "Edit", icon: "edit" },
-      cut: { name: "Cut", icon: "cut" },
-      copy: { name: "Copy", icon: "copy" },
-      paste: { name: "Paste", icon: "paste" },
-      delete: { name: "Delete", icon: "delete" },
-      sep1: "---------",
-      quit: {
-        name: "Quit",
-        icon: function() {
-          return "context-menu-icon context-menu-icon-quit";
-        }
-      }
+    plugins: ["contextmenu"],
+    contextmenu: {
+      items: customMenu
     }
   });
+}
 
-  $(".context-menu-one").on("click", function(e) {
-    console.log("clicked", this);
-  });
-});
+// $(function() {
+//   $.contextMenu({
+//     // selector: ".context-menu",
+//     selector: ".tree-container",
+//     callback: function(key, options) {
+//       var m = "clicked: " + key;
+//       (window.console && console.log(m)) || alert(m);
+//     },
+//     items: {
+//       edit: { name: "편집", icon: "edit" },
+//       cut: { name: "Cut", icon: "cut" },
+//       copy: { name: "Copy", icon: "copy" },
+//       paste: { name: "Paste", icon: "paste" },
+//       delete: { name: "Delete", icon: "delete" },
+//       sep1: "---------",
+//       quit: {
+//         name: "Quit",
+//         icon: function() {
+//           return "context-menu-icon context-menu-icon-quit";
+//         }
+//       }
+//     }
+//   });
+//   $.contextMenu({
+//     selector: ".context-menu",
+//     // selector: ".tree-container",
+//     callback: function(key, options) {
+//       var m = "clicked: " + key;
+//       (window.console && console.log(m)) || alert(m);
+//     },
+//     items: {
+//       edit: { name: "^^", icon: "edit" },
+//       cut: { name: "잘라내기", icon: "cut" },
+//       copy: { name: "복사", icon: "copy" },
+//       paste: { name: "Paste", icon: "paste" },
+//       delete: { name: "Delete", icon: "delete" },
+//       sep1: "---------",
+//       quit: {
+//         name: "Quit",
+//         icon: function() {
+//           return "context-menu-icon context-menu-icon-quit";
+//         }
+//       }
+//     }
+//   });
 
-$(function() {
-  // $("#table-pagination").twbsPagination({
-  //   totalPages: 20,
-  //   items: 20,
-  //   itemOnPage: 5,
-  //   currentPage: 1,
-  //   prevText: '<span aria-hidden="true">&laquo;</span>',
-  //   nextText: '<span aria-hidden="true">&raquo;</span>'
-  // });
-
-  function simpleTemplating(data) {
-    var html = "<ul>";
-    $.each(data, function(index, item) {
-      html += "<li>" + item + "</li>";
-    });
-    html += "</ul>";
-    return html;
-  }
-
-  // $("#table-pagination").pagination({
-  //   dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-  //   pageSize: 5,
-  //   showGoInput: true,
-  //   showGoButton: true
-  //   // callback: function(data, pagination) {
-  //   //   var html = simpleTemplating(data);
-  //   //   $("#table-pagination").html(html);
-  //   // }
-  // });
-
-  //simple pagination js
-  $("#table-pagination").pagination({
-    items: 100,
-    itemsOnPage: 15,
-    displayedPages: 3,
-    edges: 1,
-    ellipsePageSet: false
-    // prevText: "앞",
-    // nextText: ""
-  });
-
-  autosize(document.querySelectorAll("textarea"));
-});
-
-$(function() {
-  var statusH = $(".voting-details-status").outerHeight();
-  console.log(statusH);
-
-  $(".status-chart").height(statusH - 25);
-
-  var ctx = document.getElementById("myChart");
-
-  var myChart = new Chart(ctx, {
-    type: "horizontalBar",
-    data: {
-      labels: [
-        "리오넬 메시",
-        "루이스 수아레스",
-        "크리스티아누 호날두",
-        "데이비드 베컴",
-        "에릭 칸토나",
-        "에릭 칸토나칸토나칸토나칸토나칸토나칸토나"
-      ],
-      datasets: [
-        {
-          // label: "# of Votes",
-          data: [219, 100, 150, 35, 7, 81],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      legend: {
-        display: false
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      // categoryPercentage: 0.2,
-      // barPercentage: 1.0,
-      scales: {
-        xAxes: [
-          {
-            ticks: {
-              beginAtZero: true
-            },
-            gridLines: {
-              display: false
-            }
-          }
-        ],
-        yAxes: [
-          {
-            ticks: {
-              display: false,
-              beginAtZero: true
-            },
-            gridLines: {
-              display: false
-            },
-            barThickness: 40
-            // barPercentage: 0.5,
-            // categoryPercentage: 1.0
-          }
-        ]
-      }
-    }
-  });
-});
-
-$(function() {
-  //인풋 클릭 시 드롭다운 노출
-
-  $(".dropdown").on("click", function(evt) {
-    evt.stopPropagation();
-    $(this).toggleClass("active");
-  });
-
-  // $(document).on("click", ".combobox-item", function() {
-  //   var text = $(this).text();
-  //   $(this)
-  //     .parents()
-  //     .prevAll(".text-value")
-  //     .val(text);
-  // });
-
-  $(".dropdown-input, .dropdown-paging").on("mousedown", function(evt) {
-    evt.stopPropagation();
-    if (event.target.tagName == "BUTTON") {
-      var text = event.target.innerText;
-
-      console.log("dropdown-input의 텍스트:", text);
-      $(this)
-        .find(".text-value")
-        .val(text);
-    }
-  });
-
-  // $(".dropdown").on("mousedown", function(evt) {
-  //   if (event.target.tagName == "BUTTON") {
-  //     var text = event.target.innerText;
-
-  //     console.log("dropdown-input의 텍스트:", text);
-  //     $(this)
-  //       .find(".text-value")
-  //       .val(text);
-  //   }
-  // });
-  // $(document).on("click", ".dropdown-paging", function() {
-  //   if (event.target.tagName == "BUTTON") {
-  //     var text = event.target.innerText;
-
-  //     console.log("dropdown-paging의 텍스트:", text);
-  //     $(this)
-  //       .find(".text-value")
-  //       .val(text);
-  //   }
-  // });
-
-  // $(".combobox").on("click", function(evt) {
-  //   evt.stopPropagation();
-  // });
-
-  $("body").on("click", function() {
-    var $dropdown = $(".dropdown");
-    if ($dropdown.hasClass("active")) {
-      console.log("!액티브지님??");
-      $dropdown.removeClass("active");
-    }
-  });
-
-  $(".input-file").change(function() {
-    //임시
-    var fileValue = $(this)
-      .val()
-      .split("\\");
-    var fileName = fileValue[fileValue.length - 1];
-    var fileSize_byte = this.files[0].size;
-
-    var fSExt = new Array("Bytes", "KB", "MB", "GB");
-    fSize = fileSize_byte;
-    i = 0;
-    while (fSize > 900) {
-      fSize /= 1024;
-      i++;
-    }
-
-    var fiileSize = "(" + (Math.round(fSize * 100) / 100 + fSExt[i]) + ")";
-
-    $(this)
-      .prev(".fileName")
-      .children(".name")
-      .text(fileName);
-    $(this)
-      .prev(".fileName")
-      .children(".size")
-      .text(fiileSize);
-  });
-});
+//   $(".context-menu").on("click", function(e) {
+//     console.log("clicked", this);
+//   });
+// });

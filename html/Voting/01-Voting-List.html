@@ -88,246 +88,248 @@
 
         <div class="main-container voting-list">
 
-          <div class="main-top">
+          <div class="scroll-area">
 
-            <div class="search-container search-voting">
-              <div class="form-container">
+            <div class="main-top">
 
-                <div class="flex-line">
-                  <div class="input-container">
-                    <strong class="title">투표명</strong>
-                    <input type="text" class="input-text" />
-                  </div>
-                  <div class="input-container">
-                    <strong class="title">투표대상</strong>
-                    <input type="text" class="input-text" />
-                  </div>
-                  <div class="input-container input-sm">
-                    <strong class="title">시작일시</strong>
-                    <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="datepicker-startDate" />
-                  </div>
-                  <div class="input-container input-sm">
-                    <strong class="title">종료일시</strong>
-                    <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" id="datepicker-endDate" />
-                  </div>
-                </div>
-              </div>
-              <div class="button-container">
-                <button class="button-type-c" disabled>초기화</button>
-                <button class="button-type-b">검색</button>
-              </div>
-            </div>
+              <div class="search-container search-voting">
+                <div class="form-container">
 
-          </div>
-          <!-- //end of .main-top -->
-
-          <div class="main-body">
-
-            <div class="table-container">
-
-              <div class="table-top">
-                <div class="left">
-                  <p class="table-indicator">
-                    100개중 <span class="accent">1-15</span>
-                  </p>
-                </div>
-
-                <div class="right">
-                  <div class="table-button-container">
-                    <div class="checkbox-container checkbox-type-a">
-                      <input type="checkbox" id="checkbox-include-finishedVote" />
-                      <label for="checkbox-include-finishedVote">종료된 투표 포함</label>
+                  <div class="flex-line">
+                    <div class="input-container">
+                      <strong class="title">투표명</strong>
+                      <input type="text" class="input-text" />
+                    </div>
+                    <div class="input-container">
+                      <strong class="title">투표대상</strong>
+                      <input type="text" class="input-text" />
+                    </div>
+                    <div class="input-container input-sm">
+                      <strong class="title">시작일시</strong>
+                      <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="datepicker-startDate" />
+                    </div>
+                    <div class="input-container input-sm">
+                      <strong class="title">종료일시</strong>
+                      <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" id="datepicker-endDate" />
                     </div>
                   </div>
                 </div>
+                <div class="button-container">
+                  <button class="button-type-c" disabled>초기화</button>
+                  <button class="button-type-b">검색</button>
+                </div>
               </div>
-              <!-- //end of .table-top -->
 
-              <div class="table-titleArea">
-                <table class="table-header">
-                  <!-- column 9개 -->
-                  <colgroup>
-                    <col width="8%" />
-                    <col width="19%" />
-                    <col width="23%" />
-                    <col width="12%" />
-                    <col width="12%" />
-                    <col width="6%" />
-                    <col width="6%" />
-                    <col width="6%" />
-                    <col width="8%" />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>번호</th>
-                      <th>투표명</th>
-                      <th>투표 대상</th>
-                      <th>시작일시</th>
-                      <th>종료일시</th>
-                      <th>대상인원</th>
-                      <th>참여인원</th>
-                      <th>상태</th>
-                      <th>참여</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-              <!-- //end of .table-titleArea -->
+            </div>
+            <!-- //end of .main-top -->
 
-              <div class="table-viewArea">
-                <table class="table-basic">
-                  <colgroup>
-                    <col width="8%" />
-                    <col width="19%" />
-                    <col width="23%" />
-                    <col width="12%" />
-                    <col width="12%" />
-                    <col width="6%" />
-                    <col width="6%" />
-                    <col width="6%" />
-                    <col width="8%" />
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <td>120</td>
-                      <td><a href="#">테스트 투표 123</a></td>
-                      <td>산업공학과</td>
-                      <td>2018-06-01 09:00</td>
-                      <td>2018-06-01 18:00</td>
-                      <td>180</td>
-                      <td>78</td>
-                      <td>마감</td>
-                      <td>불가</td>
-                    </tr>
-                    <tr>
-                      <td>119</td>
-                      <td><a href="#">총학생회 선거</a></td>
-                      <td>전체</td>
-                      <td>2018-01-01 00:00</td>
-                      <td>2018-12-31 00:00</td>
-                      <td>482</td>
-                      <td>482</td>
-                      <td>마감</td>
-                      <td>완료</td>
-                    </tr>
-                    <tr>
-                      <td>118</td>
-                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
-                      <td>공과대학</td>
-                      <td>2018-01-01 09:00</td>
-                      <td>2018-01-01 09:10</td>
-                      <td>200</td>
-                      <td>111</td>
-                      <td>진행</td>
-                      <td>가능</td>
-                    </tr>
-                    <tr>
-                      <td>120</td>
-                      <td><a href="#">테스트 투표 123</a></td>
-                      <td>산업공학과</td>
-                      <td>2018-06-01 09:00</td>
-                      <td>2018-06-01 18:00</td>
-                      <td>180</td>
-                      <td>78</td>
-                      <td>마감</td>
-                      <td>불가</td>
-                    </tr>
-                    <tr>
-                      <td>119</td>
-                      <td><a href="#">총학생회 선거</a></td>
-                      <td>전체</td>
-                      <td>2018-01-01 00:00</td>
-                      <td>2018-12-31 00:00</td>
-                      <td>482</td>
-                      <td>482</td>
-                      <td>마감</td>
-                      <td>완료</td>
-                    </tr>
-                    <tr>
-                      <td>118</td>
-                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
-                      <td>공과대학</td>
-                      <td>2018-01-01 09:00</td>
-                      <td>2018-01-01 09:10</td>
-                      <td>200</td>
-                      <td>111</td>
-                      <td>진행</td>
-                      <td>가능</td>
-                    </tr>
-                    <tr>
-                      <td>120</td>
-                      <td><a href="#">테스트 투표 123</a></td>
-                      <td>산업공학과</td>
-                      <td>2018-06-01 09:00</td>
-                      <td>2018-06-01 18:00</td>
-                      <td>180</td>
-                      <td>78</td>
-                      <td>마감</td>
-                      <td>불가</td>
-                    </tr>
-                    <tr>
-                      <td>119</td>
-                      <td><a href="#">총학생회 선거</a></td>
-                      <td>전체</td>
-                      <td>2018-01-01 00:00</td>
-                      <td>2018-12-31 00:00</td>
-                      <td>482</td>
-                      <td>482</td>
-                      <td>마감</td>
-                      <td>완료</td>
-                    </tr>
-                    <tr>
-                      <td>118</td>
-                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
-                      <td>공과대학</td>
-                      <td>2018-01-01 09:00</td>
-                      <td>2018-01-01 09:10</td>
-                      <td>200</td>
-                      <td>111</td>
-                      <td>진행</td>
-                      <td>가능</td>
-                    </tr>
-                    <tr>
-                      <td>120</td>
-                      <td><a href="#">테스트 투표 123</a></td>
-                      <td>산업공학과</td>
-                      <td>2018-06-01 09:00</td>
-                      <td>2018-06-01 18:00</td>
-                      <td>180</td>
-                      <td>78</td>
-                      <td>마감</td>
-                      <td>불가</td>
-                    </tr>
-                    <tr>
-                      <td>119</td>
-                      <td><a href="#">총학생회 선거</a></td>
-                      <td>전체</td>
-                      <td>2018-01-01 00:00</td>
-                      <td>2018-12-31 00:00</td>
-                      <td>482</td>
-                      <td>482</td>
-                      <td>마감</td>
-                      <td>완료</td>
-                    </tr>
-                    <tr>
-                      <td>118</td>
-                      <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
-                      <td>공과대학</td>
-                      <td>2018-01-01 09:00</td>
-                      <td>2018-01-01 09:10</td>
-                      <td>200</td>
-                      <td>111</td>
-                      <td>진행</td>
-                      <td>가능</td>
-                    </tr>
-                  </tbody>
+            <div class="main-body">
+
+              <div class="table-container">
+
+                <div class="table-top">
+                  <div class="left">
+                    <p class="table-indicator">
+                      100개중 <span class="accent">1-15</span>
+                    </p>
+                  </div>
+
+                  <div class="right">
+                    <div class="table-button-container">
+                      <div class="checkbox-container checkbox-type-a">
+                        <input type="checkbox" id="checkbox-include-finishedVote" />
+                        <label for="checkbox-include-finishedVote">종료된 투표 포함</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //end of .table-top -->
+
+                <div class="table-titleArea">
+                  <table class="table-header">
+                    <!-- column 9개 -->
+                    <colgroup>
+                      <col width="8%" />
+                      <col width="19%" />
+                      <col width="23%" />
+                      <col width="12%" />
+                      <col width="12%" />
+                      <col width="6%" />
+                      <col width="6%" />
+                      <col width="6%" />
+                      <col width="8%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>투표명</th>
+                        <th>투표 대상</th>
+                        <th>시작일시</th>
+                        <th>종료일시</th>
+                        <th>대상인원</th>
+                        <th>참여인원</th>
+                        <th>상태</th>
+                        <th>참여</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <!-- //end of .table-titleArea -->
+
+                <div class="table-viewArea">
+                  <table class="table-basic">
+                    <colgroup>
+                      <col width="8%" />
+                      <col width="19%" />
+                      <col width="23%" />
+                      <col width="12%" />
+                      <col width="12%" />
+                      <col width="6%" />
+                      <col width="6%" />
+                      <col width="6%" />
+                      <col width="8%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>120</td>
+                        <td><a href="#">테스트 투표 123</a></td>
+                        <td>산업공학과</td>
+                        <td>2018-06-01 09:00</td>
+                        <td>2018-06-01 18:00</td>
+                        <td>180</td>
+                        <td>78</td>
+                        <td>마감</td>
+                        <td>불가</td>
+                      </tr>
+                      <tr>
+                        <td>119</td>
+                        <td><a href="#">총학생회 선거</a></td>
+                        <td>전체</td>
+                        <td>2018-01-01 00:00</td>
+                        <td>2018-12-31 00:00</td>
+                        <td>482</td>
+                        <td>482</td>
+                        <td>마감</td>
+                        <td>완료</td>
+                      </tr>
+                      <tr>
+                        <td>118</td>
+                        <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                        <td>공과대학</td>
+                        <td>2018-01-01 09:00</td>
+                        <td>2018-01-01 09:10</td>
+                        <td>200</td>
+                        <td>111</td>
+                        <td>진행</td>
+                        <td>가능</td>
+                      </tr>
+                      <tr>
+                        <td>120</td>
+                        <td><a href="#">테스트 투표 123</a></td>
+                        <td>산업공학과</td>
+                        <td>2018-06-01 09:00</td>
+                        <td>2018-06-01 18:00</td>
+                        <td>180</td>
+                        <td>78</td>
+                        <td>마감</td>
+                        <td>불가</td>
+                      </tr>
+                      <tr>
+                        <td>119</td>
+                        <td><a href="#">총학생회 선거</a></td>
+                        <td>전체</td>
+                        <td>2018-01-01 00:00</td>
+                        <td>2018-12-31 00:00</td>
+                        <td>482</td>
+                        <td>482</td>
+                        <td>마감</td>
+                        <td>완료</td>
+                      </tr>
+                      <tr>
+                        <td>118</td>
+                        <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                        <td>공과대학</td>
+                        <td>2018-01-01 09:00</td>
+                        <td>2018-01-01 09:10</td>
+                        <td>200</td>
+                        <td>111</td>
+                        <td>진행</td>
+                        <td>가능</td>
+                      </tr>
+                      <tr>
+                        <td>120</td>
+                        <td><a href="#">테스트 투표 123</a></td>
+                        <td>산업공학과</td>
+                        <td>2018-06-01 09:00</td>
+                        <td>2018-06-01 18:00</td>
+                        <td>180</td>
+                        <td>78</td>
+                        <td>마감</td>
+                        <td>불가</td>
+                      </tr>
+                      <tr>
+                        <td>119</td>
+                        <td><a href="#">총학생회 선거</a></td>
+                        <td>전체</td>
+                        <td>2018-01-01 00:00</td>
+                        <td>2018-12-31 00:00</td>
+                        <td>482</td>
+                        <td>482</td>
+                        <td>마감</td>
+                        <td>완료</td>
+                      </tr>
+                      <tr>
+                        <td>118</td>
+                        <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                        <td>공과대학</td>
+                        <td>2018-01-01 09:00</td>
+                        <td>2018-01-01 09:10</td>
+                        <td>200</td>
+                        <td>111</td>
+                        <td>진행</td>
+                        <td>가능</td>
+                      </tr>
+                      <tr>
+                        <td>120</td>
+                        <td><a href="#">테스트 투표 123</a></td>
+                        <td>산업공학과</td>
+                        <td>2018-06-01 09:00</td>
+                        <td>2018-06-01 18:00</td>
+                        <td>180</td>
+                        <td>78</td>
+                        <td>마감</td>
+                        <td>불가</td>
+                      </tr>
+                      <tr>
+                        <td>119</td>
+                        <td><a href="#">총학생회 선거</a></td>
+                        <td>전체</td>
+                        <td>2018-01-01 00:00</td>
+                        <td>2018-12-31 00:00</td>
+                        <td>482</td>
+                        <td>482</td>
+                        <td>마감</td>
+                        <td>완료</td>
+                      </tr>
+                      <tr>
+                        <td>118</td>
+                        <td><a href="#">10월 공과대학 세미나 개최 관련 투표(많은 참여 바랍니다)</a></td>
+                        <td>공과대학</td>
+                        <td>2018-01-01 09:00</td>
+                        <td>2018-01-01 09:10</td>
+                        <td>200</td>
+                        <td>111</td>
+                        <td>진행</td>
+                        <td>가능</td>
+                      </tr>
+                    </tbody>
 
 
-                  <!-- 
+                    <!-- 
                     [전달사항] 
                     표시할 목록이 없으면 아래 tbody가 표시되도록 해주세요.
                   -->
-                  <!-- 
+                    <!-- 
                   <tbody>
                     <tr class="tr-noData">
                       <td colspan="8">
@@ -339,39 +341,42 @@
                   </tbody> 
                   -->
 
-                </table>
-              </div>
-              <!-- //end of .table-viewArea -->
+                  </table>
+                </div>
+                <!-- //end of .table-viewArea -->
 
-              <div class="table-bottom">
-                <div class="table-utils"></div>
-                <div id="table-pagination"></div>
-                <div class="table-paging-container">
+                <div class="table-bottom">
+                  <div class="table-utils"></div>
+                  <div id="table-pagination"></div>
+                  <div class="table-paging-container">
 
-                  <!-- 
+                    <!-- 
                     [전달사항] 
                     dropdown에 active 클래스를 추가하면 콤보박스가 화면에 보입니다.
                   -->
-                  <div class="dropdown dropdown-paging reverse active">
-                    <p class="label">행 표시</p>
-                    <input class="text-value" readonly value="15">
-                    <div class="combobox">
-                      <button class="combobox-item">15</button>
-                      <button class="combobox-item">30</button>
-                      <button class="combobox-item">50</button>
-                      <button class="combobox-item">100</button>
+                    <div class="dropdown dropdown-paging reverse active">
+                      <p class="label">행 표시</p>
+                      <input class="text-value" readonly value="15">
+                      <div class="combobox">
+                        <button class="combobox-item">15</button>
+                        <button class="combobox-item">30</button>
+                        <button class="combobox-item">50</button>
+                        <button class="combobox-item">100</button>
+                      </div>
                     </div>
+                    <!-- //end of .dropdown -->
                   </div>
-                  <!-- //end of .dropdown -->
                 </div>
+                <!-- //end of .table-bottom -->
+
               </div>
-              <!-- //end of .table-bottom -->
+              <!-- //end of .table-container -->
 
             </div>
-            <!-- //end of .table-container -->
+            <!-- //end of .main-body -->
 
           </div>
-          <!-- //end of .main-body -->
+          <!-- //end of .scroll-area -->
 
         </div>
         <!-- //end of #main -->
