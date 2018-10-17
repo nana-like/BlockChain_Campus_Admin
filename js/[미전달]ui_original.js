@@ -37,6 +37,7 @@ $(function() {
   // [*] 데이트피커 함수 (임시)
   // http://www.daterangepicker.com/
   var datePickerEvt = function() {
+    console.log("TODO: Datepicker!");
     var $datepicker_start = $("#datepicker-startDate");
     var $datepicker_end = $("#datepicker-endDate");
     var startDate = moment().subtract(30, "days"); //30일 전 (moment.js 의존)
@@ -67,6 +68,7 @@ $(function() {
   // [*] 페이지네이션 함수 (임시)
   // http://flaviusmatis.github.io/simplePagination.js/
   var paginationEvt = function() {
+    console.log("TODO: Pagination!");
     var $tablePagination = $("#table-pagination");
 
     $tablePagination.pagination({
@@ -81,6 +83,8 @@ $(function() {
   // [*] 차트 함수 (임시)
   // http://www.chartjs.org/docs/latest/
   var chartEvt = function() {
+    console.log("TODO: Chart!");
+
     var statusH = $(".voting-details-status").outerHeight();
     $statusChart.height(statusH - 25);
 
@@ -156,6 +160,7 @@ $(function() {
 
   // [*] 테이블 높이 조절 함수
   var resizeTableHeight = function() {
+    console.log("TODO: Resize Table!");
     var resizedH =
       heightValue.main -
       heightValue.mainTop -
@@ -177,6 +182,8 @@ $(function() {
 
   // [*] 테이블 함수
   var tableEvt = function() {
+    console.log("TODO: Table All!");
+
     //패딩 지정 함수
     var setTablePadding = function() {
       //스크롤로 인해 생기는 여백을 thead 오른쪽에도 지정합니다 (윈도 크롬 기준 17px 정도)
@@ -198,6 +205,17 @@ $(function() {
         evt.stopPropagation();
         $(this).toggleClass("active");
       });
+
+      // 드롭다운 콤보박스의 클릭한 텍스트를 보여줘야하는 경우
+      // $(".dropdown-input, .dropdown-paging").on("mousedown", function(evt) {
+      //   evt.stopPropagation();
+      //   if (event.target.tagName == "BUTTON") {
+      //     var text = event.target.innerText;
+      //     $(this)
+      //       .find(".text-value")
+      //       .val(text);
+      //   }
+      // });
 
       // 바디 클릭 시 드롭다운 닫기
       $("body").on("click", function() {
@@ -281,3 +299,109 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  var jsondata = [
+    {
+      id: "all",
+      parent: "#",
+      text: "전체",
+      state: {
+        opened: true,
+        selected: true
+      }
+    },
+    {
+      id: "postech",
+      parent: "all",
+      text: "POSTECH",
+      state: {
+        opened: true
+      }
+    },
+    {
+      id: "test_1",
+      parent: "postech",
+      text: "분류_1"
+    },
+    {
+      id: "test_2",
+      parent: "postech",
+      text: "분류_2"
+    },
+    {
+      id: "test_1_1",
+      parent: "test_1",
+      text: "분류_1_1"
+    },
+    {
+      id: "test_1_2",
+      parent: "test_1",
+      text: "분류_1_2"
+    }
+  ];
+
+  createJSTree(jsondata);
+});
+
+function customMenu($node) {
+  var tree = $("#jsTree").jstree(true);
+
+  var items = {
+    Create: {
+      separator_before: false,
+      separator_after: true,
+      label: "신규등록",
+      action: function(obj) {
+        var name = prompt("분류를 신규등록합니다.");
+        if (name) {
+          $node = tree.create_node($node, {
+            text: name,
+            type: "default"
+          });
+          tree.deselect_all();
+          tree.select_node($node);
+        }
+      }
+    },
+    Rename: {
+      separator_before: false,
+      separator_after: false,
+      label: "수정",
+      action: function(obj) {
+        var name = prompt("분류를 수정합니다.");
+        if (name) {
+          tree.edit($node, name);
+        }
+      }
+    },
+    Remove: {
+      separator_before: false,
+      separator_after: false,
+      label: "삭제",
+      action: function(obj) {
+        if (confirm("분류를 삭제합니다.")) {
+          tree.delete_node($node);
+        } else {
+          return false;
+        }
+      }
+    }
+  };
+
+  return items;
+}
+
+function createJSTree(jsondata) {
+  $("#jsTree").jstree({
+    core: {
+      check_callback: true,
+      data: jsondata,
+      themes: { stripes: true }
+    },
+    plugins: ["contextmenu"],
+    contextmenu: {
+      items: customMenu
+    }
+  });
+}

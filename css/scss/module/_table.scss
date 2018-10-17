@@ -175,7 +175,7 @@
   }
 
   tr:hover {
-    background-color: #fafafa;
+    background-color: #f2f4f7;
   }
 
   a {
@@ -237,6 +237,10 @@
 }
 
 // + + + +
+
+.status-text {
+  @include flex-shrink(0);
+}
 
 .table-status {
   table-layout: fixed;

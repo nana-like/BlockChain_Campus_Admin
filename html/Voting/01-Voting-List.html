@@ -96,19 +96,19 @@
                 <div class="form-container">
 
                   <div class="flex-line">
-                    <div class="input-container">
+                    <div class="input-container type-col">
                       <strong class="title">투표명</strong>
                       <input type="text" class="input-text" />
                     </div>
-                    <div class="input-container">
+                    <div class="input-container type-col">
                       <strong class="title">투표대상</strong>
                       <input type="text" class="input-text" />
                     </div>
-                    <div class="input-container input-sm">
+                    <div class="input-container type-col input-sm">
                       <strong class="title">시작일시</strong>
                       <input type="text" id="datepicker-startDate" name="datepicker" class="input-datepicker" id="datepicker-startDate" />
                     </div>
-                    <div class="input-container input-sm">
+                    <div class="input-container type-col input-sm">
                       <strong class="title">종료일시</strong>
                       <input type="text" id="datepicker-endDate" name="datepicker" class="input-datepicker" id="datepicker-endDate" />
                     </div>
@@ -136,7 +136,7 @@
 
                   <div class="right">
                     <div class="table-button-container">
-                      <div class="checkbox-container checkbox-type-a">
+                      <div class="checkbox-block checkbox-type-a">
                         <input type="checkbox" id="checkbox-include-finishedVote" />
                         <label for="checkbox-include-finishedVote">종료된 투표 포함</label>
                       </div>
@@ -356,7 +356,7 @@
                   -->
                     <div class="dropdown dropdown-paging reverse active">
                       <p class="label">행 표시</p>
-                      <input class="text-value" readonly value="15">
+                      <div class="text">15</div>
                       <div class="combobox">
                         <button class="combobox-item">15</button>
                         <button class="combobox-item">30</button>
@@ -379,11 +379,12 @@
           <!-- //end of .scroll-area -->
 
         </div>
-        <!-- //end of #main -->
-
       </div>
-      <!-- //end of #content -->
+      <!-- //end of #main -->
+
     </div>
+    <!-- //end of #content -->
+  </div>
 </body>
 
 </html>

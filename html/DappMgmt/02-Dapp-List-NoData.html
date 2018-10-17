@@ -84,22 +84,18 @@
 
               <div class="search-container search-dapp">
                 <div class="form-container">
-                  <div class="input-container">
+                  <div class="input-container type-col">
                     <strong class="title">DApp 이름</strong>
                     <input type="text" class="input-text" value="DApp Name" />
                   </div>
-                  <div class="input-container">
+                  <div class="input-container type-col">
                     <strong class="title">제작자</strong>
                     <input type="text" class="input-text" />
                   </div>
                 </div>
                 <div class="button-container">
-                  <!-- 
-                    [전달사항] 
-                    버튼 비활성화 시에는 disabled 속성을 넣어주세요.
-                  -->
-                  <button class="button-type-c">초기화</button>
-                  <button class="button-type-b" disabled>검색</button>
+                  <button class="button-type-c" disabled>초기화</button>
+                  <button class="button-type-b">검색</button>
                 </div>
               </div>
 
@@ -192,7 +188,7 @@
                   <div class="table-paging-container">
                     <div class="dropdown dropdown-paging reverse">
                       <p class="label">행 표시</p>
-                      <input class="text-value" readonly value="15">
+                      <div class="text">15</div>
                       <div class="combobox">
                         <button class="combobox-item">15</button>
                         <button class="combobox-item">30</button>

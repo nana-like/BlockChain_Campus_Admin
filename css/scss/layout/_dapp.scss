@@ -3,7 +3,7 @@
 .details-top {
   //타이틀 및 수정 버튼 영역
   // @include flexbox;
-  margin-top: 40px;
+  // margin-top: 40px;
   padding-bottom: 32px;
   border-bottom: 1px solid #f2f4f7;
 
@@ -157,7 +157,7 @@
 // - - - - - - - - - - -
 
 .dapp-details {
-  padding-top: 43px;
+  padding-top: 43px !important;
 
   .details-body {
     padding-left: 52px;
@@ -200,6 +200,9 @@
     padding-top: 28px;
   }
 
+  .title {
+    margin-bottom: 16px !important;
+  }
   .input-container {
     @include flex-shrink(0);
     margin-right: 40px;
@@ -223,5 +226,6 @@
 }
 
 .dapp-register {
+  // padding-top: 0;
   padding-bottom: 20px;
 }

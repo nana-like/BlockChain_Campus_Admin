@@ -19,7 +19,8 @@
   border-radius: 2px;
   border: 1px solid transparent;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #11adca;
   }
 
@@ -36,7 +37,8 @@
   border-color: #c6cbd4;
   background-color: #fff;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #f2f4f7;
     border-color: #c6cbd4;
   }
@@ -53,7 +55,8 @@
   color: #333;
   background-color: #f2f4f7;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #d8e0e7;
   }
 
@@ -75,7 +78,8 @@
   border: solid 1px #c6cbd4;
   background-color: #ffffff;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #f2f4f7;
   }
 

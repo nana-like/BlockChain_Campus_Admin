@@ -50,14 +50,14 @@
 .no-tree-view {
   //트리뷰가 없다면
   #lnb {
-    padding: 0 125px !important;
+    // padding: 0 125px !important;
   }
   .lnb-container {
     // width: $maxWidth-noTreeView;
   }
 
   .main-container {
-    // padding: 0 125px;
+    padding: 0 125px;
   }
   .main-container .scroll-area {
     // width: $maxWidth-noTreeView;

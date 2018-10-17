@@ -1,31 +1,21 @@
-# ICONEST
+# BlockChain Campus Admin Web
+
+## 1 차 버전
 
 **nykim@nykim.net**
 
-_Last Modified: 2018-10-05_
+_Last Modified: 2018-10-17_
 
 ## Tree Structure
 
 - images/
 - html/
+  - Login/
+  - DappMgmt/
+  - Voting/
+  - Modal/
 - fonts/
 - css/
-  - scss-helpers/
-    - \_mixins.scss
-    - \_variables.scss
-  - scss/
-    - base/
-      - \_common.scss
-      - \_reset.scss
-      - \_font.scss
-      - base.scss
-    - nykim/
-      - nykim.scss
-    - zpark/
-      - zpark.scss
-  - base.css
-  - nykim.css
-  - zpark.css
 - index.html
 - README.md
 
@@ -34,13 +24,14 @@ _Last Modified: 2018-10-05_
 ## Markup Guide
 
 - 전체를 #wrap 이라는 div 로 감쌉니다.
+  - 만약 트리뷰가 없는 페이지라면 .no-tree-view 클래스를 갖습니다.
 - #wrap 은 대부분의 화면에서 #gnb + #content 로 이루어집니다.
   - #gnb: 왼쪽에 상시 고정된 영역
   - #content: 오른쪽 콘텐츠 영역
 - #content 는 대부분의 화면에서 #lnb + #main 으로 이루어집니다.
   - #lnb: 상단에 고정된 영역
   - #main: lnb 아래에 실질적 정보가 나오는 영역
-- #mian 은 대부분의 화면에서 .main-container > .main-top + .main-body 로 이루어집니다.
+- #mian 은 실질적 정보 영역입니다. 테이블 뷰일 경우 .main-table 클래스를 갖습니다. 대부분의 화면에서 .main-container > .scroll-area > .main-top + .main-body 로 이루어집니다.
 
   - .main-top: 검색 영역 등
   - .main-body: 테이블 영역 등
@@ -60,7 +51,6 @@ _Last Modified: 2018-10-05_
 ## Class Name Guide
 
 - suffix 와 스타일 네임은 하이픈(-)로 연결합니다. (예. button-blue)
-- 선택자 대신 가능한 클래스 네임으로 셀렉팅합니다.
 - 활성화 된 모습을 표시하기 위한 경우 active 라는 클래스 네임을 사용합니다.
   > ex)
   > &lt;div class="div">그냥 디브&lt;/div>
@@ -73,13 +63,7 @@ _Last Modified: 2018-10-05_
 ### 1.fonts
 
 - 기본 폰트는 'Noto Sans'를 사용하며, /\_font.scss 에서 정의합니다.
-  - normal
-  - bold
 
 ### 2.crowss browse
 
-- 크롬 / 모던 브라우저 기준으로 작업합니다.
-
----
-
-http://flaviusmatis.github.io/simplePagination.js/
+- 크롬 / 모던 브라우저 기준(IE Edge)으로 작업합니다.

@@ -4,20 +4,31 @@
 
 .search-container {
   @include flexbox;
+  @include align-items(flex-end);
   width: 100%;
   padding-bottom: 30px;
   border-bottom: 1px solid #f2f4f7;
 
   .form-container {
     @include flexbox;
+    @include flex-wrap(wrap);
     @include flex-grow(1);
+    margin-right: 30px;
+
     .flex-line {
       width: 100%;
+      margin-top: 22px;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 
-  .input-container {
-    margin-right: 40px;
+  .spacer {
+    width: 1px;
+    height: 20px;
+    background-color: #c6cbd4;
   }
 
   .button-container {
@@ -36,21 +47,24 @@
 // 개별 스타일링
 
 .search-container {
+  // ------------
+  // DAPP
+  // ------------
   &.search-dapp {
-    //디앱 검색
     .input-container {
       width: 32%;
     }
   }
+  // ------------
+  // VOTING APP
+  // ------------
   &.search-voting {
-    .flex-line {
-      width: 100%;
-    }
     .input-container {
-      width: 35%;
+      width: 34%;
     }
     .input-container.input-sm {
-      width: 15%;
+      width: 16%;
+      max-width: 200px;
     }
   }
   &.search-votingApp {
@@ -62,4 +76,125 @@
       min-width: 64px;
     }
   }
+  // ------------
+  // 계정 관리 및 역할 관리
+  // ------------
+  &.search-account,
+  &.search-permission-1 {
+    outline: 2px dotted gold;
+    .input-container {
+      width: 37%;
+    }
+    .input-container:last-child {
+      width: 26%;
+    }
+  }
+  // ------------
+  // 기능 관리
+  // ------------
+  &.search-permission-2 {
+    .input-container {
+      width: 100%;
+    }
+    .flex-line:first-child {
+      .input-container {
+        width: 45%;
+      }
+    }
+  }
+  // ------------
+  // 잡 스케줄 관리
+  // ------------
+  &.search-job {
+    .flex-line:last-child {
+      .input-container {
+        width: auto;
+        margin-right: 0;
+      }
+      .spacer {
+        // margin: 0 5%;
+        margin: 0 30px;
+      }
+    }
+  }
+  // ------------
+  // 코드 관리
+  // ------------
+  &.search-code {
+    .input-container {
+      width: 50%;
+    }
+  }
+  // ------------
+  // 감사 로그
+  // ------------
+  &.search-log-1 {
+    .form-container {
+      margin-right: 10px;
+    }
+    .input-container {
+      width: 28%;
+      margin-right: 15px;
+    }
+    .input-container-dd {
+      // width: 12%;
+      width: auto;
+      // margin-right: 30px;
+    }
+    .flex-line:last-child {
+      .input-container {
+        width: 45%;
+      }
+    }
+  }
+  // ------------
+  // 사용자 접속 로그
+  // ------------
+  &.search-log-2,
+  &.search-log-3 {
+    .form-container {
+      margin-right: 10px;
+    }
+    .input-container {
+      width: 30%;
+      margin-right: 15px;
+    }
+    .input-container-dd {
+      width: auto;
+      min-width: 150px;
+    }
+    .dropdown .text-value {
+      width: 106px;
+    }
+    .flex-line:first-child .input-container:last-child {
+      width: 25%;
+    }
+    .flex-line:last-child .input-container {
+      width: 100%;
+    }
+  }
+  // ------------
+  // 권한 관리 로그
+  // ------------
+  // &.search-log-4 {
+  //   .input-container {
+  //     width: 20%;
+  //     // margin-right: 15px;
+  //   }
+  //   .input-container-dd {
+  //     width: auto;
+  //     min-width: 200px;
+  //   }
+  //   .dropdown {
+  //     margin-right: 10px;
+
+  //     .text-value {
+  //       width: 150px;
+  //     }
+
+  //     & + .input-text {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
 }

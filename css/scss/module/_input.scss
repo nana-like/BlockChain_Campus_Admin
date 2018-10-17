@@ -4,24 +4,44 @@
 
 .input-container {
   position: relative;
+  margin-right: 20px;
   width: 320px;
 
   &.input-sm {
     width: 140px;
   }
 
+  &.input-full {
+    width: 100%;
+  }
+
   .title {
     display: block;
-    margin-bottom: 19px;
     font-size: 13px;
     font-weight: $fw-m;
     margin-right: 14px;
     color: #333;
   }
+}
 
-  &.full {
-    //full 클래스 달고 있을 때
-    width: 100%;
+.input-container.type-col {
+  //타이틀과 인풋이 따로 있는 두 줄 타입일 때
+
+  .title {
+    margin-bottom: 19px;
+  }
+}
+
+.input-container.type-row {
+  //타이틀과 인풋이 함께 있는 한 줄 타입일 때
+  @include flexbox;
+  @include align-items(center);
+  .input-text {
+    height: 32px !important;
+  }
+  .title {
+    font-size: 14px;
+    @include flex-shrink(0);
   }
 }
 
@@ -43,6 +63,25 @@
   &[readonly] {
     border-color: transparent;
   }
+
+  &[disabled] {
+    color: #9daab9;
+    border-color: #f2f4f7;
+    background-color: #f2f4f7;
+  }
+}
+
+.input-button {
+  // top: 0;
+  // right: 0;
+  // position: absolute;
+  display: block;
+  margin-left: -2px;
+  padding: 0 20px;
+  color: #4d4d4d;
+  font-size: 14px;
+  // border-left: none;
+  // border-left: 1px solid #c6cbd4;
 }
 
 .textarea-basic {
@@ -119,7 +158,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  outline: 2px solid red;
+  // outline: 2px solid red;
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -148,6 +187,14 @@
 // .checkbox-container
 // - - - -
 .checkbox-container {
+  @include flexbox;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.checkbox-block {
   // > checkbox-type-a
   &.checkbox-type-a {
     input[type="checkbox"] {
@@ -156,6 +203,7 @@
       top: -999px;
       width: 0;
       height: 0;
+      visibility: hidden;
 
       &:checked + label {
         &:before {
@@ -172,9 +220,10 @@
       color: #333333;
       height: 32px;
       line-height: 32px;
-      padding: 0 10px 0 30px;
+      padding: 0 0px 0 30px;
+      margin-right: 10px;
       border-radius: 2px;
-      background-color: #f2f4f7;
+      // background-color: #f2f4f7;
 
       &:before {
         position: absolute;
@@ -189,20 +238,67 @@
       }
     }
   }
+
+  // > checkbox-type-b
+  // &.checkbox-type-b {
+  //   input[type="checkbox"] {
+  //     overflow: hidden;
+  //     position: absolute;
+  //     top: -999px;
+  //     width: 0;
+  //     height: 0;
+  //     visibility: hidden;
+
+  //     &:checked + label {
+  //       &:before {
+  //         background-image: icon(icon-checkbox-active, "#C6CBD4");
+  //       }
+  //     }
+  //   }
+
+  //   label {
+  //     position: relative;
+  //     display: block;
+  //     font-size: 14px;
+  //     font-weight: $fw-m;
+  //     color: #333333;
+  //     height: 32px;
+  //     line-height: 32px;
+  //     padding: 0 10px 0 30px;
+  //     border-radius: 2px;
+  //     background-color: #f2f4f7;
+
+  //     &:before {
+  //       position: absolute;
+  //       top: 6px;
+  //       left: 6px;
+  //       display: block;
+  //       width: 20px;
+  //       height: 20px;
+  //       content: "";
+  //       background-image: icon(icon-checkbox, "#C6CBD4");
+  //       background-repeat: none;
+  //     }
+  //   }
+  // }
 }
 
 // - - - -
-// .checkbox-container
+// .radio-container
 // - - - -
 .radio-container {
   @include flexbox;
 
-  .radio-type-a {
+  .radio-block {
     margin-left: 20px;
 
-    // &:first-child {
-    //   margin-left: 0;
-    // }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  label {
+    cursor: pointer;
   }
 }
 
@@ -216,9 +312,14 @@
     top: -999px;
     width: 0;
     height: 0;
+    visibility: hidden;
 
     &:checked + label:before {
       background-image: icon(icon-radio-active, #000);
+    }
+
+    &:disabled + label {
+      color: #999;
     }
   }
 

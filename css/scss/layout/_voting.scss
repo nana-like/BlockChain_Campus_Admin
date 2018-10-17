@@ -3,10 +3,13 @@
 // - - - - - - - - - - -
 // .voting-list
 // - - - - - - - - - - -
-
-.search-voting {
-  .input-container {
-    margin-right: 20px;
+.voting-list {
+  .checkbox-block {
+    label {
+      margin-right: 0;
+      padding-right: 10px;
+      background-color: #f2f4f7;
+    }
   }
 }
 
@@ -15,7 +18,7 @@
 // - - - - - - - - - - -
 
 .voting-details {
-  padding-top: 47px;
+  padding-top: 47px !important;
   // width: $maxWidth;
 
   .details-top {
@@ -25,6 +28,15 @@
   .details-info {
     padding-top: 18px;
     padding-bottom: 18px;
+    @include flex-wrap(wrap);
+
+    .flex-line {
+      width: 100%;
+    }
+
+    .radio-block {
+      margin-left: 15px;
+    }
   }
 
   .details-body {

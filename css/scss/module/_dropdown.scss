@@ -188,6 +188,23 @@
     border: 1px solid #c6cbd4;
     background-color: #fff;
   }
+
+  .text {
+    cursor: pointer;
+    width: auto;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 30px;
+    padding-left: 12px;
+    padding-right: 26px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333333;
+    border: 1px solid #c6cbd4;
+    background-color: #fff;
+  }
   .combobox {
     left: initial;
     right: 0;
@@ -217,6 +234,15 @@
     background-size: 100%;
     background-image: icon(select, #a8b6c8);
   }
+  .icon-select-2 {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+    background-image: icon(arrow-down, #333);
+  }
 
   input {
     cursor: pointer;
@@ -226,6 +252,21 @@
     margin-top: 10px;
   }
 
+  .text-value {
+    cursor: pointer;
+    width: 78px;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 26px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333333;
+    border: 1px solid #c6cbd4;
+    background-color: #fff;
+  }
+
   .combobox-item {
     height: 30px;
     line-height: 30px;
@@ -233,9 +274,36 @@
     font-size: 14px;
     text-align: center;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #f2f4f7;
     }
+  }
+}
+
+.dropdown-search {
+  .text {
+    cursor: pointer;
+    // width: 78px;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 30px;
+    padding-left: 12px;
+    padding-right: 26px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333333;
+    border: 1px solid #c6cbd4;
+    background-color: #fff;
+    background-size: 22px 22px;
+    background-image: icon(arrow-down, #333);
+    background-repeat: no-repeat;
+    background-position: right 6px top 50%;
+  }
+  .combobox-item {
+    text-align: center;
   }
 }
 
