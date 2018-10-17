@@ -2,7 +2,7 @@
 
 - **Web Published: nykim@nykim.net**
 - **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17)**
-- _Last Modified: 2018-10-12_
+- _Last Modified: 2018-10-17_
 
 ## Tree Structure
 
