@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="../../css/style.css">
 
-  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
 
   <script src="../../js/library/jquery.min.js"></script>
   <script src="../../js/library-all.js"></script>
@@ -115,39 +115,81 @@
             <div class="main-top">
 
               <div class="search-container search-job">
+
                 <div class="form-container">
+
                   <div class="flex-line">
-                    <div class="input-container full">
+
+                    <div class="input-container type-row input-full">
                       <strong class="title">스케줄명</strong>
                       <input type="text" class="input-text" />
                     </div>
+
                   </div>
+
                   <div class="flex-line">
-                    <div class="radio-container">
+
+
+                    <div class="input-container type-row">
                       <strong class="title">상태</strong>
-                      <div class="radio-type-a">
-                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date">
-                        <label for="radio-endCondition-date">일시</label>
-                      </div>
-                      <div class="radio-type-a">
-                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date">
-                        <label for="radio-endCondition-date">운영</label>
-                      </div>
-                      <div class="radio-type-a">
-                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date" checked>
-                        <label for="radio-endCondition-date">미운영</label>
+                      <div class="radio-container type-row">
+                        <div class="radio-block radio-type-a">
+                          <input type="radio" name="radio-job-status" id="radio-job-status-all" />
+                          <label for="radio-job-status-all">전체</label>
+                        </div>
+                        <div class="radio-block radio-type-a">
+                          <input type="radio" name="radio-job-status" id="radio-job-status-run" />
+                          <label for="radio-job-status-run">운영</label>
+                        </div>
+                        <div class="radio-block radio-type-a">
+                          <input type="radio" name="radio-job-status" id="radio-job-status-stop" />
+                          <label for="radio-job-status-stop">미운영</label>
+                        </div>
                       </div>
                     </div>
+
+                    <div class="spacer"></div>
+
+                    <div class="input-container type-row">
+                      <strong class="title">스케줄 유형</strong>
+                      <div class="checkbox-container type-row">
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-all" />
+                          <label for="cb-job-type-all">전체</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-time" />
+                          <label for="cb-job-type-time">시간</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-day" />
+                          <label for="cb-job-type-day">일간</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-week" />
+                          <label for="cb-job-type-week">주간</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-month" />
+                          <label for="cb-job-type-month">월간</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-job-type-custom" />
+                          <label for="cb-job-type-custom">사용자 정의</label>
+                        </div>
+                      </div>
+                    </div>
+
+
                   </div>
+
                 </div>
+
                 <div class="button-container">
-                  <!-- 
-                  [전달사항] 
-                  버튼 비활성화 시에는 disabled 속성을 넣어주세요.
-                -->
                   <button class="button-type-c" disabled>초기화</button>
                   <button class="button-type-b">검색</button>
                 </div>
+
               </div>
 
             </div>
@@ -166,6 +208,10 @@
 
                   <div class="right">
                     <div class="table-button-container">
+                      <div class="scheduler-info">
+                        스케줄러 상태: <span class="status">Running</span>
+                        <button class="scheduler-realod">reload</button>
+                      </div>
                       <button class="button-type-a">신규등록</button>
                     </div>
                   </div>
@@ -174,27 +220,23 @@
 
                 <div class="table-titleArea">
                   <table class="table-header">
-                    <!-- 8개 -->
+                    <!-- 6개 -->
                     <colgroup>
                       <col width="8%" />
+                      <col width="8%" />
+                      <col width="10%" />
                       <col width="10%" />
                       <col width="30%" />
-                      <col width="14%" />
-                      <col width="14%" />
-                      <col width="8%" />
-                      <col width="7%" />
-                      <col width="9%" />
+                      <col width="18%" />
                     </colgroup>
                     <thead>
                       <tr>
+                        <th>체크박스</th>
                         <th>번호</th>
-                        <th>DApp 이름</th>
-                        <th>간단한 설명</th>
-                        <th>제작자</th>
-                        <th>작성일시</th>
-                        <th>검수정보</th>
-                        <th>조회수</th>
-                        <th>즐겨찾기</th>
+                        <th>분류</th>
+                        <th>스케줄명</th>
+                        <th>스케줄 유형</th>
+                        <th>상태</th>
                       </tr>
                     </thead>
                   </table>
@@ -205,44 +247,36 @@
                   <table class="table-basic">
                     <colgroup>
                       <col width="8%" />
+                      <col width="8%" />
+                      <col width="10%" />
                       <col width="10%" />
                       <col width="30%" />
-                      <col width="14%" />
-                      <col width="14%" />
-                      <col width="8%" />
-                      <col width="7%" />
-                      <col width="9%" />
+                      <col width="18%" />
                     </colgroup>
                     <tbody>
                       <tr>
+                        <td>체크</td>
                         <td>150</td>
-                        <td><a href="#">DApp Name 001</a></td>
-                        <td>Aute esse mollit voluptate eiusmod do nisi amet duis aliquip adipisicing.</td>
-                        <td>제작자이름제작자이름</td>
-                        <td>2018-06-01 09:00</td>
-                        <td><span class="review-done">검수 완료</span></td>
-                        <td>80</td>
-                        <td>40</td>
+                        <td>RDB 백업</td>
+                        <td><a href="#">학생정보 백업</a></td>
+                        <td>시간</td>
+                        <td>운영(Normal)</td>
                       </tr>
                       <tr>
-                        <td>149</td>
-                        <td><a href="#">DApp Name 002</a></td>
-                        <td>Aute esse mollit voluptate eiusmod do nisi amet duis aliquip adipisicing.</td>
-                        <td>제작자이름</td>
-                        <td>2018-06-01 09:00</td>
-                        <td><span class="review-rejected">반려</span></td>
-                        <td>21</td>
-                        <td>2</td>
+                        <td>체크</td>
+                        <td>150</td>
+                        <td>RDB 백업</td>
+                        <td><a href="#">학생정보 백업</a></td>
+                        <td>시간</td>
+                        <td>운영(Normal)</td>
                       </tr>
                       <tr>
-                        <td>148</td>
-                        <td><a href="#">DApp Name 003</a></td>
-                        <td>Culpa pariatur enim cillum ad ipsum deserunt.</td>
-                        <td>제작자이름</td>
-                        <td>2018-06-01 19:00</td>
-                        <td><span class="review-onging">검수 중</span></td>
-                        <td>110</td>
-                        <td>18</td>
+                        <td>체크</td>
+                        <td>150</td>
+                        <td>RDB 백업</td>
+                        <td><a href="#">학생정보 백업</a></td>
+                        <td>시간</td>
+                        <td>운영(Normal)</td>
                       </tr>
                     </tbody>
 
@@ -261,14 +295,12 @@
                 <!-- //end of .table-viewArea -->
 
                 <div class="table-bottom">
-                  <div class="table-utils"></div>
+                  <div class="table-utils">
+                    <p class="selected-number">(0)</p>
+                    <div class="button-type-a">선택삭제</div>
+                  </div>
                   <div id="table-pagination"></div>
                   <div class="table-paging-container">
-
-                    <!-- 
-                    [전달사항] 
-                    dropdown에 active 클래스를 추가하면 콤보박스가 화면에 보입니다.
-                  -->
                     <div class="dropdown dropdown-paging reverse active">
                       <p class="label">행 표시</p>
                       <div class="text">15</div>
@@ -295,8 +327,9 @@
         <!-- //end of #main -->
 
       </div>
-      <!-- //end of #content -->
     </div>
+    <!-- //end of #content -->
+  </div>
 </body>
 
 </html>
