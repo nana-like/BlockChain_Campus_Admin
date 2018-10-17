@@ -52,16 +52,5 @@
 - 활성화 된 모습을 표시하기 위한 경우 active 라는 클래스 네임을 사용합니다.
   > ex)
   > &lt;div class="div">그냥 디브&lt;/div>
+  
   > &lt;div class="div active">활성화된 디브&lt;/div>
-
----
-
-## CSS Guide
-
-### 1.fonts
-
-- 기본 폰트는 'Noto Sans'를 사용하며, /\_font.scss 에서 정의합니다.
-
-### 2.crowss browse
-
-- 크롬 / 모던 브라우저 기준(IE Edge)으로 작업합니다.
