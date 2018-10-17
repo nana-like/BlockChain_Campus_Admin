@@ -46,7 +46,7 @@
       height: 22px;
       background-repeat: no-repeat;
       background-size: 100%;
-      background-image: icon(gnb-arrow-down, #fff);
+      background-image: icon(gnb-arrow-down, "%23fff");
       transition: transform 0.25s;
     }
     &.opened {

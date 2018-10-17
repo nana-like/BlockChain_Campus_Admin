@@ -26,7 +26,7 @@
       content: "";
       width: 20px;
       height: 20px;
-      background-image: icon(dropdown-arrow, #fff);
+      background-image: icon(dropdown-arrow, "%23fff");
       background-position: 50% 50%;
       background-repeat: no-repeat;
     }
@@ -120,7 +120,7 @@
     color: #17365b;
 
     &:after {
-      background-image: icon(dropdown-arrow, #17365b);
+      background-image: icon(dropdown-arrow, "%2317365b");
     }
   }
 
@@ -158,7 +158,7 @@
     right: 4px;
     width: 24px;
     height: 24px;
-    background-image: icon(dropdown-list, #333);
+    background-image: icon(dropdown-list, "%23333");
     background-size: 24px 24px;
     @include transform(translateY(-50%));
     content: "";
@@ -232,7 +232,7 @@
     width: 34px;
     height: 34px;
     background-size: 100%;
-    background-image: icon(select, #a8b6c8);
+    background-image: icon(select, "%23a8b6c8");
   }
   .icon-select-2 {
     position: absolute;
@@ -241,7 +241,7 @@
     width: 24px;
     height: 24px;
     background-size: 100%;
-    background-image: icon(arrow-down, #333);
+    background-image: icon(arrow-down, "%23333");
   }
 
   input {
@@ -298,7 +298,7 @@
     border: 1px solid #c6cbd4;
     background-color: #fff;
     background-size: 22px 22px;
-    background-image: icon(arrow-down, #333);
+    background-image: icon(arrow-down, "%23333");
     background-repeat: no-repeat;
     background-position: right 6px top 50%;
   }

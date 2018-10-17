@@ -144,10 +144,10 @@
 }
 
 .daterangepicker .calendar-table .prev {
-  background-image: icon(arrow-left, #5c5c5c);
+  background-image: icon(arrow-left, "%235c5c5c");
 }
 .daterangepicker .calendar-table .next {
-  background-image: icon(arrow-right, #5c5c5c);
+  background-image: icon(arrow-right, "%235c5c5c");
 }
 
 .daterangepicker .calendar-table .next span {
@@ -287,7 +287,7 @@
   appearance: none;
   padding: 6px 40px 6px 12px;
   // background: #fff url(../../images/icon-selectbox.png) no-repeat right 9px center;
-  background-image: icon(arrow-down, #5c5c5c);
+  background-image: icon(arrow-down, "%235c5c5c");
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-size: 26px;

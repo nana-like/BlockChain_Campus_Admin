@@ -24,7 +24,7 @@
       // 드롭다운 리스트 모양
       // ----
       dropdown-list:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.656 8V6.656h2.688V8H.656zM0 0h12v1.344H0V0zm0 4.656V3.344h8v1.312H0z"/></defs><use fill="#{$color}" fill-rule="evenodd" transform="translate(6 8)" xlink:href="#a"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.656 8V6.656h2.688V8H.656zM0 0h12v1.344H0V0zm0 4.656V3.344h8v1.312H0z"/></defs><use fill="%23{$color}" fill-rule="evenodd" transform="translate(6 8)" xlink:href="%23a"/></svg>',
     // ----
       //셀렉트 화살표
       // ----
@@ -39,27 +39,27 @@
       // 왼쪽 작은 화살표 (페이지네이션 사용)
       // ----
       arrow-left:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.938 0l4 4-4 4L0 7.062 3.063 4 0 .937z"/></defs><use fill="#{$color}" fill-rule="evenodd" transform="matrix(-1 0 0 1 13.938 8)" xlink:href="#a"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.938 0l4 4-4 4L0 7.062 3.063 4 0 .937z"/></defs><use fill="#{$color}" fill-rule="evenodd" transform="matrix(-1 0 0 1 13.938 8)" xlink:href="%23a"/></svg>',
     // ----
       // 오른쪽 작은 화살표
       // ----
       arrow-right:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.938 0l4 4-4 4L0 7.062 3.063 4 0 .937z"/></defs><use fill="#{$color}" fill-rule="evenodd" transform="translate(11.063 8)" xlink:href="#a"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M.938 0l4 4-4 4L0 7.062 3.063 4 0 .937z"/></defs><use fill="#{$color}" fill-rule="evenodd" transform="translate(11.063 8)" xlink:href="%23a"/></svg>',
     //----
       // 아래로 작은 화살표
       //----
       arrow-down:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M7.063 0L8 .938l-4 4-4-4L.938 0 4 3.063z"/></defs><use fill="#{$color}" fill-rule="evenodd" opacity=".8" transform="translate(8 10)" xlink:href="#a"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M7.063 0L8 .938l-4 4-4-4L.938 0 4 3.063z"/></defs><use fill="#{$color}" fill-rule="evenodd" opacity=".8" transform="translate(8 10)" xlink:href="%23a"/></svg>',
     //----
       // 위로 작은 화살표
       //----
       arrow-up:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M7.063 0L8 .938l-4 4-4-4L.938 0 4 3.063z"/></defs><use fill="#{$color}" fill-rule="evenodd" opacity=".8" transform="matrix(1 0 0 -1 8 14)" xlink:href="#a"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><path id="a" d="M7.063 0L8 .938l-4 4-4-4L.938 0 4 3.063z"/></defs><use fill="#{$color}" fill-rule="evenodd" opacity=".8" transform="matrix(1 0 0 -1 8 14)" xlink:href="%23a"/></svg>',
     // ----
       // 뒤로가기 버튼
       // ----
       button-back:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><path id="a" d="M15.016 7h1.968v14.156l3.61-3.562L22 19l-6 6-6-6 1.406-1.406 3.61 3.562z"/></defs><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 32 0)"><rect width="31" height="31" x=".5" y=".5" fill="#{$color}" stroke="#000" rx="2"/><use fill="#000" transform="matrix(0 1 1 0 0 0)" xlink:href="#a"/></g></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><path id="a" d="M15.016 7h1.968v14.156l3.61-3.562L22 19l-6 6-6-6 1.406-1.406 3.61 3.562z"/></defs><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 32 0)"><rect width="31" height="31" x=".5" y=".5" fill="#{$color}" stroke="%23000" rx="2"/><use fill="%23000" transform="matrix(0 1 1 0 0 0)" xlink:href="%23a"/></g></svg>',
     // ----
       // 이미지 첨부 아이콘
       // ----
@@ -69,27 +69,27 @@
       // 체크박스 (기본)
       // ----
       icon-checkbox:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="13" height="13" x=".5" y=".5" fill="#FFF" fill-rule="evenodd" stroke="#{$color}" rx="2" transform="matrix(-1 0 0 1 17 3)"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="13" height="13" x=".5" y=".5" fill="%23FFF" fill-rule="evenodd" stroke="#{$color}" rx="2" transform="matrix(-1 0 0 1 17 3)"/></svg>',
     // ----
       // 체크박스 (활성화)
       // ----
       icon-checkbox-active:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 17 3)"><rect width="13" height="13" x=".5" y=".5" fill="#FFF" stroke="#{$color}" rx="2"/><path fill="#333" d="M11 4l-2.974 6.349c-.198.434-.539.651-1.021.651-.483 0-.826-.217-1.03-.651L3 4h1.447l2.39 5.095a.172.172 0 0 0 .168.108c.08 0 .135-.036.169-.108L9.563 4H11z"/></g></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 17 3)"><rect width="13" height="13" x=".5" y=".5" fill="%23FFF" stroke="#{$color}" rx="2"/><path fill="%23333" d="M11 4l-2.974 6.349c-.198.434-.539.651-1.021.651-.483 0-.826-.217-1.03-.651L3 4h1.447l2.39 5.095a.172.172 0 0 0 .168.108c.08 0 .135-.036.169-.108L9.563 4H11z"/></g></svg>',
     // ----
       // 사람 아이콘
       // ----
       icon-people:
-      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="14"><defs><path id="a" d="M0 .07h7.98V5H0z"/><path id="c" d="M4.091-.303a2.21 2.21 0 0 0 1.621-.673c.448-.447.672-.988.672-1.62a2.21 2.21 0 0 0-.672-1.622 2.21 2.21 0 0 0-1.62-.672 2.21 2.21 0 0 0-1.622.672 2.21 2.21 0 0 0-.672 1.621c0 .633.224 1.174.672 1.621a2.21 2.21 0 0 0 1.621.673"/></defs><g fill="none" fill-rule="evenodd" transform="translate(2 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#6E6E6E" d="M7.96 2.852a6.28 6.28 0 0 0-.23-1.289 3.103 3.103 0 0 0-.243-.577 2.076 2.076 0 0 0-.351-.48A1.474 1.474 0 0 0 6.65.189 1.64 1.64 0 0 0 6.019.07c-.034 0-.113.043-.238.127-.125.086-.265.18-.422.285a2.62 2.62 0 0 1-.612.284 2.351 2.351 0 0 1-.757.128 2.35 2.35 0 0 1-.757-.128 2.604 2.604 0 0 1-.612-.284C2.464.378 2.324.282 2.2.197 2.074.113 1.995.07 1.961.07c-.23 0-.441.04-.632.119a1.47 1.47 0 0 0-.485.317 2.035 2.035 0 0 0-.35.48c-.103.187-.184.38-.245.577a6.28 6.28 0 0 0-.23 1.289c-.013.2-.019.404-.019.614 0 .473.138.848.414 1.122.276.275.642.412 1.1.412h4.953c.457 0 .823-.137 1.1-.412.275-.274.413-.649.413-1.122 0-.21-.007-.414-.02-.614" mask="url(#b)"/><use fill="#6E6E6E" xlink:href="#c"/></g></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="14"><defs><path id="a" d="M0 .07h7.98V5H0z"/><path id="c" d="M4.091-.303a2.21 2.21 0 0 0 1.621-.673c.448-.447.672-.988.672-1.62a2.21 2.21 0 0 0-.672-1.622 2.21 2.21 0 0 0-1.62-.672 2.21 2.21 0 0 0-1.622.672 2.21 2.21 0 0 0-.672 1.621c0 .633.224 1.174.672 1.621a2.21 2.21 0 0 0 1.621.673"/></defs><g fill="none" fill-rule="evenodd" transform="translate(2 7)"><mask id="b" fill="%23fff"><use xlink:href="%23a"/></mask><path fill="%236E6E6E" d="M7.96 2.852a6.28 6.28 0 0 0-.23-1.289 3.103 3.103 0 0 0-.243-.577 2.076 2.076 0 0 0-.351-.48A1.474 1.474 0 0 0 6.65.189 1.64 1.64 0 0 0 6.019.07c-.034 0-.113.043-.238.127-.125.086-.265.18-.422.285a2.62 2.62 0 0 1-.612.284 2.351 2.351 0 0 1-.757.128 2.35 2.35 0 0 1-.757-.128 2.604 2.604 0 0 1-.612-.284C2.464.378 2.324.282 2.2.197 2.074.113 1.995.07 1.961.07c-.23 0-.441.04-.632.119a1.47 1.47 0 0 0-.485.317 2.035 2.035 0 0 0-.35.48c-.103.187-.184.38-.245.577a6.28 6.28 0 0 0-.23 1.289c-.013.2-.019.404-.019.614 0 .473.138.848.414 1.122.276.275.642.412 1.1.412h4.953c.457 0 .823-.137 1.1-.412.275-.274.413-.649.413-1.122 0-.21-.007-.414-.02-.614" mask="url(%23b)"/><use fill="%236E6E6E" xlink:href="%23c"/></g></svg>',
     // ----
       // 라디오 (기본)
       // ----
       icon-radio:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="7.5" cy="7.5" r="7.5" fill="#FFF" fill-rule="evenodd" stroke="#B3BECD" transform="translate(3 3)"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="7.5" cy="7.5" r="7.5" fill="%23FFF" fill-rule="evenodd" stroke="%23B3BECD" transform="translate(3 3)"/></svg>',
     // ----
       // 라디오 (활성화)
       // ----
       icon-radio-active:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd" transform="translate(3 3)"><circle cx="7.5" cy="7.5" r="7.5" fill="#FFF" stroke="#30B9D3"/><ellipse cx="7.51" cy="7.333" fill="#30B9D3" rx="2.51" ry="2.333"/></g></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd" transform="translate(3 3)"><circle cx="7.5" cy="7.5" r="7.5" fill="%23FFF" stroke="%2330B9D3"/><ellipse cx="7.51" cy="7.333" fill="%2330B9D3" rx="2.51" ry="2.333"/></g></svg>',
     // ----
       // GNB 화살표 (위)
       // ----

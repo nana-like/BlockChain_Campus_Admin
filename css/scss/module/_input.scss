@@ -108,7 +108,7 @@
 
   &[readonly] {
     border: 0;
-    min-height: auto;
+    // min-height: auto;
   }
 }
 
@@ -145,7 +145,7 @@
     width: 24px;
     height: 24px;
     margin-right: 6px;
-    background-image: icon(icon-upload, #c6cbd4);
+    background-image: icon(icon-upload, "%23c6cbd4");
     background-repeat: no-repeat;
     vertical-align: sub;
     content: "";
@@ -207,7 +207,7 @@
 
       &:checked + label {
         &:before {
-          background-image: icon(icon-checkbox-active, "#C6CBD4");
+          background-image: icon(icon-checkbox-active, "%23C6CBD4");
         }
       }
     }
@@ -233,7 +233,7 @@
         width: 20px;
         height: 20px;
         content: "";
-        background-image: icon(icon-checkbox, "#C6CBD4");
+        background-image: icon(icon-checkbox, "%23C6CBD4");
         background-repeat: none;
       }
     }
@@ -251,7 +251,7 @@
 
   //     &:checked + label {
   //       &:before {
-  //         background-image: icon(icon-checkbox-active, "#C6CBD4");
+  //         background-image: icon(icon-checkbox-active, "%23C6CBD4");
   //       }
   //     }
   //   }
@@ -276,7 +276,7 @@
   //       width: 20px;
   //       height: 20px;
   //       content: "";
-  //       background-image: icon(icon-checkbox, "#C6CBD4");
+  //       background-image: icon(icon-checkbox, "%23C6CBD4");
   //       background-repeat: none;
   //     }
   //   }
@@ -315,7 +315,7 @@
     visibility: hidden;
 
     &:checked + label:before {
-      background-image: icon(icon-radio-active, #000);
+      background-image: icon(icon-radio-active, "%23000");
     }
 
     &:disabled + label {
@@ -339,7 +339,7 @@
       width: 20px;
       height: 20px;
       content: "";
-      background-image: icon(icon-radio, #000);
+      background-image: icon(icon-radio, "%23000");
     }
   }
 }
