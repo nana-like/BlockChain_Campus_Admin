@@ -426,7 +426,7 @@ $(function() {
 });
 
 function customMenu($node) {
-  var tree = $("#SimpleJSTree").jstree(true);
+  var tree = $("#jsTree").jstree(true);
 
   var items = {
     Create: {
@@ -474,7 +474,7 @@ function customMenu($node) {
 }
 
 function createJSTree(jsondata) {
-  $("#SimpleJSTree").jstree({
+  $("#jsTree").jstree({
     core: {
       check_callback: true,
       data: jsondata,

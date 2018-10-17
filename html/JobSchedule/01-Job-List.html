@@ -99,71 +99,45 @@
 
       <div id="main" class="main-table">
 
-        <div class="test"></div>
         <div id="tree">
           <div class="tree-container">
-
-
-            <!-- <div id="jstree">
-              <ul>
-                <li><span class="tree-menu context-menu">전체</span>
-                  <ul>
-                    <li id="child_node_1">
-                      <span class="tree-menu context-menu">POSTECH</span>
-                      <ul>
-                        <li>
-                          <span class="tree-menu context-menu">분류_1</span>
-                          <ul>
-                            <li>
-                              <span class="tree-menu context-menu">분류_1_1</span>
-                              <ul>
-                                <li>
-                                  <span class="tree-menu context-menu">분류_1_1_1</span></li>
-                                <li>분류_1_1_2</li>
-                                <li>분류_1_1_3</li>
-                                <li data-jstree='{"icon":"glyphicon glyphicon-leaf"}'>특수 분류</li>
-                              </ul>
-                            </li>
-                            <li>분류_1_2
-                              <ul>
-                                <li>분류_1_2_1</li>
-                                <li>분류_1_2_2</li>
-                                <li>분류_1_2_3</li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>분류_2</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div> -->
-
-
-            <div id="SimpleJSTree">
+            <div id="jsTree">
 
             </div>
           </div>
         </div>
         <!-- //end of #tree-->
 
-        <div class="main-container dapp-list">
+        <div class="main-container job-list">
 
           <div class="scroll-area">
 
             <div class="main-top">
 
-              <div class="search-container search-dapp">
+              <div class="search-container search-job">
                 <div class="form-container">
-                  <div class="input-container">
-                    <strong class="title">DApp 이름</strong>
-                    <input type="text" class="input-text" />
+                  <div class="flex-line">
+                    <div class="input-container full">
+                      <strong class="title">스케줄명</strong>
+                      <input type="text" class="input-text" />
+                    </div>
                   </div>
-                  <div class="input-container">
-                    <strong class="title">제작자</strong>
-                    <input type="text" class="input-text" />
+                  <div class="flex-line">
+                    <div class="radio-container">
+                      <strong class="title">상태</strong>
+                      <div class="radio-type-a">
+                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date">
+                        <label for="radio-endCondition-date">일시</label>
+                      </div>
+                      <div class="radio-type-a">
+                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date">
+                        <label for="radio-endCondition-date">운영</label>
+                      </div>
+                      <div class="radio-type-a">
+                        <input type="radio" name="radio-endCondition" id="radio-endCondition-date" checked>
+                        <label for="radio-endCondition-date">미운영</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="button-container">

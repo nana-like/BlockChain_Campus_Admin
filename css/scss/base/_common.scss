@@ -50,14 +50,18 @@
 .no-tree-view {
   //트리뷰가 없다면
   #lnb {
-    padding: 0 20px !important;
+    padding: 0 125px !important;
   }
   .lnb-container {
-    width: $maxWidth-noTreeView;
+    // width: $maxWidth-noTreeView;
+  }
+
+  .main-container {
+    // padding: 0 125px;
   }
   .main-container .scroll-area {
-    width: $maxWidth-noTreeView;
-    // padding: 0 40px;
+    // width: $maxWidth-noTreeView;
+    // padding: 0 125px;
   }
 }
 
@@ -75,5 +79,5 @@
 }
 
 .scrollable {
-  overflow-y: auto;
+  overflow-y: auto !important;
 }

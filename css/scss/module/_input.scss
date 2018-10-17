@@ -18,6 +18,11 @@
     margin-right: 14px;
     color: #333;
   }
+
+  &.full {
+    //full 클래스 달고 있을 때
+    width: 100%;
+  }
 }
 
 .input-text {

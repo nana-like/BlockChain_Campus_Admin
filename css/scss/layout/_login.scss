@@ -15,9 +15,9 @@
     @include justify-content(flex-end);
     padding-right: 50px;
     width: 100%;
-    max-width: 1600px;
+    // max-width: 1600px;
     margin: 0 auto 0;
-    padding: 40px;
+    padding: 40px 125px;
 
     li {
       position: relative;

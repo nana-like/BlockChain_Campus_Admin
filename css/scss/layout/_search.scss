@@ -11,6 +11,9 @@
   .form-container {
     @include flexbox;
     @include flex-grow(1);
+    .flex-line {
+      width: 100%;
+    }
   }
 
   .input-container {
@@ -35,6 +38,20 @@
 .search-container {
   &.search-dapp {
     //디앱 검색
+    .input-container {
+      width: 32%;
+    }
+  }
+  &.search-voting {
+    .flex-line {
+      width: 100%;
+    }
+    .input-container {
+      width: 35%;
+    }
+    .input-container.input-sm {
+      width: 15%;
+    }
   }
   &.search-votingApp {
     //투표앱 검색
