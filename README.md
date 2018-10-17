@@ -1,10 +1,8 @@
-# BlockChain Campus Admin Web
+# [ BlockChain Campus ] Admin Web
 
-## 1 차 버전
-
-**nykim@nykim.net**
-
-_Last Modified: 2018-10-17_
+- **Web Published: nykim@nykim.net**
+- **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17)**
+- _Last Modified: 2018-10-12_
 
 ## Tree Structure
 
