@@ -22,6 +22,25 @@
     margin-right: 14px;
     color: #333;
   }
+
+  &.input-disable {
+    cursor: default;
+    @include pointer-none;
+    @include select-none;
+
+    .title,
+    .line-title {
+      color: #9daab9;
+    }
+
+    label {
+      color: #9daab9;
+    }
+
+    .input-text {
+      border-color: #c6cbd4;
+    }
+  }
 }
 
 .input-container.type-col {
@@ -288,8 +307,12 @@
 // - - - -
 .radio-container {
   @include flexbox;
+  @include align-items(center);
 
   .radio-block {
+    @include flexbox;
+    @include align-items(center);
+    @include flex-shrink(0);
     margin-left: 20px;
 
     &:first-child {
@@ -297,8 +320,22 @@
     }
   }
 
+  input {
+    &:checked + label + .input-text {
+      // outline: 3px solid red;
+      // color: #000;
+      // border-color: #c6cbd4;
+      // background-color: #fff;
+    }
+  }
+
   label {
     cursor: pointer;
+    @include flex-shrink(0);
+
+    & + .input-text {
+      margin-left: 8px;
+    }
   }
 }
 
@@ -319,7 +356,9 @@
     }
 
     &:disabled + label {
-      color: #999;
+      // color: #999;
+      // opacity: 0.8;
+      cursor: default;
     }
   }
 
@@ -360,5 +399,18 @@
 
   @include placeholder {
     color: #8592a2;
+  }
+}
+
+.input-container {
+  &.w-300 {
+    .input-text {
+      width: 300px !important;
+    }
+  }
+  &.w-100 {
+    .input-text {
+      width: 100px !important;
+    }
   }
 }

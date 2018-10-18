@@ -1,0 +1,330 @@
+@charset "utf-8";
+
+.details-top {
+  padding-bottom: 57px;
+
+  .button-back {
+    width: 32px;
+    height: 32px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: icon(button-back, "transparent");
+    //
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &:hover {
+      background-image: icon(button-back, "%23F2F4F7");
+    }
+  }
+
+  .details-title {
+    //상단에 있는 '학생정보 연동' 등의 최상위 타이틀
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: $fw-m;
+    color: #000;
+  }
+
+  .button-container {
+    @include flexbox;
+    @include align-items(center);
+
+    button {
+      width: 90px;
+      padding: 0;
+      margin-left: 4px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  ////
+  // 여기서부터는 .dapp-detilas 전용
+  ////
+  & > .dapp-title {
+    display: block;
+    font-size: 16px;
+    font-weight: $fw-m;
+    margin-top: -10px;
+    margin-left: 60px;
+    margin-bottom: 8px;
+  }
+  & > .flex-line {
+    @include align-items(center);
+    @include justify-content(space-between);
+  }
+
+  .title-container {
+    @include flexbox;
+    @include align-items(center);
+    position: relative;
+
+    input {
+      width: 700px;
+      height: 40px;
+      padding: 0 10px;
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: $fw-m;
+      color: #000;
+    }
+
+    .message {
+      left: 62px;
+      bottom: -22px;
+      position: absolute;
+    }
+  }
+} // ---- end of details-top
+
+.details-info {
+  //제작자, 등록일, 최종수정일 등
+  @include flexbox;
+  @include flex-wrap(wrap);
+  padding: 14px 0;
+  padding-left: 66px;
+  border-bottom: solid 1px #f2f4f7;
+
+  & > .flex-line {
+    @include flex-wrap(wrap);
+
+    &:nth-child(2) {
+      margin-top: 16px;
+    }
+  }
+
+  .info-list {
+    position: relative;
+    margin-right: 13px;
+    // margin-left: 14px;
+    font-size: 13px;
+    color: #3b5675;
+    line-height: 200%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      // position: absolute;
+      // left: 100%;
+      position: relative;
+      // top: 50%;
+      display: inline-block;
+      width: 1px;
+      height: 20px;
+      // margin-top: 20px;
+      margin-left: 13px;
+      background-color: #c6cbd4;
+      content: "";
+      vertical-align: middle;
+      // @include transform(translateY(-50%));
+    }
+
+    strong {
+      display: inline-block;
+      font-weight: $fw-r;
+      vertical-align: middle;
+    }
+
+    .text {
+      @include ellipsis;
+      display: inline-block;
+      vertical-align: middle;
+
+      &.address {
+        max-width: 100px;
+      }
+
+      &.mail {
+        max-width: 160px;
+      }
+    }
+
+    button,
+    a {
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+} // ---- end of .details-info
+
+.details-body {
+  &.details-type-b {
+    padding-left: 62px;
+    // outline: 3px solid silver;
+    .input-container {
+      width: auto;
+      .input-text {
+        width: 200px;
+      }
+    }
+  } // --- end of .details-type-b
+
+  .details-container {
+    margin-top: 68px;
+    margin-bottom: 21px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > .container-title {
+      display: block;
+      width: 100%;
+      padding-bottom: 13px;
+      margin-bottom: 21px;
+      font-size: 16px;
+      color: #000;
+      font-weight: $fw-m;
+      border-bottom: 1px solid #f2f4f7;
+    }
+
+    & > .flex-line {
+      // @include ellipsis;
+      margin-bottom: 10px;
+
+      .input-container {
+        @include flex-shrink(0);
+        // outline: 2px solid red;
+      }
+
+      .line-title {
+        @include flex-shrink(0);
+        font-weight: $fw-m;
+        font-size: 13px;
+        margin-right: 6px;
+
+        & + .radio-container {
+          margin-left: 10px;
+          // margin-top: 6px;
+          // margin-bottom: 6x;
+        }
+      }
+
+      &.mtb-10 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      &.only-view {
+        //뷰모드에서만 보이는 요소들
+
+        .string-value + button {
+          margin-left: 7px;
+        }
+      }
+      .spacer {
+        margin-right: 0;
+
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 15px;
+          margin: 0 10px;
+          background-color: #c6cbd4;
+        }
+      }
+    }
+
+    .string-value {
+      max-width: 300px;
+      @include ellipsis;
+      font-size: 13px;
+      font-weight: $fw-m;
+    }
+
+    // .dropdown-search {
+    //   .text[disabled] {
+    //     // @include select-none;
+    //     cursor: default;
+    //     padding: 0;
+    //     height: auto;
+    //     line-height: 120%;
+    //     font-weight: $fw-m;
+    //     font-size: 13px;
+    //     border: 0;
+    //     background: none;
+    //     cursor: text;
+
+    //     &:after {
+    //       display: none;
+    //     }
+    //   }
+    // }
+  } // --- //container
+
+  .input-text.editable-value {
+    &[readonly] {
+      width: auto !important;
+      padding: 0 !important;
+      font-weight: $fw-m !important;
+      font-size: 13px !important;
+      margin-right: 6px !important;
+      border: 0 !important;
+      // @include pointer-none;
+      @include select-none;
+      cursor: text !important;
+    }
+  }
+} // ---- //details-body
+
+.mode-view {
+  //보기 모드일 때!!!
+
+  .string-value {
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .input-text {
+    display: none;
+  }
+  .radio-block {
+    input[type="radio"] {
+      & + label {
+        cursor: default;
+        @include select-none;
+        @include pointer-none;
+
+        & + .input-text {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.mode-edit {
+  //편집 모드일 때!!!
+
+  .string-value {
+    display: none;
+  }
+
+  .dropdown {
+    display: block;
+  }
+
+  .input-text {
+    display: block;
+  }
+
+  .only-view {
+    display: none;
+  }
+}

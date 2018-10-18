@@ -209,7 +209,14 @@
                   <div class="right">
                     <div class="table-button-container">
                       <div class="scheduler-info">
-                        스케줄러 상태: <span class="status">Running</span>
+                        <span>스케줄러 상태:</span>
+                        <!--
+                          [전달사항]
+                          상황에 맞춰 아래와 같이 표시해주세요!
+                          - 작동 중: <span class="status-on">Running</span>
+                          - 작동 중지: <span class="status-off">Stopped</span>
+                        -->
+                        <span class="status-on">Running</span>
                         <button class="scheduler-realod">reload</button>
                       </div>
                       <button class="button-type-a">신규등록</button>
@@ -296,8 +303,8 @@
 
                 <div class="table-bottom">
                   <div class="table-utils">
-                    <p class="selected-number">(0)</p>
-                    <div class="button-type-a">선택삭제</div>
+                    <p class="selected-number">(2)</p>
+                    <button class="button-type-a" disabled>선택삭제</button>
                   </div>
                   <div id="table-pagination"></div>
                   <div class="table-paging-container">

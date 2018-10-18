@@ -290,7 +290,7 @@
     line-height: 30px;
     padding-left: 12px;
     padding-right: 26px;
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: left;
     font-size: 14px;
     font-weight: $fw-r;
@@ -301,6 +301,9 @@
     background-image: icon(arrow-down, "%23333");
     background-repeat: no-repeat;
     background-position: right 6px top 50%;
+  }
+  .combobox {
+    margin-top: 4px;
   }
   .combobox-item {
     text-align: center;

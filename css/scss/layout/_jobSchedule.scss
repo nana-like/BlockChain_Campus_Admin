@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// **** job schedule
+
+// * * * * * * * *
+// [ job-list ]
+// - 잡 스케줄 목록
+// * * * * * * * *
+.job-list {
+  outline: 1px dotted salmon;
+}
+
+// * * * * * * * *
+// [ job-detilas ]
+// - 잡 스케줄 상세
+// * * * * * * * *
+.job-details {
+  padding-top: 43px !important;
+  padding-bottom: 43px !important;
+  outline: 2px solid red;
+  padding-left: 68px;
+  padding-right: 68px;
+}

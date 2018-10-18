@@ -27,10 +27,14 @@
 @import "layout/content";
 @import "layout/lnb";
 @import "layout/main";
-@import "layout/search";
-@import "layout/login";
-@import "layout/dapp";
-@import "layout/voting";
+@import "layout/search"; //TODO: Module로 뺄 것
+@import "layout/details"; //TODO: Module로 뺄 것
+@import "layout/login"; //로그인 화면
+
+@import "layout/dapp"; //디앱 관리
+@import "layout/voting"; //보팅앱 관리
+
+@import "layout/jobSchedule"; //잡 스케줄
 
 // Library
 @import "library/jstree";

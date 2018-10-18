@@ -2,6 +2,24 @@
 
 // Table
 
+table {
+  th,
+  td {
+    position: relative;
+  }
+  tr .checkbox-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // background: pink;
+    @include transform(translate(-50%, -50%));
+
+    &.checkbox-type-a label {
+      margin-right: 2px;
+    }
+  }
+}
+
 .table-container {
   table {
     table-layout: fixed;
@@ -50,6 +68,31 @@
     @include flexbox;
     @include align-items(center);
   }
+
+  .scheduler-info {
+    //스케줄러 상태
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    font-size: 14px;
+    font-weight: $fw-r;
+    color: #333333;
+    margin-right: 9px;
+
+    [class^="status-"] {
+      margin-left: 3px;
+      margin-right: 8px;
+      font-weight: $fw-b;
+
+      &.status-on {
+        color: #30b9d3;
+      }
+
+      &.status-off {
+        color: #ee6262;
+      }
+    }
+  }
 }
 
 // + + + +
@@ -59,6 +102,28 @@
   @include flexbox;
   @include justify-content(space-between);
   margin: 25px auto 41px;
+}
+
+.table-utils {
+  //왼쪽 유틸 목록
+  @include flexbox;
+  @include align-items(center);
+
+  .selected-number {
+    margin-left: 16px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #a4b0be;
+
+    & + button {
+      padding: 0;
+      width: 80px;
+    }
+
+    &.active {
+      color: #4d4d4d;
+    }
+  }
 }
 
 .table-pagination-container {
