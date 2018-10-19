@@ -214,9 +214,13 @@
         }
       }
 
-      &.mtb-10 {
+      &.line-radio {
         margin-top: 10px;
         margin-bottom: 10px;
+
+        .spacer:after {
+          margin: 0 20px;
+        }
       }
 
       &.only-view {
@@ -240,7 +244,8 @@
       }
     }
 
-    .string-value {
+    .string-value,
+    .string {
       max-width: 300px;
       @include ellipsis;
       font-size: 13px;

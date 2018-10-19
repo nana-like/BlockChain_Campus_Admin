@@ -324,9 +324,10 @@
 }
 
 .daterangepicker .drp-selected {
-  display: inline-block;
+  // display: inline-block;
   font-size: 12px;
   padding-right: 8px;
+  display: none;
 
   .cancelBtn {
     color: #4d4d4d;

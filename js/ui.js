@@ -75,9 +75,27 @@ $(function() {
         daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       }
     };
+    var Opt3 = {
+      // singleDatePicker: true,
+      timePicker: true,
+      timePicker24Hour: true,
+      timePickerIncrement: 10,
+      // parentEl: "#wrap",
+      parentEl: ".datepicker-multi-area",
+      opens: "center",
+      autoApply: true,
+      locale: {
+        format: "YYYY-MM-DD H:mm",
+        applyLabel: "확인",
+        cancelLabel: "취소",
+        customRangeLabel: "Custom",
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      }
+    };
 
     // $datepicker.daterangepicker(commonOpt);
     $(".datepicker-inner").daterangepicker(Opt2);
+    $("#datepicker-multi").daterangepicker(Opt3);
     // $datepicker_start.data("daterangepicker").setStartDate(startDate);
     // $datepicker_end.data("daterangepicker").setStartDate(endDate);
   };
@@ -250,6 +268,9 @@ $(function() {
           $dropdown.removeClass("active");
         }
       });
+
+      //textarea size
+      autosize(document.querySelectorAll("textarea"));
     };
 
     // 인풋 파일 이벤트

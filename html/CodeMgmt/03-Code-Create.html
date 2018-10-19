@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="../../favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- 잡 스케줄 상세 화면 -->
+
+  <div id="wrap">
+    <header id="gnb" class="gnb">
+      <div class="dropdown dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <!-- //end of .dropdown -->
+
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link">계정 관리</a>
+        </li>
+        <li class="gnb-item">
+          <!--
+              [전달사항]
+              .gnb-accordion에 opened 클래스를 붙이면 하위메뉴가 화면상에 펼쳐져서 보이게 됩니다.
+            -->
+          <a class="gnb-link gnb-accordion opened">권한 관리</a>
+          <ul class="gnb-list-sub">
+            <li class="gnb-item-sub"><a href="">역할 관리</a></li>
+            <li class="gnb-item-sub"><a href="">기능 관리</a></li>
+          </ul>
+        </li>
+        <li class="gnb-item">
+          <a class="gnb-link gnb-accordion opened">시스템 로그</a>
+          <ul class="gnb-list-sub">
+            <li class="gnb-item-sub"><a href="">감사 로그</a></li>
+            <li class="gnb-item-sub"><a href="">사용자 접속 로그</a></li>
+            <li class="gnb-item-sub"><a href="">권한 관리 로그</a></li>
+            <li class="gnb-item-sub"><a href="">연동 / 배치 로그</a></li>
+          </ul>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link">잡 스케줄 관리</a>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link active">코드 관리</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">코드 관리</p>
+              <p class="lnb-route-info">코드 목록</p>
+              <p class="lnb-route-info">코드 신규 등록</p>
+            </div>
+          </div>
+          <div class="lnb-right">
+            <div class="dropdown dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="main-detail">
+
+        <div id="tree">
+          <div class="tree-container">
+            <div id="jsTree">
+
+            </div>
+          </div>
+        </div>
+        <!-- //end of #tree-->
+
+
+        <div class="main-container scrollable code-create">
+
+          <div class="details-top">
+            <div class="flex-line">
+              <div class="title-container">
+                <button class="button-back"></button>
+                <div class="details-title">
+                  코드 신규 등록
+                </div>
+              </div>
+              <div class="button-container">
+                <button class="button-type-a" id="button-edit-job-details">수정</button>
+                <!--TODO: ID값 바꿀것-->
+              </div>
+            </div>
+          </div>
+
+          <div class="details-body details-type-b">
+
+            <div class="details-container">
+              <strong class="container-title">기본 정보</strong>
+
+              <div class="flex-line">
+                <div class="input-container type-row">
+                  <strong class="line-title">상위 코드 경로:</strong>
+                  <p class="string">전체 > DApp</p>
+                </div>
+              </div>
+
+              <div class="flex-line">
+                <div class="input-container type-row spacer">
+                  <strong class="line-title">상위 코드명:</strong>
+                  <p class="string">DApp</p>
+                </div>
+                <div class="input-container type-row">
+                  <strong class="line-title">상위 코드구분:</strong>
+                  <p class="string">000000</p>
+                </div>
+              </div>
+
+              <div class="flex-line">
+                <div class="input-container type-row">
+                  <strong class="line-title">코드 구분:</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+              </div>
+
+              <div class="flex-line">
+                <div class="input-container type-row">
+                  <strong class="line-title">정렬 순서:</strong>
+                  <div class="dropdown dropdown-search w-80">
+                    <button class="text">1</button>
+                    <div class="combobox">
+                      <button class="combobox-item">1</button>
+                      <button class="combobox-item">2</button>
+                      <button class="combobox-item">3</button>
+                      <button class="combobox-item">99</button>
+                      <button class="combobox-item">100</button>
+                      <button class="combobox-item">200</button>
+                      <button class="combobox-item">999</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="flex-line">
+                <div class="input-container type-row spacer">
+                  <strong class="line-title">코드명:</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+                <div class="input-container type-row">
+                  <strong class="line-title">코드값:</strong>
+                  <input type="text" class="input-text" value="" />
+                </div>
+              </div>
+
+              <div class="flex-line">
+                <div class="textarea-container">
+                  <strong class="textarea-title">코드 설명</strong>
+                  <textarea name="textarea-code-description" id="textarea-code-description" class="textarea-basic"></textarea>
+                </div>
+              </div>
+
+              <div class="flex-line">
+                <div class="textarea-container">
+                  <strong class="textarea-title">비고</strong>
+                  <textarea name="textarea-code-rmks" id="textarea-code-rmks" class="textarea-basic"></textarea>
+                </div>
+              </div>
+
+              <div class="flex-line line-radio">
+                <div class="input-container type-row spacer">
+                  <strong class="line-title">검색조건 사용여부</strong>
+                  <div class="radio-container type-row">
+                    <div class="radio-block radio-type-a">
+                      <input type="radio" name="radio-temp-search" id="radio-temp-search-0" checked />
+                      <label for="radio-temp-search-0">사용</label>
+                    </div>
+                    <div class="radio-block radio-type-a">
+                      <input type="radio" name="radio-temp-search" id="radio-temp-search-1" />
+                      <label for="radio-temp-search-1">미사용</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-container type-row">
+                  <strong class="line-title">사용여부</strong>
+                  <div class="radio-container type-row">
+                    <div class="radio-block radio-type-a">
+                      <input type="radio" name="radio-temp-use" id="radio-temp-use-0" checked />
+                      <label for="radio-temp-use-0">사용</label>
+                    </div>
+                    <div class="radio-block radio-type-a">
+                      <input type="radio" name="radio-temp-use" id="radio-temp-use-1" />
+                      <label for="radio-temp-use-1">미사용</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+            <!-- //end of .details-container -->
+
+          </div>
+          <!-- //end of .details-body-->
+
+        </div>
+        <!-- //end of .main-container -->
+
+
+      </div>
+      <!-- //end of #main -->
+
+    </div>
+    <!-- //end of #content -->
+  </div>
+</body>
+
+</html>

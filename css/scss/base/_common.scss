@@ -45,10 +45,23 @@
 }
 
 .datepicker-inner-area {
+  // @include pointer-none;
+  // @include select-none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+}
+
+.datepicker-multi-area {
+  // @include pointer-none;
+  // @include select-none;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  min-width: 600px;
   height: 100%;
 }
 .div {
