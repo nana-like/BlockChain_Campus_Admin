@@ -167,6 +167,8 @@
       width: auto;
       .input-text {
         width: 200px;
+        font-size: 14px;
+        letter-spacing: 0;
       }
     }
   } // --- end of .details-type-b
@@ -307,6 +309,10 @@
       }
     }
   }
+
+  .button-details-delete {
+    display: none;
+  }
 }
 
 .mode-edit {
@@ -326,5 +332,9 @@
 
   .only-view {
     display: none;
+  }
+
+  .button-details-delete {
+    display: block;
   }
 }

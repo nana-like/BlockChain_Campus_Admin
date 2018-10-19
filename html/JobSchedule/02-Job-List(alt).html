@@ -36,18 +36,14 @@
           <a href="" class="gnb-link">계정 관리</a>
         </li>
         <li class="gnb-item">
-          <!--
-            [전달사항]
-            .gnb-accordion에 opened 클래스를 붙이면 하위메뉴가 화면상에 펼쳐져서 보이게 됩니다.
-          -->
-          <a class="gnb-link gnb-accordion opened">권한 관리</a>
+          <a class="gnb-link gnb-accordion">권한 관리</a>
           <ul class="gnb-list-sub">
             <li class="gnb-item-sub"><a href="">역할 관리</a></li>
             <li class="gnb-item-sub"><a href="">기능 관리</a></li>
           </ul>
         </li>
         <li class="gnb-item">
-          <a class="gnb-link gnb-accordion opened">시스템 로그</a>
+          <a class="gnb-link gnb-accordion">시스템 로그</a>
           <ul class="gnb-list-sub">
             <li class="gnb-item-sub"><a href="">감사 로그</a></li>
             <li class="gnb-item-sub"><a href="">사용자 접속 로그</a></li>
@@ -122,7 +118,7 @@
 
                     <div class="input-container type-row input-full">
                       <strong class="title">스케줄명</strong>
-                      <input type="text" class="input-text" />
+                      <input type="text" class="input-text" value="스케줄 이름" />
                     </div>
 
                   </div>
@@ -134,7 +130,7 @@
                       <strong class="title">상태</strong>
                       <div class="radio-container type-row">
                         <div class="radio-block radio-type-a">
-                          <input type="radio" name="radio-job-status" id="radio-job-status-all" />
+                          <input type="radio" name="radio-job-status" id="radio-job-status-all" checked />
                           <label for="radio-job-status-all">전체</label>
                         </div>
                         <div class="radio-block radio-type-a">
@@ -166,11 +162,11 @@
                           <label for="cb-job-type-day">일간</label>
                         </div>
                         <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-job-type-week" />
+                          <input type="checkbox" id="cb-job-type-week" checked />
                           <label for="cb-job-type-week">주간</label>
                         </div>
                         <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-job-type-month" />
+                          <input type="checkbox" id="cb-job-type-month" checked />
                           <label for="cb-job-type-month">월간</label>
                         </div>
                         <div class="checkbox-block checkbox-type-a">
@@ -186,8 +182,8 @@
                 </div>
 
                 <div class="button-container">
-                  <button class="button-type-c" disabled>초기화</button>
-                  <button class="button-type-b">검색</button>
+                  <button class="button-type-c">초기화</button>
+                  <button class="button-type-b" disabled>검색</button>
                 </div>
 
               </div>
@@ -216,7 +212,7 @@
                           - 작동 중: <span class="status-on">Running</span>
                           - 작동 중지: <span class="status-off">Stopped</span>
                         -->
-                        <span class="status-on">Running</span>
+                        <span class="status-off">Stopped</span>
                         <button class="button-reload">reload</button>
                       </div>
                       <button class="button-type-a">신규등록</button>
@@ -266,8 +262,7 @@
                       <col width="30%" />
                       <col width="18%" />
                     </colgroup>
-
-                    <tbody>
+                    <!-- <tbody>
                       <tr>
                         <td>
                           <div class="checkbox-block checkbox-type-a">
@@ -307,134 +302,17 @@
                         <td>주간</td>
                         <td>미운영</td>
                       </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-151" />
-                            <label for="cb-temp-151"></label>
+                    </tbody> -->
+
+                    <tbody>
+                      <tr class="tr-noData">
+                        <td colspan="6">
+                          <div class="text-noData">
+                            No search results found
                           </div>
                         </td>
-                        <td>151</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>시간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-150" />
-                            <label for="cb-temp-150"></label>
-                          </div>
-                        </td>
-                        <td>150</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>월간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-149" />
-                            <label for="cb-temp-149"></label>
-                          </div>
-                        </td>
-                        <td>149</td>
-                        <td>이메일</td>
-                        <td><a href="#">연동결과 현황</a></td>
-                        <td>주간</td>
-                        <td>미운영</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-151" />
-                            <label for="cb-temp-151"></label>
-                          </div>
-                        </td>
-                        <td>151</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>시간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-150" />
-                            <label for="cb-temp-150"></label>
-                          </div>
-                        </td>
-                        <td>150</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>월간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-149" />
-                            <label for="cb-temp-149"></label>
-                          </div>
-                        </td>
-                        <td>149</td>
-                        <td>이메일</td>
-                        <td><a href="#">연동결과 현황</a></td>
-                        <td>주간</td>
-                        <td>미운영</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-151" />
-                            <label for="cb-temp-151"></label>
-                          </div>
-                        </td>
-                        <td>151</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>시간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-150" />
-                            <label for="cb-temp-150"></label>
-                          </div>
-                        </td>
-                        <td>150</td>
-                        <td>RDB 백업</td>
-                        <td><a href="#">학생정보 백업</a></td>
-                        <td>월간</td>
-                        <td>운영(Normal)</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-149" />
-                            <label for="cb-temp-149"></label>
-                          </div>
-                        </td>
-                        <td>149</td>
-                        <td>이메일</td>
-                        <td><a href="#">연동결과 현황</a></td>
-                        <td>주간</td>
-                        <td>미운영</td>
                       </tr>
                     </tbody>
-
-                    <!-- <tbody>
-                  <tr class="tr-noData">
-                    <td colspan="6">
-                      <div class="text-noData">
-                        No data
-                      </div>
-                    </td>
-                  </tr>
-                </tbody> -->
 
                   </table>
                 </div>
@@ -448,14 +326,14 @@
                       - .selected-number에 active 클래스를 추가하고,
                       - button의 disabeld 속성을 제거해주세요.
                     -->
-                    <p class="selected-number active">(2)</p>
-                    <button class="button-type-a">선택삭제</button>
+                    <p class="selected-number">(0)</p>
+                    <button class="button-type-a" disabled>선택삭제</button>
                   </div>
                   <div id="table-pagination"></div>
                   <div class="table-paging-container">
-                    <div class="dropdown dropdown-paging reverse active">
+                    <div class="dropdown dropdown-paging reverse">
                       <p class="label">행 표시</p>
-                      <div class="text">15</div>
+                      <div class="text">30</div>
                       <div class="combobox">
                         <button class="combobox-item">15</button>
                         <button class="combobox-item">30</button>

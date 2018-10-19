@@ -80,7 +80,7 @@
   }
 
   &[readonly] {
-    border-color: transparent;
+    // border-color: transparent;
   }
 
   &[disabled] {
@@ -403,6 +403,11 @@
 }
 
 .input-container {
+  &.w-500 {
+    .input-text {
+      width: 500px !important;
+    }
+  }
   &.w-300 {
     .input-text {
       width: 300px !important;

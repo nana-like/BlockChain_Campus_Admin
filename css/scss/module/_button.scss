@@ -106,10 +106,18 @@
 }
 
 //스케줄러 리로드 버튼 (돌아가는 화살표)
-.scheduler-realod {
-  width: 17px;
-  height: 17px;
+.button-reload {
+  opacity: 0.8;
+  width: 18px;
+  height: 18px;
   text-indent: -9999px;
   overflow: hidden;
-  background-color: orange;
+  background-image: icon(icon-reload, "%23000");
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: none;
+
+  &:hover {
+    opacity: 1;
+  }
 }

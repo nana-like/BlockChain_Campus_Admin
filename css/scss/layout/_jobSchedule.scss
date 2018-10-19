@@ -21,3 +21,15 @@
   padding-left: 68px;
   padding-right: 68px;
 }
+
+// * * * * * * * *
+// [ job-create ]
+// - 잡 생성
+// * * * * * * * *
+.job-create {
+  padding-top: 43px !important;
+  padding-bottom: 43px !important;
+  .details-body {
+    // min-height: 900px;
+  }
+}

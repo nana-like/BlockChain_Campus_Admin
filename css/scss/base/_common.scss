@@ -39,10 +39,18 @@
 }
 
 .flex-line {
+  position: relative;
   @include flexbox;
   @include align-items(center);
 }
 
+.datepicker-inner-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .div {
   @include flexbox;
 }

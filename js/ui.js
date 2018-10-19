@@ -59,10 +59,27 @@ $(function() {
         daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       }
     };
+    var Opt2 = {
+      singleDatePicker: true,
+      timePicker: true,
+      timePicker24Hour: true,
+      timePickerIncrement: 10,
+      parentEl: ".datepicker-inner-area",
+      opens: "left",
+      autoApply: true,
+      locale: {
+        format: "YYYY-MM-DD H:mm",
+        applyLabel: "확인",
+        cancelLabel: "취소",
+        customRangeLabel: "Custom",
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      }
+    };
 
-    $datepicker.daterangepicker(commonOpt);
-    $datepicker_start.data("daterangepicker").setStartDate(startDate);
-    $datepicker_end.data("daterangepicker").setStartDate(endDate);
+    // $datepicker.daterangepicker(commonOpt);
+    $(".datepicker-inner").daterangepicker(Opt2);
+    // $datepicker_start.data("daterangepicker").setStartDate(startDate);
+    // $datepicker_end.data("daterangepicker").setStartDate(endDate);
   };
 
   // [*] 페이지네이션 함수 (임시)
@@ -200,22 +217,32 @@ $(function() {
   var commonEvt = function() {
     // 드롭다운 이벤트
     var dropdownEvt = function() {
+      console.log("TODO: Dropdown! ");
       // 드롭다운 클릭 시 active클래스 추가
       $dropdown.on("click", function(evt) {
         evt.stopPropagation();
+        console.log("TODO: Dropdown Toggle ...");
         $(this).toggleClass("active");
       });
 
       // 드롭다운 콤보박스의 클릭한 텍스트를 보여줘야하는 경우
-      // $(".dropdown-input, .dropdown-paging").on("mousedown", function(evt) {
-      //   evt.stopPropagation();
-      //   if (event.target.tagName == "BUTTON") {
-      //     var text = event.target.innerText;
-      //     $(this)
-      //       .find(".text-value")
-      //       .val(text);
-      //   }
+      // $(".dropdown").on("click", ".combobox-item", function(evt) {
+      //   var text = $(this).text();
+      //   console.log(text);
+      //   $(this)
+      //     .find(".text")
+      //     .val(text);
       // });
+      $(".dropdown-search, .dropdown-paging").on("mousedown", function(evt) {
+        evt.stopPropagation();
+        if (evt.target.className == "combobox-item") {
+          var value = evt.target.innerText;
+          console.log(value);
+          $(this)
+            .find(".text")
+            .text(value);
+        }
+      });
 
       // 바디 클릭 시 드롭다운 닫기
       $("body").on("click", function() {
@@ -453,6 +480,7 @@ $(function() {
     if ($(".main-container").hasClass("mode-view")) {
       $(".main-container").removeClass("mode-view");
       $(".main-container").addClass("mode-edit");
+      $(this).text("저장");
     } else if ($(".main-container").hasClass("mode-edit")) {
       $(".job-details .input-text").each(function() {
         var val = $(this).val();
@@ -466,9 +494,33 @@ $(function() {
           .prev(".string-value")
           .text(val);
       });
+      $(".job-details .dropdown").each(function() {
+        var val = $(this)
+          .children(".text")
+          .text();
+        $(this)
+          .prev(".string-value")
+          .text(val);
+      });
 
       $(".main-container").removeClass("mode-edit");
       $(".main-container").addClass("mode-view");
+      $(this).text("수정");
+    }
+  });
+
+  $(".job-details input[type='radio']").on("change", function() {
+    if ($("#radio-temp-type-4").is(":checked")) {
+      $("#temp-id-duration").removeClass("input-disable");
+      $("#radio-temp-duration-0").attr("checked", true);
+    } else {
+      $("#temp-id-duration").addClass("input-disable");
+    }
+
+    if ($("#radio-temp-duration-1").is(":checked")) {
+      $(this)
+        .nextAll(".input-text")
+        .val("0 0 5 1 * ?");
     }
   });
 });
