@@ -30,6 +30,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    margin-bottom: -3px;
   }
 
   .gnb-accordion {
@@ -57,7 +58,7 @@
 
       & + .gnb-list-sub {
         max-height: 500px;
-        overflow-y: scroll;
+        // overflow-y: scroll;
         transition: max-height 0.35s ease-in;
       }
     }
@@ -107,7 +108,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      padding: 10px 60px 5px;
+      padding: 10px 60px 10px;
       color: #666;
 
       &:hover {

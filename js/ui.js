@@ -228,7 +228,6 @@ $(function() {
 
     resizeTableHeight();
     setTablePadding();
-    paginationEvt();
   };
 
   // [*] 커먼 함수
@@ -271,6 +270,7 @@ $(function() {
 
       //textarea size
       autosize(document.querySelectorAll("textarea"));
+      paginationEvt();
     };
 
     // 인풋 파일 이벤트
@@ -441,6 +441,7 @@ function customMenu($node) {
 }
 
 function createJSTree(jsondata) {
+  console.log("TODO: Create JS Tree!");
   $("#jsTree").jstree({
     core: {
       check_callback: true,

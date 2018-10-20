@@ -191,7 +191,7 @@
 
   .text {
     cursor: pointer;
-    width: auto;
+    width: 80px;
     height: 32px;
     vertical-align: middle;
     line-height: 30px;
@@ -350,6 +350,9 @@
 }
 
 .dropdown {
+  &.w-150 {
+    width: 150px;
+  }
   &.w-130 {
     width: 130px;
   }

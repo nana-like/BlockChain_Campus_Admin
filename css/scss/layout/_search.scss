@@ -174,27 +174,39 @@
     }
   }
   // ------------
-  // 권한 관리 로그
+  // 연동/배치 로그
   // ------------
-  // &.search-log-4 {
-  //   .input-container {
-  //     width: 20%;
-  //     // margin-right: 15px;
-  //   }
-  //   .input-container-dd {
-  //     width: auto;
-  //     min-width: 200px;
-  //   }
-  //   .dropdown {
-  //     margin-right: 10px;
+  &.search-log-4 {
+    .form-container {
+      margin-right: 10px;
+    }
+    .input-container {
+      // width: auto;
+      width: 35%;
+      margin-right: 15px;
+    }
+    .input-container-dd {
+      width: auto;
+    }
+    .flex-line:last-child {
+      & > .input-container:first-child {
+        width: auto;
+      }
+      & > .input-container:last-child {
+        width: 45%;
+      }
+    }
+    .dropdown {
+      margin-right: 10px;
 
-  //     .text-value {
-  //       width: 150px;
-  //     }
+      .text-value {
+        width: 150px;
+      }
 
-  //     & + .input-text {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
+      & + .input-text {
+        @include flex-shrink(0);
+        width: 280px;
+      }
+    }
+  }
 }

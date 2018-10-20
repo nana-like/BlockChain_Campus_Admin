@@ -125,6 +125,7 @@ $iconPath: "../../images/icon-tree.png";
   /* disable the IOS popup when long-press on a link */
 }
 .vakata-context {
+  z-index: 10000;
   display: none;
 }
 .vakata-context,

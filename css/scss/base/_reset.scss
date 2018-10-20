@@ -116,6 +116,7 @@ summary,
 textarea {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
+  @include font-main;
 }
 
 table {

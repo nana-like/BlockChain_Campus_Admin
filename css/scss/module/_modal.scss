@@ -20,77 +20,177 @@
   @include justify-content(center);
   @include align-items(center);
   display: none;
+  overflow: auto;
 
   &.active {
     @include flexbox;
   }
+}
 
-  .modal-box {
-    min-width: 420px;
-    width: auto;
-    height: auto;
-    padding: 48px 92px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 2px;
+.modal-box {
+  position: relative;
+  max-width: 95vw;
+  min-width: 420px;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  padding: 48px 92px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 2px;
 
-    &.modal-edit {
-    }
+  &.modal-edit {
+  }
 
-    .modal-title {
+  .modal-title {
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    font-weight: $fw-m;
+    margin-bottom: 22px;
+  }
+
+  .modal-content {
+    position: relative;
+    padding-bottom: 40px;
+
+    .text {
       color: #000;
-      font-size: 18px;
-      font-weight: $fw-m;
-      margin-bottom: 22px;
+      line-height: 1.88;
+      font-weight: $fw-r;
+      font-size: 16px;
     }
 
-    .modal-content {
-      position: relative;
-      padding-bottom: 40px;
+    .input-container {
+      margin-top: 20px;
 
-      .text {
-        color: #000;
-        line-height: 1.88;
-        font-weight: $fw-r;
-        font-size: 16px;
+      &:first-child {
+        margin-top: 0;
       }
-
-      .input-container {
-        margin-top: 20px;
-
-        &:first-child {
-          margin-top: 0;
-        }
-        .title {
-          margin-bottom: 15px;
-          text-align: left;
-        }
-      }
-
-      .message-modal {
-        position: absolute;
-        width: 100%;
-        bottom: 14px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        color: #ee6262 !important;
+      .title {
+        margin-bottom: 15px;
+        text-align: left;
       }
     }
 
-    .modal-button-container {
-      @include flexbox;
-      @include justify-content(center);
-      @include align-items(center);
+    .message-modal {
+      position: absolute;
+      width: 100%;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #ee6262 !important;
+    }
+  }
 
-      button {
-        margin: 0;
-        margin-left: 10px;
+  .modal-button-container {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
 
-        &:first-child {
-          margin-left: 0;
-        }
+    button {
+      margin: 0;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
       }
+    }
+  }
+}
+
+.modal-box.modal-layout-large {
+  padding: 0 !important;
+  // max-width: 90vw;
+  overflow: auto;
+  // max-height: 600px;
+  // overflow: auto;
+
+  .modal-title {
+    width: 100%;
+    height: 80px;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    line-height: 80px;
+    padding: 0 40px;
+    margin-bottom: 0;
+    background-color: #f2f4f7;
+    border-bottom: 1px solid #e3e7ec;
+  }
+
+  .modal-content {
+    overflow: auto;
+    padding-bottom: 0;
+    max-height: calc(95vh - 80px);
+  }
+
+  .table-container {
+    margin-top: 19px;
+    margin-bottom: 0;
+
+    .table-viewArea {
+      min-height: 0;
+    }
+  }
+}
+
+.button-modal-close {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  @include transform(translateY(-50%));
+  background-color: orangered;
+}
+
+.modal-log {
+  .modal-content-container {
+    width: 840px;
+    padding: 40px;
+  }
+  .log-title {
+    display: block;
+    font-size: 16px;
+    font-weight: $fw-m;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-top: 43px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .log-description {
+    text-align: left;
+    font-size: 16px;
+    font-weight: $fw-t;
+    line-height: 1.88;
+    letter-spacing: -0.1px;
+  }
+}
+
+.modal-transfer {
+  .modal-content-container {
+    @include flexbox;
+    width: 1280px;
+    min-height: 840px;
+    padding: 30px;
+  }
+  #tree {
+    text-align: left;
+  }
+  .transfer-container {
+    @include flexbox;
+    outline: 2px solid red;
+
+    .table-container {
+      outline: 3px solid gold;
+    }
+
+    .transfer-form {
+      outline: 3px solid navy;
     }
   }
 }
