@@ -67,6 +67,14 @@ table {
     //테이블 위에 있는 신규 등록 버튼 등
     @include flexbox;
     @include align-items(center);
+
+    button {
+      margin-left: 3px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
 
   .scheduler-info {
@@ -115,13 +123,17 @@ table {
     font-size: 14px;
     color: #a4b0be;
 
-    & + button {
-      padding: 0;
-      width: 80px;
-    }
-
     &.active {
       color: #4d4d4d;
+    }
+  }
+
+  button {
+    padding: 0 15px;
+    margin-left: 3px;
+
+    &:first-child {
+      margin-left: 0;
     }
   }
 }
@@ -240,6 +252,16 @@ table {
     }
   }
 
+  .td-toggle {
+    position: relative;
+    .radio-container {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @include transform(translateY(-50%));
+    }
+  }
+
   tr:hover {
     background-color: #f2f4f7;
   }
@@ -301,6 +323,18 @@ table {
 .table-paging-container {
   //행 표시
   margin-right: 10px;
+}
+
+//오른편 패딩없음
+.no-pdr {
+  th:first-child,
+  td:first-child {
+    padding-left: 30px;
+  }
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
 }
 
 // + + + +

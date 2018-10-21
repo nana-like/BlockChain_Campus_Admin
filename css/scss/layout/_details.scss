@@ -12,6 +12,7 @@
     //
     margin-left: 10px;
     margin-right: 10px;
+    background-size: 100%;
 
     &:hover {
       background-image: icon(button-back, "%23F2F4F7");
@@ -199,6 +200,16 @@
       .input-container {
         @include flex-shrink(0);
         // outline: 2px solid red;
+
+        .has-message {
+          position: relative;
+        }
+        .message {
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          color: #ee6262;
+        }
       }
 
       .line-title {
@@ -225,10 +236,6 @@
 
       &.only-view {
         //뷰모드에서만 보이는 요소들
-
-        .string-value + button {
-          margin-left: 7px;
-        }
       }
       .spacer {
         margin-right: 0;
@@ -246,10 +253,16 @@
 
     .string-value,
     .string {
+      min-width: 14px;
       max-width: 300px;
       @include ellipsis;
       font-size: 13px;
       font-weight: $fw-m;
+
+      & + button,
+      & + a.button-type-d {
+        margin-left: 7px;
+      }
     }
 
     // .dropdown-search {
@@ -304,6 +317,7 @@
   .radio-block {
     input[type="radio"] {
       & + label {
+        outline: 2px solid red;
         cursor: default;
         @include select-none;
         @include pointer-none;
@@ -316,6 +330,10 @@
   }
 
   .button-details-delete {
+    display: none;
+  }
+
+  .message {
     display: none;
   }
 }
@@ -340,6 +358,10 @@
   }
 
   .button-details-delete {
+    display: block;
+  }
+
+  .message {
     display: block;
   }
 }
