@@ -265,24 +265,15 @@
       }
     }
 
-    // .dropdown-search {
-    //   .text[disabled] {
-    //     // @include select-none;
-    //     cursor: default;
-    //     padding: 0;
-    //     height: auto;
-    //     line-height: 120%;
-    //     font-weight: $fw-m;
-    //     font-size: 13px;
-    //     border: 0;
-    //     background: none;
-    //     cursor: text;
-
-    //     &:after {
-    //       display: none;
-    //     }
-    //   }
-    // }
+    .radio-block {
+      label + .input-text {
+        display: block;
+        // opacity: 0.5;
+        // outline: 3px solid gold;
+        // @include select-none;
+        // @include pointer-none;
+      }
+    }
   } // --- //container
 
   .input-text.editable-value {
@@ -317,14 +308,10 @@
   .radio-block {
     input[type="radio"] {
       & + label {
-        outline: 2px solid red;
         cursor: default;
         @include select-none;
         @include pointer-none;
-
-        & + .input-text {
-          display: block;
-        }
+        opacity: 0.8;
       }
     }
   }

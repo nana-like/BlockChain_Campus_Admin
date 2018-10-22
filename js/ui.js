@@ -3,8 +3,8 @@ $(function() {
   var $window = $(window);
   var $main = $("#main");
   var $mainTop = $main.find(".main-top");
-  var $table_titleArea = $(".table-titleArea");
-  var $table_viewArea = $(".table-viewArea");
+  var $table_titleArea = $("#wrap .table-titleArea");
+  var $table_viewArea = $("#wrap .table-viewArea");
   var $datepicker = $(".input-datepicker");
   var $statusChart = $(".status-chart");
   var $dropdown = $(".dropdown");
@@ -38,10 +38,8 @@ $(function() {
   // http://www.daterangepicker.com/
   var datePickerEvt = function() {
     console.log("TODO: Datepicker!");
-    var $datepicker_start = $("#datepicker-startDate");
-    var $datepicker_end = $("#datepicker-endDate");
-    var startDate = moment().subtract(30, "days"); //30일 전 (moment.js 의존)
-    var endDate = moment();
+    // var startDate = moment().subtract(30, "days"); //30일 전 (moment.js 의존)
+    // var endDate = moment();
 
     var commonOpt = {
       singleDatePicker: true,
@@ -76,11 +74,9 @@ $(function() {
       }
     };
     var Opt3 = {
-      // singleDatePicker: true,
       timePicker: true,
       timePicker24Hour: true,
       timePickerIncrement: 10,
-      // parentEl: "#wrap",
       parentEl: ".datepicker-multi-area",
       opens: "center",
       autoApply: true,
@@ -93,11 +89,15 @@ $(function() {
       }
     };
 
-    // $datepicker.daterangepicker(commonOpt);
+    //싱글 데이트피커의 경우
+    $("#datepicker-startDate").daterangepicker(commonOpt);
+    $("#datepicker-endDate").daterangepicker(commonOpt);
+
+    //details 페이지내 데이트피커의 경우 (=데이트피커가 페이지 하단에 위치할 경우)
     $(".datepicker-inner").daterangepicker(Opt2);
+
+    //범위 선택이 가능한 데이트피커의 경우
     $("#datepicker-multi").daterangepicker(Opt3);
-    // $datepicker_start.data("daterangepicker").setStartDate(startDate);
-    // $datepicker_end.data("daterangepicker").setStartDate(endDate);
   };
 
   // [*] 페이지네이션 함수 (임시)
@@ -209,7 +209,6 @@ $(function() {
       resizedH = 100;
     } else {
       //그렇지 않다면 스크롤을 막습니다
-      // $main.removeClass("scrollable");
       $(".main-container").removeClass("scrollable");
     }
     $table_viewArea.height(resizedH);
@@ -222,34 +221,47 @@ $(function() {
     //패딩 지정 함수
     var setTablePadding = function() {
       //스크롤로 인해 생기는 여백을 thead 오른쪽에도 지정합니다 (윈도 크롬 기준 17px 정도)
-      var padding = scrollBarWidth();
-      $table_titleArea.css("padding-right", padding);
+
+      if ($table_viewArea[0].scrollHeight > $table_viewArea.height()) {
+        //table_viewArea에 스크롤바가 생기면 그 여백을 table_titleArea에게도 패딩값으로 지정
+        var padding = scrollBarWidth();
+        $table_titleArea.css("padding-right", padding);
+      } else {
+        $table_titleArea.css("padding-right", 0);
+      }
     };
 
     resizeTableHeight();
     setTablePadding();
   };
 
+  //---------
+
+  var openModal = function() {
+    $("#dim").addClass("active");
+    $("#modal").addClass("active");
+  };
+
+  //---------
   // [*] 커먼 함수
   var commonEvt = function() {
     // 드롭다운 이벤트
     var dropdownEvt = function() {
       console.log("TODO: Dropdown! ");
       // 드롭다운 클릭 시 active클래스 추가
+
       $dropdown.on("click", function(evt) {
         evt.stopPropagation();
         console.log("TODO: Dropdown Toggle ...");
-        $(this).toggleClass("active");
+
+        if ($(this).hasClass("active")) {
+          $dropdown.removeClass("active");
+        } else {
+          $dropdown.removeClass("active");
+          $(this).addClass("active");
+        }
       });
 
-      // 드롭다운 콤보박스의 클릭한 텍스트를 보여줘야하는 경우
-      // $(".dropdown").on("click", ".combobox-item", function(evt) {
-      //   var text = $(this).text();
-      //   console.log(text);
-      //   $(this)
-      //     .find(".text")
-      //     .val(text);
-      // });
       $(".dropdown-search, .dropdown-paging").on("mousedown", function(evt) {
         evt.stopPropagation();
         if (evt.target.className == "combobox-item") {
@@ -270,6 +282,8 @@ $(function() {
 
       //textarea size
       autosize(document.querySelectorAll("textarea"));
+
+      //pagination
       paginationEvt();
     };
 
@@ -332,6 +346,7 @@ $(function() {
       chartEvt();
     }
 
+    openModal();
     commonEvt();
   };
 
@@ -344,11 +359,17 @@ $(function() {
       heightValue.window = $window.height();
       heightValue.main = $main.height();
       resizeTableHeight();
+      tableEvt();
     }
   });
 });
 
+// -------------------
+
 $(function() {
+  // [*] JS TREE
+  // https://www.jstree.com/
+
   var jsondata = [
     {
       id: "all",
@@ -390,113 +411,77 @@ $(function() {
   ];
 
   createJSTree(jsondata);
+
+  function customMenu($node) {
+    var tree = $("#jsTree").jstree(true);
+
+    var items = {
+      Create: {
+        separator_before: false,
+        separator_after: true,
+        label: "신규등록",
+        action: function(obj) {
+          var name = prompt("분류를 신규등록합니다.");
+          if (name) {
+            $node = tree.create_node($node, {
+              text: name,
+              type: "default"
+            });
+            tree.deselect_all();
+            tree.select_node($node);
+          }
+        }
+      },
+      Rename: {
+        separator_before: false,
+        separator_after: false,
+        label: "수정",
+        action: function(obj) {
+          var name = prompt("분류를 수정합니다.");
+          if (name) {
+            tree.edit($node, name);
+          }
+        }
+      },
+      Remove: {
+        separator_before: false,
+        separator_after: false,
+        label: "삭제",
+        action: function(obj) {
+          if (confirm("분류를 삭제합니다.")) {
+            tree.delete_node($node);
+          } else {
+            return false;
+          }
+        }
+      }
+    };
+
+    return items;
+  }
+
+  function createJSTree(jsondata) {
+    console.log("TODO: Create JS Tree!");
+    $("#jsTree").jstree({
+      core: {
+        check_callback: true,
+        data: jsondata,
+        themes: { stripes: true }
+      },
+      plugins: ["contextmenu"],
+      contextmenu: {
+        items: customMenu
+      }
+    });
+  }
 });
 
-function customMenu($node) {
-  var tree = $("#jsTree").jstree(true);
-
-  var items = {
-    Create: {
-      separator_before: false,
-      separator_after: true,
-      label: "신규등록",
-      action: function(obj) {
-        var name = prompt("분류를 신규등록합니다.");
-        if (name) {
-          $node = tree.create_node($node, {
-            text: name,
-            type: "default"
-          });
-          tree.deselect_all();
-          tree.select_node($node);
-        }
-      }
-    },
-    Rename: {
-      separator_before: false,
-      separator_after: false,
-      label: "수정",
-      action: function(obj) {
-        var name = prompt("분류를 수정합니다.");
-        if (name) {
-          tree.edit($node, name);
-        }
-      }
-    },
-    Remove: {
-      separator_before: false,
-      separator_after: false,
-      label: "삭제",
-      action: function(obj) {
-        if (confirm("분류를 삭제합니다.")) {
-          tree.delete_node($node);
-        } else {
-          return false;
-        }
-      }
-    }
-  };
-
-  return items;
-}
-
-function createJSTree(jsondata) {
-  console.log("TODO: Create JS Tree!");
-  $("#jsTree").jstree({
-    core: {
-      check_callback: true,
-      data: jsondata,
-      themes: { stripes: true }
-    },
-    plugins: ["contextmenu"],
-    contextmenu: {
-      items: customMenu
-    }
-  });
-}
-
-// $(function() {
-//   $("#button-edit-job-details").on("click", function() {
-//     console.log("!");
-
-//     if ($(".job-details").hasClass("mode-view")) {
-//       $(".job-details").removeClass("mode-view");
-//       $(
-//         ".job-details .input-text, .job-details .radio-block > input, .job-details .dropdown .text"
-//       ).each(function() {
-//         $(this).removeAttr("readonly");
-//         $(this).removeAttr("disabled");
-//       });
-//       $(this).text("저장");
-//     } else {
-//       $(".job-details").addClass("mode-view");
-
-//       $(
-//         ".job-details .radio-block > input[type='radio'], .job-details .dropdown .text"
-//       ).each(function() {
-//         $(this).prop("readonly", true);
-//         $(this).prop("disabled", true);
-//       });
-//       $(".job-details .input-text").each(function() {
-//         $(this).prop("readonly", true);
-//       });
-
-//       $(this).text("수정");
-//     }
-//   });
-
-//   $(".job-details input[type='radio']").on("change", function() {
-//     if ($("#radio-temp-type-4").is(":checked")) {
-//       $("#temp-id-duration").removeClass("input-disable");
-//       // $("#radio-temp-duration-0").prop("checked", true);
-//     } else {
-//       $("#temp-id-duration").addClass("input-disable");
-//     }
-//   });
-// });
-
 $(function() {
-  $("#button-edit-job-details").on("click", function() {
+  // ------------------
+  // [*] 테스트용 동작
+  // ------------------
+
+  $("#button-edit-details").on("click", function() {
     console.log("TODO: TEST!");
 
     if ($(".main-container").hasClass("mode-view")) {
@@ -504,19 +489,19 @@ $(function() {
       $(".main-container").addClass("mode-edit");
       $(this).text("저장");
     } else if ($(".main-container").hasClass("mode-edit")) {
-      $(".job-details .input-text").each(function() {
+      $(".main-detail .input-text").each(function() {
         var val = $(this).val();
         $(this)
           .prev(".string-value")
           .text(val);
       });
-      $(".job-details .input-datepicker").each(function() {
+      $(".main-detail .input-datepicker").each(function() {
         var val = $(this).val();
         $(this)
           .prev(".string-value")
           .text(val);
       });
-      $(".job-details .dropdown").each(function() {
+      $(".main-detail .dropdown").each(function() {
         var val = $(this)
           .children(".text")
           .text();
@@ -542,7 +527,12 @@ $(function() {
     if ($("#radio-temp-duration-1").is(":checked")) {
       $(this)
         .nextAll(".input-text")
+        .removeAttr("disabled")
         .val("0 0 5 1 * ?");
+    } else {
+      $("#radio-temp-duration-1")
+        .nextAll(".input-text")
+        .prop("disabled", true);
     }
   });
 });

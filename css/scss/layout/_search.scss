@@ -81,7 +81,6 @@
   // ------------
   &.search-account,
   &.search-permission-1 {
-    outline: 2px dotted gold;
     .input-container {
       width: 37%;
     }
@@ -188,12 +187,23 @@
     .input-container-dd {
       width: auto;
     }
+    .dropdown,
+    .text {
+      @include flex-shrink(0);
+      // width: 130px !important;
+    }
     .flex-line:last-child {
       & > .input-container:first-child {
         width: auto;
+        .input-text {
+          width: auto;
+        }
       }
       & > .input-container:last-child {
-        width: 45%;
+        // width: auto;
+        .input-text {
+          width: 90%;
+        }
       }
     }
     .dropdown {

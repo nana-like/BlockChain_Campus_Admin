@@ -79,13 +79,9 @@
     outline: 0;
   }
 
-  &[readonly] {
-    // border-color: transparent;
-  }
-
   &[disabled] {
     color: #9daab9;
-    border-color: #f2f4f7;
+    border-color: #f2f4f7 !important;
     background-color: #f2f4f7;
   }
 }
@@ -190,7 +186,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  // outline: 2px solid red;
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -373,9 +368,7 @@
       background-image: icon(icon-radio-active, "%23000");
     }
 
-    &:disabled + label {
-      // color: #999;
-      // opacity: 0.8;
+    &[disabled] + label {
       cursor: default;
     }
   }

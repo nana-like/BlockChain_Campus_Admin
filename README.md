@@ -1,7 +1,7 @@
 # [ BlockChain Campus ] Admin Web
 
 - **Web Published: nykim@nykim.net**
-- **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-17)**
+- **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-22](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-22)**
 - _Last Modified: 2018-10-17_
 
 ## Tree Structure
@@ -11,11 +11,30 @@
   - Login/
   - DappMgmt/
   - Voting/
+  - JobSchedule/
+  - CodeMgmt/
+  - SystemLog/
   - Modal/
 - fonts/
 - css/
 - index.html
 - README.md
+
+---
+
+## Library
+
+- 사용중인 라이브러리는 다음과 같습니다.
+
+1. jQuery
+2. [jsTree.js](https://www.jstree.com/) : 트리 디렉토리
+3. [simplePagination](http://flaviusmatis.github.io/simplePagination.js/) : 페이지네이션
+4. [DateRangePicker.js](http://www.daterangepicker.com/) : 데이트 피커 (Moment.js 의존)
+5. [Chart.js](http://www.chartjs.org/docs/latest/) : 차트
+6. [autoSize.js](http://www.jacklmoore.com/autosize/) : 텍스트에리어 사이즈 조절
+
+- library-all.js 는 **jQuery 를 제외한** 모든 라이브러리를 통합한 파일입니다.
+- ui.js 는 ui 구현에 필요하거나 동작 확인 시 필요한 제이쿼리를 작성한 파일입니다.
 
 ---
 
@@ -50,7 +69,8 @@
 
 - suffix 와 스타일 네임은 하이픈(-)로 연결합니다. (예. button-blue)
 - 활성화 된 모습을 표시하기 위한 경우 active 라는 클래스 네임을 사용합니다.
+
   > ex)
   > &lt;div class="div">그냥 디브&lt;/div>
-  
+
   > &lt;div class="div active">활성화된 디브&lt;/div>

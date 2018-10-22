@@ -8,7 +8,7 @@
   <meta name="description" content="File List | BC WebApp">
   <meta name="author" content="NY KIM">
 
-  <title>[미전달] File List</title>
+  <title>File List</title>
 
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
   <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
@@ -179,7 +179,7 @@
     }
 
     .borderTop {
-      border-top: 2px solid #e4e4e4;
+      border-top: 2px solid #e9e9e9;
     }
 
     .borderTop2 {
@@ -213,7 +213,11 @@
     }
 
     .new td {
-      background-color: rgba(214, 255, 180, 0.2);
+      background-color: rgba(250, 232, 200, 0.2);
+    }
+
+    .new2 td {
+      background-color: rgba(250, 200, 239, 0.2);
     }
 
     .new td[rowspan] {
@@ -233,7 +237,7 @@
       <colgroup>
         <col width="130px" />
         <col width="250px" />
-        <col width="240px" />
+        <col width="280px" />
         <col />
         <col />
       </colgroup>
@@ -348,11 +352,155 @@
           <td class="rmks"></td>
         </tr>
 
+        <!-- ~~~~ 여기까지 1차 버전 ~~~~~ -->
+
+
+        <!-- JOB SCHEDULE -->
+
+        <tr class="new">
+          <td rowspan="4" class="borderTop2">
+            <strong>Job Schedule</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/JobSchedule/01-Job-List.html" target="_blank">01-Job-List</a>
+          </td>
+          <td class="borderTop2">잡스케줄 관리 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/JobSchedule/02-Job-List(alt).html" target="_blank">02-Job-List(alt)</a>
+          </td>
+          <td>잡스케줄 관리 목록 (alt.)</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/JobSchedule/03-Job-Details.html" target="_blank">03-Job-Details</a>
+          </td>
+          <td>잡스케줄 상세 정보</td>
+          <td class="desc"></td>
+          <td class="rmks">수정 버튼 클릭에 따른 임시 이벤트 구현</td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/JobSchedule/04-Job-Create.html" target="_blank">04-Job-Create</a>
+          </td>
+          <td>잡스케줄 신규 등록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+
+        <!-- CODE MGMT -->
+
+        <tr class="new">
+          <td rowspan="3" class="borderTop2">
+            <strong>Code Mgmt</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/CodeMgmt/01-Code-List.html" target="_blank">01-Code-List</a>
+          </td>
+          <td class="borderTop2">코드 관리 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/CodeMgmt/02-Code-Details.html" target="_blank">02-Code-Details</a>
+          </td>
+          <td>코드 상세 정보</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/CodeMgmt/03-Code-Create.html" target="_blank">03-Code-Create</a>
+          </td>
+          <td>코드 신규 등록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+
+        <!-- SYSTEML LOG -->
+
+        <tr class="new">
+          <td rowspan="4" class="borderTop2">
+            <strong>System Log</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/SystemLog/01-Log-Sub-A.html" target="_blank">01-Log-Sub-A</a>
+          </td>
+          <td class="borderTop2">시스템 로그 - 감사 로그 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/SystemLog/02-Log-Sub-B.html" target="_blank">02-Log-Sub-B</a>
+          </td>
+          <td>시스템 로그 - 사용자 접속 로그 목록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/SystemLog/03-Log-Sub-C.html" target="_blank">03-Log-Sub-C</a>
+          </td>
+          <td>시스템 로그 - 권한 관리 로그 목록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/SystemLog/04-Log-Sub-D.html" target="_blank">04-Log-Sub-D</a>
+          </td>
+          <td>시스템 로그 - 연동/배치 로그 목록</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+
+        <!-- SYSTEML LOG -->
+
+        <tr class="new2">
+          <td rowspan="2" class="borderTop2">
+            <strong>Account Mgmt</strong>
+          </td>
+          <td class="borderTop2">
+            <a class="link" href="html/AccountMgmt/01-Account-List.html" target="_blank">01-Account-List</a>
+          </td>
+          <td class="borderTop2">계정 목록</td>
+          <td class="borderTop2 desc"></td>
+          <td class="borderTop2 rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/AccountMgmt/02-Account-Details.html" target="_blank">02-Account-Details</a>
+          </td>
+          <td>계정 상세 정보</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
 
         <!-- MODAL -->
 
         <tr>
-          <td rowspan="4" class="borderTop2">
+          <td rowspan="8" class="borderTop2">
             <strong>Modal</strong>
           </td>
           <td class="borderTop2">
@@ -372,16 +520,16 @@
           <td class="rmks"></td>
         </tr>
 
-        <tr>
-          <td>
+        <tr class="new">
+          <td class="borderTop">
             <a class="link" href="html/Modal/03-Modal-Input.html" target="_blank">03-Modal-Input</a>
           </td>
-          <td>분류 신규등록 모달</td>
-          <td class="desc"></td>
-          <td class="rmks"></td>
+          <td class="borderTop">분류 신규등록 모달</td>
+          <td class="desc borderTop"></td>
+          <td class="rmks borderTop"></td>
         </tr>
 
-        <tr>
+        <tr class="new">
           <td>
             <a class="link" href="html/Modal/04-Modal-Input(alt).html" target="_blank">04-Modal-Input(alt)</a>
           </td>
@@ -389,11 +537,47 @@
           <td class="desc"></td>
           <td class="rmks"></td>
         </tr>
+        </tr>
 
-        <!-- ~~~~ 여기까지 1차 버전 ~~~~~ -->
+        <tr class="new">
+          <td class="borderTop">
+            <a class="link" href="html/Modal/05-Modal-Log-A.html" target="_blank">05-Modal-Log-A</a>
+          </td>
+          <td class="borderTop">시스템 로그 - 감사 로그 모달</td>
+          <td class="desc borderTop"></td>
+          <td class="rmks borderTop"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/Modal/06-Modal-Log-B.html" target="_blank">06-Modal-Log-B</a>
+          </td>
+          <td>시스템 로그 - 사용자 접속 로그 모달</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/Modal/07-Modal-Log-C.html" target="_blank">07-Modal-Log-C</a>
+          </td>
+          <td>시스템 로그 - 권한 관리 로그 모달</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
+
+        <tr class="new">
+          <td>
+            <a class="link" href="html/Modal/08-Modal-Log-D.html" target="_blank">08-Modal-Log-D</a>
+          </td>
+          <td>시스템 로그 - 연동/배치 로그 모달</td>
+          <td class="desc"></td>
+          <td class="rmks"></td>
+        </tr>
 
 
-        <!-- 계정 관리 -->
+
 
 
       </tbody>

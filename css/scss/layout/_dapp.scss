@@ -13,6 +13,12 @@
 .dapp-details {
   padding-top: 43px !important;
 
+  .details-top {
+    input[readonly] {
+      border-color: transparent;
+    }
+  }
+
   .details-body {
     padding-left: 52px;
     padding-right: 4px;

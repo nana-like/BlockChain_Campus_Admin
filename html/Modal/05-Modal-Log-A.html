@@ -18,7 +18,6 @@
 </head>
 
 <body>
-  <!-- 사용자 접속 로그 목록 화면 -->
 
   <div id="wrap">
     <header id="gnb" class="gnb">
@@ -53,8 +52,8 @@
               [전달사항]
               서브메뉴가 활성화된 경우 .gnb-item-sub에 active 클래스를 추가해주세요.
             -->
-            <li class="gnb-item-sub"><a href="">감사 로그</a></li>
-            <li class="gnb-item-sub active"><a href="">사용자 접속 로그</a></li>
+            <li class="gnb-item-sub active"><a href="">감사 로그</a></li>
+            <li class="gnb-item-sub"><a href="">사용자 접속 로그</a></li>
             <li class="gnb-item-sub"><a href="">권한 관리 로그</a></li>
             <li class="gnb-item-sub"><a href="">연동 / 배치 로그</a></li>
           </ul>
@@ -83,7 +82,7 @@
             <h1 class="lnb-logo">Blockchain Campus Admin</h1>
             <div class="lnb-route">
               <p class="lnb-route-info">시스템 로그</p>
-              <p class="lnb-route-info">사용자 접속 로그</p>
+              <p class="lnb-route-info">감사 로그</p>
             </div>
           </div>
 
@@ -118,20 +117,20 @@
 
             <div class="main-top">
 
-              <div class="search-container search-log-2">
+              <div class="search-container search-log-1">
 
                 <div class="form-container">
 
                   <div class="flex-line">
 
                     <div class="input-container input-container-dd type-row">
-                      <strong class="title">구분</strong>
-                      <div class="dropdown dropdown-search w-130 active">
-                        <div class="text">로그아웃</div>
+                      <strong class="title">상태</strong>
+                      <div class="dropdown dropdown-search active w-100">
+                        <div class="text">전체</div>
                         <div class="combobox">
                           <button class="combobox-item">전체</button>
-                          <button class="combobox-item">로그인</button>
-                          <button class="combobox-item">로그아웃</button>
+                          <button class="combobox-item">성공</button>
+                          <button class="combobox-item">실패</button>
                         </div>
                       </div>
                       <!-- //end of .dropdown -->
@@ -157,26 +156,17 @@
                   </div>
 
                   <div class="flex-line">
+
                     <div class="input-container type-row">
-                      <strong class="title">사용자 역할</strong>
-                      <div class="checkbox-container type-row">
-                        <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-log-role-all" />
-                          <label for="cb-log-role-all">전체</label>
-                        </div>
-                        <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-log-role-lv3" />
-                          <label for="cb-log-role-lv3">시스템 관리자</label>
-                        </div>
-                        <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-log-role-lv2" />
-                          <label for="cb-log-role-lv2">시스템 운영자</label>
-                        </div>
-                        <div class="checkbox-block checkbox-type-a">
-                          <input type="checkbox" id="cb-log-role-lv1" />
-                          <label for="cb-log-role-lv1">일반 사용자</label>
-                        </div>
-                      </div>
+                      <strong class="title">기능명</strong>
+                      <input type="text" class="input-text" />
+                      <button class="input-button button-type-c">검색</button>
+                    </div>
+
+                    <div class="input-container type-row">
+                      <strong class="title">URL</strong>
+                      <input type="text" class="input-text" />
+                      <button class="input-button button-type-c">검색</button>
                     </div>
 
                   </div>
@@ -189,7 +179,6 @@
                 </div>
 
               </div>
-
 
             </div>
             <!-- //end of .main-top -->
@@ -214,24 +203,26 @@
 
                 <div class="table-titleArea">
                   <table class="table-header">
-                    <!-- col: 7개 -->
+                    <!-- col: 8개 -->
                     <colgroup>
-                      <col width="11%" />
-                      <col width="12%" />
+                      <col width="9%" />
+                      <col width="9%" />
+                      <col width="14%" />
+                      <col width="14%" />
                       <col width="15%" />
-                      <col width="20%" />
-                      <col width="16%" />
-                      <col width="16%" />
+                      <col width="15%" />
+                      <col width="14%" />
                       <col width="10%" />
                     </colgroup>
                     <thead>
                       <tr>
                         <th>번호</th>
-                        <th>구분</th>
+                        <th>상태</th>
                         <th>등록일시</th>
                         <th>등록자</th>
                         <th>IP</th>
-                        <th>사용자 역할</th>
+                        <th>기능명</th>
+                        <th>URL</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -242,58 +233,53 @@
                 <div class="table-viewArea">
                   <table class="table-basic">
                     <colgroup>
-                      <!-- col: 7개 -->
-                      <col width="11%" />
-                      <col width="12%" />
+                      <!-- col: 8개 -->
+                      <col width="9%" />
+                      <col width="9%" />
+                      <col width="14%" />
+                      <col width="14%" />
                       <col width="15%" />
-                      <col width="20%" />
-                      <col width="16%" />
-                      <col width="16%" />
+                      <col width="15%" />
+                      <col width="14%" />
                       <col width="10%" />
                     </colgroup>
 
                     <tbody>
                       <tr>
                         <td>150</td>
-                        <td>로그인</td>
+                        <td>성공</td>
                         <td>2018-01-01 00:00</td>
                         <td>admin</td>
                         <td>110.110.110.111</td>
-                        <td>시스템 관리자</td>
+                        <td>[화면] DApp 현황 목록</td>
+                        <td>/admin/dapp/list.view</td>
                         <td><button class="button-type-d">상세정보</button></td>
                       </tr>
                       <tr>
-                        <td>150</td>
-                        <td>로그인</td>
+                        <td>149</td>
+                        <td>성공</td>
                         <td>2018-01-01 00:00</td>
-                        <td>admin</td>
+                        <td>ekbae@postech.ac.kr</td>
                         <td>110.110.110.111</td>
-                        <td>시스템 관리자</td>
+                        <td>[화면] 계정 관리 목록</td>
+                        <td>/admin/account/list.view</td>
                         <td><button class="button-type-d">상세정보</button></td>
                       </tr>
                       <tr>
-                        <td>150</td>
-                        <td>로그인</td>
+                        <td>148</td>
+                        <td>실패</td>
                         <td>2018-01-01 00:00</td>
-                        <td>admin</td>
+                        <td>ekbae@postech.ac.kr</td>
                         <td>110.110.110.111</td>
-                        <td>시스템 관리자</td>
-                        <td><button class="button-type-d">상세정보</button></td>
-                      </tr>
-                      <tr>
-                        <td>150</td>
-                        <td>로그인</td>
-                        <td>2018-01-01 00:00</td>
-                        <td>admin</td>
-                        <td>110.110.110.111</td>
-                        <td>일반 사용자</td>
+                        <td>[화면] 잡 스케줄 관리 목록</td>
+                        <td>/admin/jobschedule/list.view</td>
                         <td><button class="button-type-d">상세정보</button></td>
                       </tr>
                     </tbody>
 
                     <!-- <tbody>
                   <tr class="tr-noData">
-                    <td colspan="7">
+                    <td colspan="8">
                       <div class="text-noData">
                         No data
                       </div>
@@ -310,7 +296,7 @@
                   </div>
                   <div id="table-pagination"></div>
                   <div class="table-paging-container">
-                    <div class="dropdown dropdown-paging reverse ">
+                    <div class="dropdown dropdown-paging reverse active">
                       <p class="label">행 표시</p>
                       <div class="text">15</div>
                       <div class="combobox">
@@ -338,6 +324,132 @@
       </div>
     </div>
     <!-- //end of #content -->
+  </div>
+
+  <div id="dim">
+
+    <div id="modal">
+
+      <div class="modal-box modal-layout-large modal-log">
+
+        <div class="modal-title">
+          감사 로그 상세정보
+          <button class="button-modal-close">모달 닫기</button>
+        </div>
+
+        <div class="modal-content">
+
+          <div class="modal-content-container">
+
+            <strong class="log-title">기본 정보</strong>
+
+            <div class="table-container">
+
+              <div class="table-titleArea">
+                <table class="table-header">
+                  <!-- col: 5개 -->
+                  <colgroup>
+                    <col width="15%" />
+                    <col width="10%" />
+                    <col width="20%" />
+                    <col width="25%" />
+                    <col width="30%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>상태</th>
+                      <th>등록일시</th>
+                      <th>등록자</th>
+                      <th>IP</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+
+              <div class="table-viewArea">
+                <table class="table-basic">
+                  <!-- col: 5개 -->
+                  <colgroup>
+                    <col width="15%" />
+                    <col width="10%" />
+                    <col width="20%" />
+                    <col width="25%" />
+                    <col width="30%" />
+                  </colgroup>
+
+                  <tbody>
+                    <tr>
+                      <td>150</td>
+                      <td>성공</td>
+                      <td>2018-01-01 00:00</td>
+                      <td>admin</td>
+                      <td>110.110.110.111</td>
+                    </tr>
+                  </tbody>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+            <div class="table-container">
+
+              <div class="table-titleArea">
+                <table class="table-header">
+                  <!-- col: 2개 -->
+                  <colgroup>
+                    <col width="55%" />
+                    <col width="45%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>기능명</th>
+                      <th>URL</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+
+              <div class="table-viewArea">
+                <table class="table-basic">
+                  <!-- col: 2개 -->
+                  <colgroup>
+                    <col width="55%" />
+                    <col width="45%" />
+                  </colgroup>
+
+                  <tbody>
+                    <tr>
+                      <td>[화면] DApp 현황 목록</td>
+                      <td>/admin/dapp/list.view</td>
+                    </tr>
+                  </tbody>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+            <strong class="log-title">부가 정보</strong>
+            <div class="log-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa
+              qui officia deserunt mollit anim id est laborum.</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </body>
 

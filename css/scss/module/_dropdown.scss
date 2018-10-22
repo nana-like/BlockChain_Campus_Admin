@@ -282,6 +282,9 @@
 }
 
 .dropdown-search {
+  &.active .text {
+    border-color: #11adca;
+  }
   .text {
     cursor: pointer;
     // width: 78px;

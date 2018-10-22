@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 #dim {
+  display: none;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -8,6 +9,10 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+
+  &.active {
+    display: block;
+  }
 }
 
 #modal {
@@ -19,11 +24,35 @@
   height: 100%;
   @include justify-content(center);
   @include align-items(center);
-  display: none;
+  // display: none;
+  @include flexbox;
   overflow: auto;
 
   &.active {
-    @include flexbox;
+    .modal-box {
+      animation: fadeIn 0.5s;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
   }
 }
 
@@ -140,8 +169,19 @@
   position: absolute;
   top: 50%;
   right: 28px;
+  width: 32px;
+  height: 32px;
   @include transform(translateY(-50%));
-  background-color: orangered;
+  // background-color: orangered;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: icon(button-modal-close, "transparent");
+
+  &:hover {
+    background-image: icon(button-modal-close, "%23F2F4F7");
+  }
 }
 
 .modal-log {
@@ -183,14 +223,11 @@
   }
   .transfer-container {
     @include flexbox;
-    outline: 2px solid red;
 
     .table-container {
-      outline: 3px solid gold;
     }
 
     .transfer-form {
-      outline: 3px solid navy;
     }
   }
 }
