@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="../../favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+
+  <!-- 전체 송금 모달 : 진행 중 -->
+
+  <div id="wrap">
+  </div>
+
+  <div id="dim">
+
+    <div id="modal" class="active">
+
+      <div class="modal-box modal-layout-large modal-transfer">
+
+        <div class="modal-title">
+          전체 송금
+          <button class="button-modal-close">모달 닫기</button>
+        </div>
+
+        <div class="modal-content">
+
+          <div class="modal-content-container">
+
+            <div class="transfer-container">
+
+              <div class="table-container">
+
+                <div class="table-top">
+                  <div class="left">
+                    <div class="transfer-tab">
+                      <!--
+                          [전달사항]
+                          활성화 된 .tab-item에게 active 클래스를 붙여 주세요.
+                        -->
+                      <button class="tab-item">대기</button>
+                      <button class="tab-item active">진행 중 (2)</button>
+                      <button class="tab-item">완료</button>
+                    </div>
+                  </div>
+
+                  <div class="right">
+                    <p class="table-indicator">
+                      진행 중 작업: 2개 중 <span class="accent">1-2</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- //end of .table-top -->
+
+                <div class="table-titleArea">
+                  <table class="table-header">
+                    <!-- col: 7개 -->
+                    <colgroup>
+                      <col width="9%" />
+                      <col width="30%" />
+                      <col width="15%" />
+                      <col width="15%" />
+                      <col width="10%" />
+                      <col width="12%" />
+                      <col width="9%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>작업명</th>
+                        <th>작업 등록자</th>
+                        <th>작업 등록일시</th>
+                        <th>송금 대상자 수</th>
+                        <th>작업 진행상태</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <!-- //end of .table-titleArea -->
+
+                <div class="table-viewArea">
+                  <table class="table-basic">
+                    <!-- col: 7개 -->
+                    <colgroup>
+                      <col width="9%" />
+                      <col width="30%" />
+                      <col width="15%" />
+                      <col width="15%" />
+                      <col width="10%" />
+                      <col width="12%" />
+                      <col width="9%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>2</td>
+                        <td>20180725 - 전체 사용자 대상 에어드랍 - 002</td>
+                        <td>admin</td>
+                        <td>2018-06-02 09:00</td>
+                        <td>100</td>
+                        <td><span class="queued">처리 예정</span></td>
+                        <td><button class="button-type-d">취소</button></td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>20180725 - 전체 사용자 대상 에어드랍 - 001</td>
+                        <td>admin</td>
+                        <td>2018-06-02 08:00</td>
+                        <td>50</td>
+                        <td>처리 중</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- //end of .table-viewArea -->
+
+                <div class="table-bottom">
+                  <div class="table-utils">
+                  </div>
+                  <div id="table-pagination"></div>
+                  <div class="table-paging-container"></div>
+                </div>
+                <!-- //end of .table-bottom -->
+
+              </div>
+              <!-- //end of .table-container -->
+
+
+
+            </div>
+            <!-- //end of .transfer-container-->
+
+          </div>
+
+        </div>
+        <!-- //end of .modal-content -->
+
+      </div>
+      <!-- //end of .modal-box -->
+
+    </div>
+    <!-- //end of #modal -->
+
+  </div>
+
+</body>
+
+</html>

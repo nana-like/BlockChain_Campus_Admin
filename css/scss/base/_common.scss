@@ -36,6 +36,7 @@
   font-size: 12px;
   font-weight: $fw-m;
   color: #11adca;
+  text-align: left;
 }
 
 .flex-line {
@@ -106,4 +107,38 @@
 
 .accent {
   color: #30b9d3;
+}
+
+.has-message {
+  @include flexbox;
+  @include align-items(center);
+  position: relative;
+  .message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-weight: $fw-b;
+    color: #ee6262;
+
+    &.active {
+      color: #11adca;
+    }
+  }
+}
+
+.has-message-block {
+  .message {
+    margin-top: 3px;
+    text-align: left;
+    color: #ee6262;
+    font-weight: $fw-b;
+
+    &.active {
+      color: #11adca;
+    }
+  }
+}
+
+.queued {
+  color: #aaa;
 }

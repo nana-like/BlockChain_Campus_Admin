@@ -213,21 +213,106 @@
 
 .modal-transfer {
   .modal-content-container {
-    @include flexbox;
     width: 1280px;
-    min-height: 840px;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .transfer-container {
+    @include flexbox;
   }
   #tree {
     text-align: left;
   }
-  .transfer-container {
-    @include flexbox;
+  .table-container {
+    min-width: 780px;
+    // max-height: 580px;
 
-    .table-container {
+    .table-viewArea {
+      height: calc(580px - 48px);
     }
 
-    .transfer-form {
+    .transfer-tab {
+      margin-top: 40px;
+      @include flexbox;
+      @include align-items(center);
+
+      .tab-item {
+        position: relative;
+        display: block;
+        font-size: 14px;
+        font-weight: $fw-m;
+        color: #9daab9;
+        margin-left: 29px;
+        padding: 10px 0;
+        margin-bottom: 5px;
+
+        &:first-child {
+          margin-left: 10px;
+          &:before {
+            display: none;
+          }
+        }
+
+        &:hover {
+          color: #504949;
+        }
+
+        &:before {
+          position: absolute;
+          top: 14px;
+          left: -14px;
+          display: block;
+          width: 1px;
+          height: 15px;
+          content: "";
+          background-color: #9daab9;
+          cursor: default;
+          @include pointer-none;
+        }
+
+        &.active {
+          color: #30b9d3;
+        }
+      }
+    }
+
+    .table-indicator {
+      margin-bottom: 12px;
+    }
+  }
+  .transfer-form {
+    position: relative;
+    @include flex-shrink(0);
+    margin-top: 112px;
+    margin-left: 30px;
+    width: 400px;
+    height: 580px;
+    padding: 50px 40px 0;
+    background-color: #f2f4f7;
+
+    .input-text {
+      font-weight: $fw-m;
+      letter-spacing: 0;
+    }
+
+    .button-transfer {
+      @include flexbox;
+      @include justify-content(flex-end);
+      position: absolute;
+      width: 320px;
+      bottom: 30px;
+
+      button {
+        margin: 0;
+      }
+
+      .message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #ee6262;
+        font-weight: $fw-b;
+      }
     }
   }
 }

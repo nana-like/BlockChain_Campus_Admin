@@ -84,6 +84,24 @@
     border-color: #f2f4f7 !important;
     background-color: #f2f4f7;
   }
+
+  &.input-unit {
+    padding-right: 42px;
+    & + .unit {
+      font-weight: $fw-m;
+      position: absolute;
+      top: 44px;
+      right: 14px;
+      font-size: 13px;
+      color: #30b9d3;
+
+      // & + .message.active {
+      //   font-weight: $fw-r;
+      //   bottom: -24px;
+      //   color: #30b9d3;
+      // }
+    }
+  }
 }
 
 .input-button {

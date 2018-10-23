@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="../../favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+
+  <!-- 선택 송금 모달 -->
+
+  <div id="wrap">
+  </div>
+
+  <div id="dim">
+
+    <div id="modal" class="active">
+
+      <div class="modal-box modal-layout-large modal-transfer">
+
+        <div class="modal-title">
+          선택 송금
+          <button class="button-modal-close">모달 닫기</button>
+        </div>
+
+        <div class="modal-content">
+
+          <div class="modal-content-container">
+
+            <div class="transfer-container">
+
+              <div class="table-container">
+
+                <div class="table-top">
+                  <div class="left">
+                    <div class="transfer-tab">
+                      <!--
+                          [전달사항]
+                          활성화 된 .tab-item에게 active 클래스를 붙여 주세요.
+                        -->
+                      <button class="tab-item active">대기 (1)</button>
+                      <button class="tab-item">진행 중</button>
+                      <button class="tab-item">완료</button>
+                    </div>
+                  </div>
+
+                  <div class="right">
+                    <p class="table-indicator">
+                      선택 송금 대상: 4개 중 <span class="accent">1-4</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- //end of .table-top -->
+
+                <div class="table-titleArea">
+                  <table class="table-header">
+                    <!-- col: 6개 -->
+                    <colgroup>
+                      <col width="9%" />
+                      <col width="11%" />
+                      <col width="30%" />
+                      <col width="20%" />
+                      <col width="15%" />
+                      <col width="15%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-all" />
+                            <label for="cb-temp-all"></label>
+                          </div>
+                        </th>
+                        <th>번호</th>
+                        <th>구분</th>
+                        <th>로그인 계정</th>
+                        <th>어드레스</th>
+                        <th>송금 처리 결과</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <!-- //end of .table-titleArea -->
+
+                <div class="table-viewArea">
+                  <table class="table-basic">
+                    <colgroup>
+                      <!-- col: 6개 -->
+                      <col width="9%" />
+                      <col width="11%" />
+                      <col width="30%" />
+                      <col width="20%" />
+                      <col width="15%" />
+                      <col width="15%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-151" checked />
+                            <label for="cb-temp-151"></label>
+                          </div>
+                        </td>
+                        <td>151</td>
+                        <td>분류_1_1_1_1</td>
+                        <td>admin</td>
+                        <td>0x5a05**********</td>
+                        <td>미실행</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-150" checked />
+                            <label for="cb-temp-150"></label>
+                          </div>
+                        </td>
+                        <td>150</td>
+                        <td>분류_1_1_1_2</td>
+                        <td>admin</td>
+                        <td>0x5a05**********</td>
+                        <td><span class="queued">미실행</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-149" checked />
+                            <label for="cb-temp-149"></label>
+                          </div>
+                        </td>
+                        <td>149</td>
+                        <td>분류_1_1_1_3</td>
+                        <td>arlee@postech.ac.kr</td>
+                        <td>0x5a05**********</td>
+                        <td><span class="queued">미실행</span></td>
+                      </tr>
+                      <!--///-->
+
+                      <tr>
+                        <td>148</td>
+                        <td>분류_1_1_1_3</td>
+                        <td>arlee@postech.ac.kr</td>
+                        <td>0x5a05**********</td>
+                        <td><span class="queued">미실행</span></td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- //end of .table-viewArea -->
+
+                <div class="table-bottom">
+                  <div class="table-utils">
+                  </div>
+                  <div id="table-pagination"></div>
+                  <div class="table-paging-container"></div>
+                </div>
+                <!-- //end of .table-bottom -->
+
+              </div>
+              <!-- //end of .table-container -->
+
+
+              <div class="transfer-form">
+
+                <div class="input-container type-col">
+                  <strong class="title">송금 작업명</strong>
+                  <div class="has-message-block">
+                    <input type="text" class="input-text" value="20180903-1434-001" />
+                    <div class="message">*다른 이름으로 설정하세요.</div>
+                  </div>
+                </div>
+
+                <div class="input-container type-col">
+                  <strong class="title">송금 패스워드</strong>
+                  <div class="has-message-block">
+                    <input type="password" class="input-text" />
+                    <div class="message">*정확한 패스워드를 다시 입력하세요.</div>
+                  </div>
+                </div>
+
+                <div class="input-container type-col">
+                  <strong class="title">내 계정 잔액</strong>
+                  <input type="number" class="input-text input-unit" />
+                  <div class="unit">BCX</div>
+                </div>
+
+                <div class="input-container type-col">
+                  <strong class="title">1인당 송금 금액(1인당 최대 9,900BCX 송금 가능)</strong>
+                  <div class="has-message-block">
+                    <input type="number" class="input-text input-unit" />
+                    <div class="unit">BCX</div>
+                    <div class="message active">
+                      *송금 수수료: -% of -BCX
+                    </div>
+                    <div class="message">*유효한 금액을 다시 입력하세요.</div>
+                  </div>
+                </div>
+
+                <div class="button-transfer">
+                  <div class="message">*송금 작업을 시작하지 못했습니다.<br />
+                    다시 시도해 주세요.</div>
+                  <button class="button-type-b" disabled>실행</button>
+                </div>
+
+              </div>
+              <!-- //end of .transfer-form -->
+
+            </div>
+            <!-- //end of .transfer-container-->
+
+          </div>
+
+        </div>
+        <!-- //end of .modal-content -->
+
+      </div>
+      <!-- //end of .modal-box -->
+
+    </div>
+    <!-- //end of #modal -->
+
+  </div>
+
+</body>
+
+</html>

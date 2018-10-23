@@ -200,22 +200,6 @@
       .input-container {
         @include flex-shrink(0);
         // outline: 2px solid red;
-
-        .has-message {
-          @include flexbox;
-          @include align-items(center);
-          position: relative;
-        }
-        .message {
-          position: absolute;
-          bottom: -20px;
-          left: 0;
-          color: #ee6262;
-
-          &.active {
-            color: #11adca;
-          }
-        }
       }
 
       .line-title {
@@ -296,6 +280,49 @@
     }
   }
 } // ---- //details-body
+
+.line-generate {
+  @include align-items(flex-start);
+  &.active {
+    .address-generate {
+      display: block;
+    }
+  }
+}
+
+.address-generate {
+  display: none;
+  // position: absolute;
+  // top: 4px;
+  // left: 150px;
+
+  .guide {
+    font-size: 12px;
+    font-weight: $fw-b;
+    color: #30b9d3;
+    margin-bottom: 28px;
+  }
+
+  input {
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-right: 10px;
+
+    & + button {
+      margin-right: 5px;
+    }
+  }
+
+  .title {
+    display: block;
+    font-weight: $fw-m;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #323b45;
+  }
+}
 
 .mode-view {
   //보기 모드일 때!!!

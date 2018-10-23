@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="shortcut icon" href="../../favicon.ico" />
+
+  <script src="../../js/library/jquery.min.js"></script>
+  <script src="../../js/library-all.js"></script>
+  <script src="../../js/ui.js"></script>
+
+  <title>BlockChain Campus</title>
+</head>
+
+<body>
+  <!-- 권한 관리 - 기능 관리 목록 화면 -->
+
+  <div id="wrap">
+    <header id="gnb" class="gnb">
+      <div class="dropdown dropdown-basic dd-gnb-mgmt">
+        <button class="text">DAPP 관리</button>
+        <div class="combobox">
+          <button class="combobox-item">시스템 관리</button>
+          <button class="combobox-item">DAPP 관리</button>
+        </div>
+      </div>
+      <!-- //end of .dropdown -->
+
+      <ul class="gnb-list">
+        <li class="gnb-item">
+          <a href="" class="gnb-link">계정 관리</a>
+        </li>
+        <li class="gnb-item">
+          <a class="gnb-link gnb-accordion active opened">권한 관리</a>
+          <ul class="gnb-list-sub">
+            <li class="gnb-item-sub"><a href="">역할 관리</a></li>
+            <li class="gnb-item-sub active"><a href="">기능 관리</a></li>
+          </ul>
+        </li>
+        <li class="gnb-item">
+          <a class="gnb-link gnb-accordion">시스템 로그</a>
+          <ul class="gnb-list-sub">
+            <li class="gnb-item-sub"><a href="">감사 로그</a></li>
+            <li class="gnb-item-sub"><a href="">사용자 접속 로그</a></li>
+            <li class="gnb-item-sub"><a href="">권한 관리 로그</a></li>
+            <li class="gnb-item-sub"><a href="">연동 / 배치 로그</a></li>
+          </ul>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link">잡 스케줄 관리</a>
+        </li>
+        <li class="gnb-item">
+          <a href="" class="gnb-link">코드 관리</a>
+        </li>
+      </ul>
+      <div class="gnb-bottom">
+        <a href="" class="gnb-bottom-link">트래커</a>
+        <a href="" class="gnb-bottom-link">개발자 센터</a>
+      </div>
+
+    </header>
+    <!-- //end of #gnb -->
+
+    <div id="content">
+
+      <nav id="lnb" class="lnb">
+        <div class="lnb-container">
+
+          <div class="lnb-left">
+            <h1 class="lnb-logo">Blockchain Campus Admin</h1>
+            <div class="lnb-route">
+              <p class="lnb-route-info">권한 관리</p>
+              <p class="lnb-route-info">기능 관리</p>
+            </div>
+          </div>
+
+          <div class="lnb-right">
+            <div class="dropdown dropdown-basic dd-lnb-email">
+              <button class="text">hello@hello.com</button>
+              <div class="combobox">
+                <button class="combobox-item">로그아웃</button>
+              </div>
+            </div>
+            <!-- //end of .dropdown -->
+          </div>
+
+        </div>
+      </nav>
+      <!-- //end of #lnb -->
+
+      <div id="main" class="main-table">
+
+        <div id="tree">
+          <div class="tree-container">
+            <div id="jsTree">
+
+            </div>
+          </div>
+        </div>
+        <!-- //end of #tree-->
+
+        <div class="main-container account-list">
+
+          <div class="scroll-area">
+
+            <div class="main-top">
+              <div class="search-container search-permission-2">
+
+                <div class="form-container">
+
+                  <div class="flex-line">
+
+                    <div class="input-container type-row">
+                      <strong class="title">기능명</strong>
+                      <input type="text" class="input-text" />
+                      <button class="input-button button-type-c">검색</button>
+                    </div>
+
+                    <div class="input-container type-row">
+                      <strong class="title">URL</strong>
+                      <input type="text" class="input-text" />
+                      <button class="input-button button-type-c">검색</button>
+                    </div>
+
+                  </div>
+
+                  <div class="flex-line">
+
+
+                    <div class="input-container type-row">
+                      <strong class="title">기능구분</strong>
+                      <div class="checkbox-container type-row">
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-function-0" checked />
+                          <label for="cb-function-0">전체</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-function-1" />
+                          <label for="cb-function-1">메뉴</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-function-2" />
+                          <label for="cb-function-2">화면</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-function-3" />
+                          <label for="cb-function-3">버튼</label>
+                        </div>
+                        <div class="checkbox-block checkbox-type-a">
+                          <input type="checkbox" id="cb-function-4" />
+                          <label for="cb-function-4">기능</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="button-container">
+                  <button class="button-type-c" disabled>초기화</button>
+                  <button class="button-type-b">검색</button>
+                </div>
+
+              </div>
+            </div>
+            <!-- //end of .main-top -->
+
+            <div class="main-body">
+
+              <div class="table-container">
+
+                <div class="table-top">
+                  <div class="left">
+                    <p class="table-indicator">
+                      100개중 <span class="accent">1-15</span>
+                    </p>
+                  </div>
+
+                  <div class="center">
+                    <p class="permission-text">일반 사용자</p>
+                  </div>
+
+                  <div class="right">
+                    <div class="table-button-container">
+                      <button class="button-type-a" disabled>기능 추가</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //end of .table-top -->
+
+                <div class="table-titleArea">
+                  <table class="table-header">
+                    <!-- col: 6개 -->
+                    <colgroup>
+                      <col width="8%" />
+                      <col width="10%" />
+                      <col width="12%" />
+                      <col width="20%" />
+                      <col width="30%" />
+                      <col width="20%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-all" />
+                            <label for="cb-temp-all"></label>
+                          </div>
+                        </th>
+                        <th>번호</th>
+                        <th>역할</th>
+                        <th>상위기능명</th>
+                        <th>기능명</th>
+                        <th>URL</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <!-- //end of .table-titleArea -->
+
+                <div class="table-viewArea">
+                  <table class="table-basic">
+                    <colgroup>
+                      <!-- col: 7개 -->
+                      <col width="8%" />
+                      <col width="10%" />
+                      <col width="12%" />
+                      <col width="20%" />
+                      <col width="30%" />
+                      <col width="20%" />
+                    </colgroup>
+
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-150" />
+                            <label for="cb-temp-150"></label>
+                          </div>
+                        </td>
+                        <td>150</td>
+                        <td>일반 사용자</td>
+                        <td>ROOT</td>
+                        <td>[메뉴] 계정 관리</td>
+                        <td>/admin/dapp/list.view</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="checkbox-block checkbox-type-a">
+                            <input type="checkbox" id="cb-temp-149" />
+                            <label for="cb-temp-149"></label>
+                          </div>
+                        </td>
+                        <td>149</td>
+                        <td>일반 사용자</td>
+                        <td>[화면] 계정 관리 목록</td>
+                        <td>[기능] 계정 관리 목록 조회 012</td>
+                        <td>/admin/systemlog/log.view</td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- //end of .table-viewArea -->
+
+                <div class="table-bottom">
+                  <div class="table-utils">
+                    <!--
+                      [전달사항]
+                      체크박스가 1개 이상 체크되면 
+                      - .selected-number에 active 클래스를 추가하고,
+                      - button의 disabeld 속성을 제거해주세요.
+                    -->
+                    <p class="selected-number">(0)</p>
+                    <button class="button-type-a" disabled>권한삭제</button>
+                  </div>
+                  <div id="table-pagination"></div>
+                  <div class="table-paging-container">
+                    <div class="dropdown dropdown-paging reverse">
+                      <p class="label">행 표시</p>
+                      <div class="text">15</div>
+                      <div class="combobox">
+                        <button class="combobox-item">15</button>
+                        <button class="combobox-item">30</button>
+                        <button class="combobox-item">50</button>
+                        <button class="combobox-item">100</button>
+                      </div>
+                    </div>
+                    <!-- //end of .dropdown -->
+                  </div>
+                </div>
+                <!-- //end of .table-bottom -->
+
+              </div>
+              <!-- //end of .table-container -->
+
+            </div>
+            <!-- //end of .main-body -->
+          </div>
+          <!-- //end of .scroll-area-->
+        </div>
+        <!-- //end of #main -->
+
+      </div>
+    </div>
+    <!-- //end of #content -->
+  </div>
+</body>
+
+</html>

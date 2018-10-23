@@ -259,14 +259,25 @@
             <div class="details-container">
               <strong class="container-title">블록체인 정보</strong>
 
-              <div class="flex-line">
+              <!--
+                [전달사항]
+                사용자가 생성 버튼을 누른 경우,
+                .line-generate active 클래스를 추가해주세요.
+              -->
+              <div class="flex-line line-generate active">
                 <div class="input-container type-row">
                   <strong class="line-title">어드레스:</strong>
                   <button class="button-type-d">Generate</button>
                 </div>
                 <div class="address-generate">
-                  <p class="guide">*어드레스 생성을 위해 현재 로그인 한 계정의 패스워드를 입력하고 확인 버튼을 누르세요.</p>
-                  <!--TODO:여기에작성-->
+                  <p class="guide">어드레스 생성을 위해 현재 로그인 한 계정의 패스워드를 입력하고 확인 버튼을 누르세요.</p>
+                  <strong class="title">비밀번호</strong>
+                  <div class="has-message">
+                    <input id="input-login-univ" type="password" class="input-type-login" />
+                    <button class="button-type-c">취소</button>
+                    <button class="button-type-b">확인</button>
+                    <div class="message">비밀번호 오류</div>
+                  </div>
                 </div>
               </div>
 
