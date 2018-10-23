@@ -353,6 +353,12 @@
 }
 
 .dropdown {
+  &.w-400 {
+    width: 400px;
+  }
+  &.w-250 {
+    width: 250px;
+  }
   &.w-200 {
     width: 200px;
   }

@@ -17,10 +17,10 @@
     overflow-y: auto;
 
     .gnb-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      // border-top: 1px solid rgba(255, 255, 255, 0.04);
 
-      &:first-child {
-        border-top: 1px solid rgba(255, 255, 255, 0.04);
+      &:last-child .gnb-link {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       }
     }
   }
@@ -36,6 +36,7 @@
   .gnb-accordion {
     position: relative;
     cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
     &:after {
       position: absolute;
@@ -75,9 +76,14 @@
     font-weight: $fw-m;
     font-size: 14px;
     background-color: #1d1d1d;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 
     &:hover {
       background-color: #0a0a0a;
+
+      .gnb-link {
+        border-color: #0a0a0a;
+      }
     }
 
     &:before {

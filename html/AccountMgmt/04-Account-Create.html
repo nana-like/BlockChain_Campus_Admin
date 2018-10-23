@@ -102,18 +102,17 @@
         <!-- //end of #tree-->
 
 
-        <div class="main-container scrollable account-details mode-view">
+        <div class="main-container scrollable account-create">
           <div class="details-top">
             <div class="flex-line">
               <div class="title-container">
                 <button class="button-back"></button>
                 <div class="details-title">
-                  arlee@postech.ac.kr
+                  새 계정 등록
                 </div>
               </div>
               <div class="button-container">
-                <button class="button-type-a button-details-delete">계정 삭제</button>
-                <button class="button-type-a" id="button-edit-details">수정(테스트)</button>
+                <button class="button-type-a">등록</button>
               </div>
             </div>
           </div>
@@ -129,21 +128,21 @@
                   <p class="string">POSTECH</p>
                 </div>
                 <div class="input-container type-row">
-                  <strong class="line-title">로그인 계정:</strong>
-                  <p class="string">arlee@postech.ac.kr</p>
-                </div>
-                <div class="input-container type-row">
                   <strong class="line-title">구분:</strong>
-                  <!-- string-value: 보기모드일 때만 표시 -->
-                  <p class="string-value">분류_1_1_1_1</p>
-                  <!-- dropdown: 편집모드일 때만 표시 -->
-                  <div class="dropdown dropdown-search w-150">
-                    <button class="text">분류_1_1_1_1</button>
+                  <div class="dropdown dropdown-search w-400">
+                    <button class="text">전체</button>
                     <div class="combobox">
+                      <button class="combobox-item">가나다라마바사아자차카타파하</button>
+                      <button class="combobox-item">분류_1</button>
+                      <button class="combobox-item">분류_1_1</button>
+                      <button class="combobox-item">분류_1_1_1</button>
                       <button class="combobox-item">분류_1_1_1_1</button>
                       <button class="combobox-item">분류_1_1_1_2</button>
                       <button class="combobox-item">분류_1_1_1_3</button>
-                      <button class="combobox-item">분류_1_1_1_4</button>
+                      <button class="combobox-item">분류_1_1_2</button>
+                      <button class="combobox-item">분류_1_1_2_1</button>
+                      <button class="combobox-item">분류_1_1_2_2</button>
+                      <button class="combobox-item">분류_1_1_2_3</button>
                     </div>
                   </div>
                 </div>
@@ -151,15 +150,16 @@
 
               <div class="flex-line">
                 <div class="input-container type-row">
-                  <strong class="line-title">상태:</strong>
-                  <div class="radio-container type-row">
-                    <div class="radio-block radio-type-b">
-                      <input type="radio" name="radio-account-status" id="radio-account-status-lock" />
-                      <label for="radio-account-status-lock">잠금</label>
-                    </div>
-                    <div class="radio-block radio-type-b">
-                      <input type="radio" name="radio-account-status" id="radio-temp-account-unlock" checked />
-                      <label for="radio-account-status-unlock">사용중</label>
+                  <strong class="line-title">로그인 계정:</strong>
+                  <div class="has-message">
+                    <input type="text" class="input-text" value="aaa@postech.ac.kr" />
+                    <button class="input-button button-type-c">check</button>
+                    <!--
+                      [전달사항]
+                      긍정적인 메시지의 경우 active 클래스를 추가해주세요.
+                    -->
+                    <div class="message active">
+                      사용할 수 있는 계정
                     </div>
                   </div>
                 </div>
@@ -171,11 +171,11 @@
                       <label for="cb-permission-lv-0">시스템 관리자</label>
                     </div>
                     <div class="checkbox-block checkbox-type-a">
-                      <input type="checkbox" id="cb-permission-lv-1" />
+                      <input type="checkbox" id="cb-permission-lv-1" checked />
                       <label for="cb-permission-lv-1">시스템 운영자</label>
                     </div>
                     <div class="checkbox-block checkbox-type-a">
-                      <input type="checkbox" id="cb-permission-lv-2" />
+                      <input type="checkbox" id="cb-permission-lv-2" checked />
                       <label for="cb-permission-lv-2">일반 사용자</label>
                     </div>
                   </div>
@@ -207,9 +207,6 @@
               <div class="flex-line">
                 <div class="input-container type-row spacer">
                   <strong class="line-title">소속:</strong>
-                  <!-- string-value: 보기모드일 때만 표시 -->
-                  <p class="string-value">시각디자인학과</p>
-                  <!-- dropdown: 편집모드일 때만 표시 -->
                   <div class="dropdown dropdown-search w-250">
                     <button class="text">시각디자인학과</button>
                     <div class="combobox">
@@ -223,9 +220,9 @@
                 </div>
                 <div class="input-container type-row spacer">
                   <strong class="line-title">학번:</strong>
-                  <p class="string-value">20189204848559</p>
                   <div class="has-message">
-                    <input type="text" class="input-text" value="20189204848559" />
+                    <input type="text" class="input-text" value="12312083120902" />
+                    <button class="input-button button-type-c">check</button>
                     <div class="message">
                       사용할 수 없는 번호
                     </div>
@@ -233,7 +230,6 @@
                 </div>
                 <div class="input-container type-row spacer">
                   <strong class="line-title">성별:</strong>
-                  <p class="string-value">여</p>
                   <div class="dropdown dropdown-search w-80">
                     <button class="text">여</button>
                     <div class="combobox">
@@ -244,7 +240,6 @@
                 </div>
                 <div class="input-container type-row">
                   <strong class="line-title">학년:</strong>
-                  <p class="string-value">4</p>
                   <div class="dropdown dropdown-search w-80">
                     <button class="text">4</button>
                     <div class="combobox">
@@ -267,82 +262,11 @@
               <div class="flex-line">
                 <div class="input-container type-row">
                   <strong class="line-title">어드레스:</strong>
-                  <p class="string">0x5a05b58a25a1e5ea0f1d5715e1f655dffc1fb30a</p>
-                  <a href="#" target="_black" class="button-type-d">Tracker</a>
+                  <button class="button-type-d">Generate</button>
                 </div>
-              </div>
-
-              <div class="flex-line">
-                <div class="input-container type-row">
-                  <strong class="line-title">BCX 잔액:</strong>
-                  <p class="string">10,000,000,000 <span class="accent">BCX</span></p>
-                </div>
-              </div>
-
-              <div class="flex-line">
-                <div class="input-container type-row">
-                  <strong class="line-title">등록일시:</strong>
-                  <p class="string">2019-01-01 09:00</p>
-                </div>
-              </div>
-
-            </div>
-            <!-- //end of .details-container -->
-
-            <div class="details-container">
-              <strong class="container-title">히스토리</strong>
-
-              <div class="table-container no-pdr">
-
-                <div class="table-titleArea">
-                  <table class="table-header">
-                    <!-- col: 5개 -->
-                    <colgroup>
-                      <col width="8%" />
-                      <col width="15%" />
-                      <col width="20%" />
-                      <col width="15%" />
-                      <col width="42%" />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>번호</th>
-                        <th>처리일시</th>
-                        <th>계정</th>
-                        <th>작업구분</th>
-                        <th>작업 상세내역</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-                <!-- //end of .table-titleArea -->
-                <div class="table-viewArea">
-                  <table class="table-basic">
-                    <!-- col: 5개 -->
-                    <colgroup>
-                      <col width="8%" />
-                      <col width="15%" />
-                      <col width="20%" />
-                      <col width="15%" />
-                      <col width="42%" />
-                    </colgroup>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>2018-01-01 01:00</td>
-                        <td>arlee@postech.ac.kr</td>
-                        <td>권한 변경</td>
-                        <td>시스템 운영자 > 시스템 관리자</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>2018-01-01 01:00</td>
-                        <td>arlee@postech.ac.kr</td>
-                        <td>상태 변경</td>
-                        <td>잠김 > 사용중</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="address-generate">
+                  <p class="guide">*어드레스 생성을 위해 현재 로그인 한 계정의 패스워드를 입력하고 확인 버튼을 누르세요.</p>
+                  <!--TODO:여기에작성-->
                 </div>
               </div>
 

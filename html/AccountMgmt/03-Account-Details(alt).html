@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <!-- 잡 스케줄 상세 화면 -->
+  <!-- 계정 상세 화면 -->
 
   <div id="wrap">
     <header id="gnb" class="gnb">
@@ -164,19 +164,19 @@
                   </div>
                 </div>
                 <div class="input-container type-row">
-                  <strong class="line-title">권한</strong>
-                  <div class="radio-container type-row">
-                    <div class="radio-block radio-type-a">
-                      <input type="radio" name="radio-permission-lv" id="radio-permission-lv-0" />
-                      <label for="radio-permission-lv-0">시스템 관리자</label>
+                  <strong class="title">권한</strong>
+                  <div class="checkbox-container type-row">
+                    <div class="checkbox-block checkbox-type-a">
+                      <input type="checkbox" id="cb-permission-lv-0" checked />
+                      <label for="cb-permission-lv-0">시스템 관리자</label>
                     </div>
-                    <div class="radio-block radio-type-a">
-                      <input type="radio" name="radio-permission-lv" id="radio-permission-lv-1" checked />
-                      <label for="radio-permission-lv-1">시스템 운영자</label>
+                    <div class="checkbox-block checkbox-type-a">
+                      <input type="checkbox" id="cb-permission-lv-1" />
+                      <label for="cb-permission-lv-1">시스템 운영자</label>
                     </div>
-                    <div class="radio-block radio-type-a">
-                      <input type="radio" name="radio-permission-lv" id="radio-permission-lv-2" />
-                      <label for="radio-permission-lv-2">일반 사용자</label>
+                    <div class="checkbox-block checkbox-type-a">
+                      <input type="checkbox" id="cb-permission-lv-2" />
+                      <label for="cb-permission-lv-2">일반 사용자</label>
                     </div>
                   </div>
                 </div>
@@ -210,7 +210,7 @@
                   <!-- string-value: 보기모드일 때만 표시 -->
                   <p class="string-value">산학협력단</p>
                   <!-- dropdown: 편집모드일 때만 표시 -->
-                  <div class="dropdown dropdown-search w-200">
+                  <div class="dropdown dropdown-search w-250">
                     <button class="text">산학협력단</button>
                     <div class="combobox">
                       <button class="combobox-item">산학협력단</button>
