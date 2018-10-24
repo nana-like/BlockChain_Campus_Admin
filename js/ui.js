@@ -113,6 +113,14 @@ $(function() {
       edges: 1, //처음과 끝에 보여줄 페이지 수
       ellipsePageSet: false //... 클릭 시 타이핑 가능하게 하는 기능 방지
     });
+
+    $("#table-pagination-2").pagination({
+      items: 60, //모든 아이템 수
+      itemsOnPage: 10, //각 페이지에 노출될 아이템 수
+      displayedPages: 3, //페이지네이션 개수 (최소치: 3)
+      edges: 1, //처음과 끝에 보여줄 페이지 수
+      ellipsePageSet: false //... 클릭 시 타이핑 가능하게 하는 기능 방지
+    });
   };
 
   // [*] 차트 함수 (임시)

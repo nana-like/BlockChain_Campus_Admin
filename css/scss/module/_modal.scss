@@ -211,9 +211,13 @@
   }
 }
 
+// + + + + +
+// 전체/선택 송금 모달
+// + + + + +
 .modal-transfer {
   .modal-content-container {
-    width: 1280px;
+    min-width: 1280px;
+    max-width: 1600px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -315,4 +319,182 @@
       }
     }
   }
+}
+
+// + + + + +
+// 권한 추가 모달
+// + + + + +
+.modal-permission {
+  .modal-content {
+    height: 100%;
+  }
+
+  .modal-content-container {
+    @include flexbox;
+    min-width: 1280px;
+    max-width: 1600px;
+    height: 760px;
+  }
+  #tree {
+    text-align: left;
+    height: 100%;
+    overflow: auto;
+  }
+  .permission-container {
+    //permission 영역 전체를 감싸는 영역
+    @include flexbox;
+    @include align-items(center);
+    width: 100%;
+    padding: 30px;
+
+    .table-header th,
+    .table-basic td {
+      height: 38px;
+      line-height: 38px;
+    }
+
+    .permission-left {
+      //왼쪽
+      @include flex-basis(50%);
+      // width: 420px;
+      height: 100%;
+
+      .search-permission-modal-a {
+        position: relative;
+        @include flex-wrap(wrap);
+        @include align-items(flex-start);
+        height: 138px;
+        margin-bottom: 30px;
+
+        .form-container {
+          @include flex-grow(0);
+          margin-right: 0;
+        }
+
+        .input-container {
+          @include flex-basis(50%);
+          margin-top: 0;
+          margin-right: 30px;
+          width: auto;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .title {
+            font-size: 13px;
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+          .input-text {
+            // @include flex-shrink(0);
+            // width: 30%;
+
+            // width: 158px;
+          }
+        }
+
+        .button-container {
+          position: absolute;
+          bottom: 6px;
+          right: 0;
+          @include flex-direction(row);
+
+          button:not(:first-child) {
+            margin-left: 4px;
+          }
+        }
+      }
+
+      .search-permission-modal-b {
+        position: relative;
+        @include flex-wrap(wrap);
+        @include align-items(flex-start);
+        height: 158px;
+        margin-bottom: 0px;
+
+        .form-container {
+          @include flex-grow(0);
+          margin-right: 0;
+        }
+
+        .flex-line {
+          margin-top: 7px;
+          &:last-child {
+            margin-top: 4px;
+          }
+        }
+
+        .input-container {
+          margin-top: 0;
+          margin-right: 0px;
+          width: 100%;
+
+          .title {
+            font-size: 13px;
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+          .input-text {
+            @include flex-grow(1);
+          }
+          .input-button,
+          label {
+            font-size: 13px;
+          }
+        }
+
+        .button-container {
+          position: absolute;
+          bottom: 4px;
+          right: 0;
+          @include flex-direction(row);
+
+          button:not(:first-child) {
+            margin-left: 4px;
+          }
+        }
+
+        & + .table-container {
+          margin-top: 10px;
+        }
+      }
+      .table-viewArea {
+        height: 394px;
+      }
+    }
+    .spacer {
+      //중간 >> 부분
+      width: 18px;
+      height: 100%;
+      margin: 0 40px;
+      background-color: #f2f4f7;
+    }
+    .permission-right {
+      //오른쪽
+      @include flex-basis(50%);
+      height: 100%;
+
+      .selected-user {
+        width: 100%;
+        margin-bottom: 20px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+
+        .title {
+          font-size: 16px;
+          font-weight: $fw-m;
+
+          & + button {
+            margin: 0;
+          }
+        }
+      } //end of .selected-user
+
+      .table-viewArea {
+        height: 510px;
+      }
+    } //end of .permission-right
+  } //end of .permission-container
 }

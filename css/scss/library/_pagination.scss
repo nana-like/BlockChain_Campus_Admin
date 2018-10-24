@@ -1,18 +1,18 @@
 @charset "utf-8";
 
-.pagination {
-  @include flexbox;
-  outline: 2px dashed darkcyan;
+// .pagination {
+//   @include flexbox;
+//   outline: 2px dashed darkcyan;
 
-  .page-item {
-    width: 32px;
-    height: 32px;
-    border-radius: 2px;
-    border: solid 1px #c6cbd4;
-  }
-}
+//   .page-item {
+//     width: 32px;
+//     height: 32px;
+//     border-radius: 2px;
+//     border: solid 1px #c6cbd4;
+//   }
+// }
 
-#table-pagination ul {
+[id^="table-pagination"] ul {
   @include flexbox;
 
   li {
