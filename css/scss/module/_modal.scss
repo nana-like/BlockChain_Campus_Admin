@@ -63,13 +63,12 @@
   max-height: 95vh;
   width: auto;
   height: auto;
-  padding: 48px 92px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   text-align: center;
   background-color: #fff;
   border-radius: 2px;
-
-  &.modal-edit {
-  }
+  overflow-y: auto;
 
   .modal-title {
     position: relative;
@@ -81,7 +80,17 @@
 
   .modal-content {
     position: relative;
-    padding-bottom: 40px;
+    // min-width: 420px;
+    padding-bottom: 20px;
+    overflow: auto;
+
+    &.modal-edit {
+      // margin-bottom: 20px;
+    }
+
+    .modal-content-container {
+      // background-color: lightsalmon;
+    }
 
     .text {
       color: #000;
@@ -92,6 +101,9 @@
 
     .input-container {
       margin-top: 20px;
+      margin-right: 0;
+      margin-left: auto;
+      margin-right: auto;
 
       &:first-child {
         margin-top: 0;
@@ -103,12 +115,13 @@
     }
 
     .message-modal {
-      position: absolute;
+      // position: absolute;
       width: 100%;
-      bottom: 14px;
-      left: 50%;
-      transform: translateX(-50%);
+      // bottom: 14px;
+      // left: 50%;
+      // transform: translateX(-50%);
       font-size: 12px;
+      margin-top: 12px;
       color: #ee6262 !important;
     }
   }
