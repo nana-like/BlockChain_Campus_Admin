@@ -1,8 +1,8 @@
 # [ BlockChain Campus ] Admin Web
 
 - **Web Published: nykim@nykim.net**
-- **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-22](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-22)**
-- _Last Modified: 2018-10-17_
+- **저장소 주소: [https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-29](https://github.com/AnnYKim/BlockChain_Campus_Admin/tree/Update_10-29)**
+- _Last Modified: 2018-10-29_
 
 ## Tree Structure
 
@@ -14,6 +14,8 @@
   - JobSchedule/
   - CodeMgmt/
   - SystemLog/
+  - AccountMgmt/
+  - PermsiionMgmt/
   - Modal/
 - fonts/
 - css/
@@ -72,5 +74,4 @@
 
   > ex)
   > &lt;div class="div">그냥 디브&lt;/div>
-
   > &lt;div class="div active">활성화된 디브&lt;/div>

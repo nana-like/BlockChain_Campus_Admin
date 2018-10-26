@@ -75,7 +75,7 @@
             <div class="lnb-route">
               <p class="lnb-route-info">계정 관리</p>
               <p class="lnb-route-info">계정 목록</p>
-              <p class="lnb-route-info">계정 상세 정보</p>
+              <p class="lnb-route-info">계정 등록</p>
             </div>
           </div>
           <div class="lnb-right">
@@ -258,16 +258,16 @@
 
             <div class="details-container">
               <strong class="container-title">블록체인 정보</strong>
-
               <!--
-                [전달사항]
+                [전달사항] <ui.js>
                 사용자가 생성 버튼을 누른 경우,
-                .line-generate active 클래스를 추가해주세요.
+                .line-generate에 active 클래스를 추가해주세요. 
+                active 클래스가 없으면 display:none 처리합니다.
               -->
-              <div class="flex-line line-generate active">
+              <div class="flex-line line-generate">
                 <div class="input-container type-row">
                   <strong class="line-title">어드레스:</strong>
-                  <button class="button-type-d">Generate</button>
+                  <button class="button-type-d" id="button-generate">Generate</button>
                 </div>
                 <div class="address-generate">
                   <p class="guide">어드레스 생성을 위해 현재 로그인 한 계정의 패스워드를 입력하고 확인 버튼을 누르세요.</p>

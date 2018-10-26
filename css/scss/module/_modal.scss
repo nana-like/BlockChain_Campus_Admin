@@ -101,7 +101,6 @@
 
     .input-container {
       margin-top: 20px;
-      margin-right: 0;
       margin-left: auto;
       margin-right: auto;
 
@@ -310,6 +309,10 @@
     .input-text {
       font-weight: $fw-m;
       letter-spacing: 0;
+
+      &[readonly] {
+        background-color: transparent;
+      }
     }
 
     .button-transfer {
@@ -392,6 +395,7 @@
 
           &:last-child {
             margin-right: 0;
+            margin-left: 0;
           }
 
           .title {

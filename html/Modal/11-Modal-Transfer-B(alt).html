@@ -50,7 +50,7 @@
                           [전달사항]
                           활성화 된 .tab-item에게 active 클래스를 붙여 주세요.
                         -->
-                      <button class="tab-item active">대기 (1)</button>
+                      <button class="tab-item active">대기 (0)</button>
                       <button class="tab-item">진행 중</button>
                       <button class="tab-item">완료</button>
                     </div>
@@ -58,7 +58,7 @@
 
                   <div class="right">
                     <p class="table-indicator">
-                      선택 송금 대상: 4개 중 <span class="accent">1-4</span>
+                      선택 송금 대상: 0개 중 <span class="accent">0-0</span>
                     </p>
                   </div>
                 </div>
@@ -105,54 +105,18 @@
                       <col width="15%" />
                       <col width="15%" />
                     </colgroup>
+                    <!--
+                      [전달사항]
+                      리스트가 없는 경우,
+                      아래 tbody가 노출되도록 해주세요.
+                    -->
                     <tbody>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-151" checked />
-                            <label for="cb-temp-151"></label>
+                      <tr class="tr-noData">
+                        <td colspan="6">
+                          <div class="text-noData">
+                            No recipients
                           </div>
                         </td>
-                        <td>151</td>
-                        <td>분류_1_1_1_1</td>
-                        <td>admin</td>
-                        <td>0x5a05**********</td>
-                        <td>미실행</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-150" checked />
-                            <label for="cb-temp-150"></label>
-                          </div>
-                        </td>
-                        <td>150</td>
-                        <td>분류_1_1_1_2</td>
-                        <td>admin</td>
-                        <td>0x5a05**********</td>
-                        <td><span class="queued">미실행</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="checkbox-block checkbox-type-a">
-                            <input type="checkbox" id="cb-temp-149" checked />
-                            <label for="cb-temp-149"></label>
-                          </div>
-                        </td>
-                        <td>149</td>
-                        <td>분류_1_1_1_3</td>
-                        <td>arlee@postech.ac.kr</td>
-                        <td>0x5a05**********</td>
-                        <td><span class="queued">미실행</span></td>
-                      </tr>
-                      <!--///-->
-
-                      <tr>
-                        <td>148</td>
-                        <td>분류_1_1_1_3</td>
-                        <td>arlee@postech.ac.kr</td>
-                        <td>0x5a05**********</td>
-                        <td><span class="queued">미실행</span></td>
                       </tr>
                     </tbody>
 
@@ -177,8 +141,8 @@
                 <div class="input-container type-col">
                   <strong class="title">송금 작업명</strong>
                   <div class="has-message-block">
-                    <input type="text" class="input-text" value="20180903-1434-001" />
-                    <div class="message">*다른 이름으로 설정하세요.</div>
+                    <input type="text" class="input-text" />
+                    <div class="message"></div>
                   </div>
                 </div>
 
@@ -186,7 +150,7 @@
                   <strong class="title">송금 패스워드</strong>
                   <div class="has-message-block">
                     <input type="password" class="input-text" />
-                    <div class="message">*정확한 패스워드를 다시 입력하세요.</div>
+                    <div class="message"></div>
                   </div>
                 </div>
 
@@ -197,20 +161,19 @@
                 </div>
 
                 <div class="input-container type-col">
-                  <strong class="title">1인당 송금 금액(1인당 최대 9,900BCX 송금 가능)</strong>
+                  <strong class="title">1인당 송금 금액(-)</strong>
                   <div class="has-message-block">
-                    <input type="number" class="input-text input-unit" />
+                    <input type="text" class="input-text input-unit" />
                     <div class="unit">BCX</div>
                     <div class="message active">
                       *송금 수수료: -% of -BCX
                     </div>
-                    <div class="message">*유효한 금액을 다시 입력하세요.</div>
+                    <div class="message"></div>
                   </div>
                 </div>
 
                 <div class="button-transfer">
-                  <div class="message">*송금 작업을 시작하지 못했습니다.<br />
-                    다시 시도해 주세요.</div>
+                  <div class="message"></div>
                   <button class="button-type-b" disabled>실행</button>
                 </div>
 

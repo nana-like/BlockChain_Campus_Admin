@@ -37,7 +37,6 @@ $(function() {
   // [*] 데이트피커 함수 (임시)
   // http://www.daterangepicker.com/
   var datePickerEvt = function() {
-    console.log("TODO: Datepicker!");
     // var startDate = moment().subtract(30, "days"); //30일 전 (moment.js 의존)
     // var endDate = moment();
 
@@ -103,7 +102,6 @@ $(function() {
   // [*] 페이지네이션 함수 (임시)
   // http://flaviusmatis.github.io/simplePagination.js/
   var paginationEvt = function() {
-    console.log("TODO: Pagination!");
     var $tablePagination = $("#table-pagination");
 
     $tablePagination.pagination({
@@ -126,8 +124,6 @@ $(function() {
   // [*] 차트 함수 (임시)
   // http://www.chartjs.org/docs/latest/
   var chartEvt = function() {
-    console.log("TODO: Chart!");
-
     var statusH = $(".voting-details-status").outerHeight();
     $statusChart.height(statusH - 25);
 
@@ -224,8 +220,6 @@ $(function() {
 
   // [*] 테이블 함수
   var tableEvt = function() {
-    console.log("TODO: Table All!");
-
     //패딩 지정 함수
     var setTablePadding = function() {
       //스크롤로 인해 생기는 여백을 thead 오른쪽에도 지정합니다 (윈도 크롬 기준 17px 정도)
@@ -255,12 +249,10 @@ $(function() {
   var commonEvt = function() {
     // 드롭다운 이벤트
     var dropdownEvt = function() {
-      console.log("TODO: Dropdown! ");
       // 드롭다운 클릭 시 active클래스 추가
 
       $dropdown.on("click", function(evt) {
         evt.stopPropagation();
-        console.log("TODO: Dropdown Toggle ...");
 
         if ($(this).hasClass("active")) {
           $dropdown.removeClass("active");
@@ -274,7 +266,6 @@ $(function() {
         evt.stopPropagation();
         if (evt.target.className == "combobox-item") {
           var value = evt.target.innerText;
-          console.log(value);
           $(this)
             .find(".text")
             .text(value);
@@ -469,7 +460,6 @@ $(function() {
   }
 
   function createJSTree(jsondata) {
-    console.log("TODO: Create JS Tree!");
     $("#jsTree").jstree({
       core: {
         check_callback: true,
@@ -490,8 +480,6 @@ $(function() {
   // ------------------
 
   $("#button-edit-details").on("click", function() {
-    console.log("TODO: TEST!");
-
     if ($(".main-container").hasClass("mode-view")) {
       $(".main-container").removeClass("mode-view");
       $(".main-container").addClass("mode-edit");
@@ -541,6 +529,18 @@ $(function() {
       $("#radio-temp-duration-1")
         .nextAll(".input-text")
         .prop("disabled", true);
+    }
+  });
+
+  $("#button-generate").on("click", function() {
+    if (
+      !$(this)
+        .parents(".line-generate")
+        .hasClass("active")
+    ) {
+      $(this)
+        .parents(".line-generate")
+        .addClass("active");
     }
   });
 });
